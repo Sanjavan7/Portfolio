@@ -4,48 +4,48 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     name: "Synovia",
-    tagline: "Predicting the future of brain surgery",
+    tagline: "See surgical outcomes before the first incision.",
     description:
-      "AI that visualizes neurological consequences before the first incision. Physics-based simulation meets deep learning.",
+      "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning delivering real-time neurological deficit predictions (motor, language, cognitive) in under 10 seconds vs 6+ hours traditional pre-operative mapping.",
     metric: "HackPrinceton Winner",
-    year: "2024",
+    year: "2025",
     link: "https://synovia.tech",
   },
   {
     name: "Alama",
     tagline: "One-touch AI companion onboarding",
     description:
-      "Replaced 47 OAuth screens with single Touch ID authentication. Acquired by Based Hardware.",
-    metric: "Acquired",
-    year: "2024",
-    link: "#",
+      "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication, replacing multiple OAuth permission screens with few seconds setup flow and increasing completion rate.",
+    metric: "Requested by Omi",
+    year: "2025",
+    link: "https://www.omi.me/",
   },
   {
     name: "UltraBench",
     tagline: "The standard for AI memory benchmarking",
     description:
-      "Open-source suite measuring how AI providers store and retrieve information. Cited by Pinecone & Weaviate.",
-    metric: "5K+ Weekly Downloads",
-    year: "2024",
-    link: "#",
+      "Open-source benchmark platform that tests AI memory providers head-to-head with real data.",
+    metric: "Requested by Supermemory",
+    year: "2025",
+    link: "https://devpost.com/software/ultrabench-open-benchmark-platform-for-ai-memory-providers",
   },
   {
     name: "CliniJoy AI",
     tagline: "Healthcare scheduling, reimagined",
     description:
       "Intelligent optimization replacing 40+ hours of manual work with 5-minute AI scheduling.",
-    metric: "$630K Annual Savings",
-    year: "2024",
-    link: "#",
+    metric: "Made for Sevaro",
+    year: "2025",
+    link: "https://sevaro.com/",
   },
   {
     name: "RentSense",
-    tagline: "Finding home in New York City",
+    tagline: "Live where you should — not just where you can.",
     description:
-      "Scores all 197 NYC neighborhoods across 8 lifestyle dimensions using AI-powered recommendations.",
+      "AI-powered system that helps people choose where to live by turning 'quality of life' into a personalized, data-driven decision.",
     metric: "NexHacks Selection",
-    year: "2024",
-    link: "#",
+    year: "2026",
+    link: "https://devpost.com/software/stealth-mode-startup",
   },
 ];
 
