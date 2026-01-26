@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const links = [
-  { label: "Email", href: "mailto:sanjavan@example.com" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/sanjavan" },
-  { label: "GitHub", href: "https://github.com/sanjavan" },
+  { label: "Email", href: "mailto:Sanjavan7@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sanjavan-ghodasara-854138235/" },
+  { label: "GitHub", href: "https://github.com/Sanjavan7" },
 ];
 
 export const Contact = () => {

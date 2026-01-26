@@ -46,7 +46,7 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-sm text-muted-foreground tracking-wide mb-8"
           >
-            AI Engineer & Researcher
+            Founder • Machine Learning Engineer • AI Researcher
           </motion.p>
 
           <motion.h1
@@ -68,8 +68,8 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-12"
           >
-            I build AI products that bridge research and reality — 
-            from brain surgery prediction to systems serving 500K daily users.
+            I build AI systems that solve real-world problems at scale — 
+            from neuroscience to network technology.
           </motion.p>
 
           <motion.div

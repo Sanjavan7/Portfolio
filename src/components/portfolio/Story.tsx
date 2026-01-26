@@ -46,7 +46,7 @@ export const Story = () => {
           >
             From the football field
             <br />
-            to AI research.
+            to the data field.
           </motion.h2>
 
           <motion.div
@@ -57,7 +57,7 @@ export const Story = () => {
             className="space-y-8 text-lg md:text-xl text-muted-foreground leading-relaxed"
           >
             <p>
-              Captain of the Gujarat State Football Team. Six hours of daily training. 
+              Captain of the National Soccer Team. Six hours of daily training. 
               On track for a professional career.
             </p>
             <p>
@@ -69,7 +69,14 @@ export const Story = () => {
             </p>
             <p>
               So I taught myself to code. The same discipline that drove 5 AM training 
-              sessions now drives 36-hour hackathon sprints.
+              sessions now drives hackathon sprints.
+            </p>
+            <p>
+              Few months later: Won HackPrinceton. Deployed ML systems at Jio serving millions. 
+              Published at ACM conferences. Built brain surgery AI now piloting in hospitals.
+            </p>
+            <p className="text-foreground font-medium">
+              The game changed. The discipline didn't.
             </p>
           </motion.div>
 
