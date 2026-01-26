@@ -8,102 +8,86 @@ export const Story = () => {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3]);
 
   return (
     <section
       id="story"
       ref={sectionRef}
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="section-spacing bg-secondary/30 overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+      {/* Organic background shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-muted/30 blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] blob bg-muted/20 blur-3xl" />
+      </div>
 
-      {/* Parallax floating elements */}
-      <motion.div
-        style={{ y }}
-        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl"
-      />
-      <motion.div
-        style={{ y: useTransform(y, (v) => v * -0.5) }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
-      />
-
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-8 md:px-12 relative z-10">
         <motion.div
           style={{ opacity }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-3xl"
         >
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary mb-8"
+            transition={{ duration: 1 }}
+            className="text-sm text-muted-foreground tracking-wide mb-8"
           >
             The Story
-          </motion.span>
+          </motion.p>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8"
+            transition={{ duration: 1, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-12"
           >
-            From Football Field to
+            From the football field
             <br />
-            <span className="gradient-text">AI Research</span>
+            to AI research.
           </motion.h2>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="space-y-8 text-lg md:text-xl text-muted-foreground leading-relaxed"
           >
             <p>
-              Captain of the Gujarat State Football Team. 6 hours daily training.
+              Captain of the Gujarat State Football Team. Six hours of daily training. 
               On track for a professional career.
             </p>
             <p>
-              Then{" "}
-              <span className="text-foreground font-medium">COVID-19</span>{" "}
-              happened. Fields closed. Career ended at 19.
+              Then COVID happened. Fields closed. 
+              At nineteen, I waited six months for them to reopen.
+            </p>
+            <p className="text-foreground">
+              They never did.
             </p>
             <p>
-              I waited 6 months for the fields to reopen. They never did.
-            </p>
-            <p>
-              So I taught myself to{" "}
-              <span className="text-foreground font-medium">code</span>.
-            </p>
-            <p>
-              The same discipline that drove 5 AM training sessions now drives
-              36-hour hackathon sprints.
-            </p>
-            <p className="text-foreground font-medium text-xl md:text-2xl pt-4">
-              HackPrinceton Winner. Technology Acquired. Published Researcher.
+              So I taught myself to code. The same discipline that drove 5 AM training 
+              sessions now drives 36-hour hackathon sprints.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 pt-8 border-t border-border/50"
+            transition={{ duration: 1, delay: 0.4 }}
+            className="mt-16 pt-12 border-t border-border"
           >
-            <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               Education
             </p>
-            <p className="text-xl md:text-2xl font-bold">
+            <p className="text-2xl font-semibold tracking-tight">
               MS in Machine Learning
             </p>
             <p className="text-muted-foreground">
-              Stevens Institute of Technology • 2025 - 2027
+              Stevens Institute of Technology · 2025 – 2027
             </p>
           </motion.div>
         </motion.div>
