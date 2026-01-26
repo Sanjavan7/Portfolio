@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowDown, ChevronRight } from "lucide-react";
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -9,85 +8,88 @@ export const Hero = () => {
     }
   };
 
-  const scrollToResearch = () => {
-    const element = document.getElementById("research");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
-      {/* Subtle animated gradient orb */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Organic background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-30"
-          style={{
-            background:
-              "radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%)",
-          }}
+          className="absolute top-1/4 -right-32 w-[600px] h-[600px] rounded-full bg-secondary/50 blur-3xl"
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.4, 0.3],
+            scale: [1, 1.05, 1],
+            rotate: [0, 5, 0],
           }}
           transition={{
-            duration: 8,
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] blob bg-muted/50 blur-3xl"
+          animate={{
+            scale: [1, 1.08, 1],
+            rotate: [0, -5, 0],
+          }}
+          transition={{
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
       </div>
 
-      <div className="container mx-auto px-6 pt-24 pb-16 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container mx-auto px-8 md:px-12 pt-32 pb-24 relative z-10">
+        <div className="max-w-4xl">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-base font-medium text-primary tracking-widest uppercase mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-sm text-muted-foreground tracking-wide mb-8"
           >
-            Founder • Machine Learning Engineer • AI Researcher
+            AI Engineer & Researcher
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+            transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] mb-8"
           >
-            Sanjavan Ghodasara
+            Crafting intelligent
+            <br />
+            systems that shape
+            <br />
+            <span className="text-muted-foreground">how we live.</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light max-w-3xl mx-auto mb-12 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-12"
           >
-            Building AI systems that solve{" "}
-            <span className="text-foreground font-normal">real-world problems</span>{" "}
-            at scale
+            I build AI products that bridge research and reality — 
+            from brain surgery prediction to systems serving 500K daily users.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="flex flex-wrap items-center gap-4"
           >
             <motion.button
               onClick={scrollToProjects}
-              className="btn-premium group flex items-center gap-2"
+              className="btn-minimal"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              View Projects
-              <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              View Selected Work
             </motion.button>
 
             <motion.button
-              onClick={scrollToResearch}
-              className="btn-premium-outline"
+              onClick={() => document.getElementById("research")?.scrollIntoView({ behavior: "smooth" })}
+              className="btn-minimal-outline"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -95,25 +97,24 @@ export const Hero = () => {
             </motion.button>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2 text-muted-foreground cursor-pointer"
-            onClick={scrollToProjects}
-          >
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-            <ArrowDown className="w-4 h-4" />
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-12 left-8 md:left-12"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-3 text-muted-foreground cursor-pointer"
+          onClick={scrollToProjects}
+        >
+          <span className="text-xs tracking-widest rotate-90 origin-center">scroll</span>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
