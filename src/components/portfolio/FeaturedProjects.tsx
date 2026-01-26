@@ -52,18 +52,18 @@ const projects = [
 export const FeaturedProjects = () => {
   return (
     <section id="projects" className="section-spacing">
-      <div className="container mx-auto px-8 md:px-12">
+      <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
-          className="mb-24"
+          className="mb-12"
         >
-          <p className="text-sm text-muted-foreground tracking-wide mb-4">
+          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
             Selected Work
           </p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
             Products that ship.
             <br />
             <span className="text-muted-foreground">Impact that scales.</span>
@@ -83,34 +83,34 @@ export const FeaturedProjects = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="group block"
             >
-              <div className="py-10 md:py-14 border-t border-border hover:bg-secondary/30 transition-all duration-500 -mx-8 md:-mx-12 px-8 md:px-12">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+              <div className="py-6 md:py-8 border-t border-border hover:bg-secondary/30 transition-all duration-500 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-3">
-                      <h3 className="text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-muted-foreground transition-colors duration-300">
+                    <div className="flex items-center gap-4 mb-2">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-muted-foreground transition-colors duration-300">
                         {project.name}
                       </h3>
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-sm text-muted-foreground">
                         {project.year}
                       </span>
                     </div>
-                    <p className="text-muted-foreground text-lg mb-4">
+                    <p className="text-muted-foreground text-lg md:text-xl mb-3">
                       {project.tagline}
                     </p>
-                    <p className="text-muted-foreground/70 text-sm max-w-xl leading-relaxed hidden md:block">
+                    <p className="text-muted-foreground/70 text-base max-w-2xl leading-relaxed hidden md:block">
                       {project.description}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-8">
-                    <span className="text-sm text-muted-foreground">
+                  <div className="flex items-center gap-6">
+                    <span className="text-base text-muted-foreground">
                       {project.metric}
                     </span>
                     <motion.div
-                      className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-300"
+                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                     >
-                      <ArrowUpRight className="w-4 h-4 group-hover:text-background transition-colors duration-300" />
+                      <ArrowUpRight className="w-5 h-5 group-hover:text-background transition-colors duration-300" />
                     </motion.div>
                   </div>
                 </div>

@@ -161,9 +161,9 @@
     @apply w-16 h-px bg-border mx-auto;
   }
 
-  /* Section spacing */
+  /* Section spacing - tighter */
   .section-spacing {
-    @apply py-32 md:py-48 lg:py-56;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
   /* Text gradient - subtle and warm */

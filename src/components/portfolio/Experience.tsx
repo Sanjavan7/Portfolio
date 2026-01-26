@@ -36,23 +36,23 @@ const experiences = [
 export const Experience = () => {
   return (
     <section id="experience" className="section-spacing">
-      <div className="container mx-auto px-8 md:px-12">
+      <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
-          className="mb-24"
+          className="mb-12"
         >
-          <p className="text-sm text-muted-foreground tracking-wide mb-4">
+          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
             Experience
           </p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
             Where I've built.
           </h2>
         </motion.div>
 
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.period}`}
@@ -60,23 +60,23 @@ export const Experience = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="py-10 border-t border-border first:border-t-0"
+              className="py-6 border-t border-border first:border-t-0"
             >
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
-                    <h3 className="text-xl font-semibold tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
                       {exp.company}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground mb-3">
+                  <p className="text-lg text-muted-foreground mb-2">
                     {exp.role}
                   </p>
-                  <p className="text-sm text-muted-foreground/70 max-w-lg leading-relaxed">
+                  <p className="text-base text-muted-foreground/70 max-w-2xl leading-relaxed">
                     {exp.description}
                   </p>
                 </div>
-                <span className="text-sm text-muted-foreground whitespace-nowrap">
+                <span className="text-base text-muted-foreground whitespace-nowrap">
                   {exp.period}
                 </span>
               </div>

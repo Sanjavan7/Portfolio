@@ -9,7 +9,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       {/* Organic background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -38,13 +38,13 @@ export const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-8 md:px-12 pt-32 pb-24 relative z-10">
-        <div className="max-w-4xl">
+      <div className="w-full px-6 md:px-16 lg:px-24 pt-28 pb-16 relative z-10">
+        <div className="max-w-6xl">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-sm text-muted-foreground tracking-wide mb-8"
+            className="text-base md:text-lg text-muted-foreground tracking-wide mb-6"
           >
             Founder • Machine Learning Engineer • AI Researcher
           </motion.p>
@@ -53,7 +53,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight leading-[1] mb-6"
           >
             Crafting intelligent
             <br />
@@ -66,7 +66,7 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-12"
+            className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-10"
           >
             I build AI systems that solve real-world problems at scale — 
             from neuroscience to network technology.
