@@ -11,24 +11,24 @@ const stats = [
 
 export const Stats = () => {
   return (
-    <section className="py-24 md:py-32">
-      <div className="container mx-auto px-8 md:px-12">
+    <section className="py-12 md:py-16">
+      <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
-          className="mb-16"
+          className="mb-10"
         >
-          <p className="text-sm text-muted-foreground tracking-wide mb-4">
+          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
             By the Numbers
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-muted-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-muted-foreground">
             Impact you can measure.
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -38,10 +38,10 @@ export const Stats = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="text-center md:text-left"
             >
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-base text-muted-foreground">
                 {stat.label}
               </div>
             </motion.div>
