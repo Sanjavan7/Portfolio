@@ -3,6 +3,24 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    name: "ContractPilot",
+    tagline: "Sign smarter. Sign safer.",
+    description:
+      "AI-powered contract reviewer that analyzes legal documents clause-by-clause using K2 Think reasoning and a 500+ contract legal knowledge base, delivering plain-English risk analysis across four categories with interactive PDF highlighting and AI clause chat in under 60 seconds vs $300/hour traditional legal review.",
+    metric: "DevFest (Columbia) Winner",
+    year: "2026",
+    link: "https://devpost.com/software/contractpilot-1l3rnd",
+  },
+  {
+    name: "RentSense",
+    tagline: "Live where you should — not just where you can.",
+    description:
+      "AI-powered system that helps people choose where to live by turning 'quality of life' into a personalized, data-driven decision.",
+    metric: "NexHacks Selection",
+    year: "2026",
+    link: "https://devpost.com/software/stealth-mode-startup",
+  },
+  {
     name: "Synovia",
     tagline: "See surgical outcomes before the first incision.",
     description:
@@ -37,15 +55,6 @@ const projects = [
     metric: "Made for Sevaro",
     year: "2025",
     link: "https://sevaro.com/",
-  },
-  {
-    name: "RentSense",
-    tagline: "Live where you should — not just where you can.",
-    description:
-      "AI-powered system that helps people choose where to live by turning 'quality of life' into a personalized, data-driven decision.",
-    metric: "NexHacks Selection",
-    year: "2026",
-    link: "https://devpost.com/software/stealth-mode-startup",
   },
 ];
 
