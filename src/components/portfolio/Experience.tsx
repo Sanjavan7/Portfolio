@@ -52,33 +52,37 @@ export const Experience = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl">
+        <div className="space-y-1">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.period}`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="py-6 border-t border-border first:border-t-0"
+              className="group"
             >
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-2">
-                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
-                      {exp.company}
-                    </h3>
+              <div className="py-6 md:py-8 border-t border-border hover:bg-secondary/30 transition-all duration-500 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-2">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-muted-foreground transition-colors duration-300">
+                        {exp.company}
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground text-lg md:text-xl mb-3">
+                      {exp.role}
+                    </p>
+                    <p className="text-muted-foreground/70 text-base max-w-2xl leading-relaxed hidden md:block">
+                      {exp.description}
+                    </p>
                   </div>
-                  <p className="text-lg text-muted-foreground mb-2">
-                    {exp.role}
-                  </p>
-                  <p className="text-base text-muted-foreground/70 max-w-2xl leading-relaxed">
-                    {exp.description}
-                  </p>
+                  <div className="flex items-center gap-6">
+                    <span className="text-base text-muted-foreground">
+                      {exp.period}
+                    </span>
+                  </div>
                 </div>
-                <span className="text-base text-muted-foreground whitespace-nowrap">
-                  {exp.period}
-                </span>
               </div>
             </motion.div>
           ))}
