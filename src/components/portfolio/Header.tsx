@@ -57,16 +57,29 @@ export const Header = () => {
             )}
           </motion.button>
 
-          <motion.a
-            href="/Sanjavan_Ghodasara_Resume.pdf"
-            download
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background text-base font-medium hover:opacity-80 transition-opacity duration-300"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Download className="w-4 h-4" />
-            <span className="hidden sm:inline">Resume</span>
-          </motion.a>
+          <div className="flex items-center gap-2">
+            <motion.a
+              href="/Sanjavan_Ghodasara_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background text-base font-medium hover:opacity-80 transition-opacity duration-300"
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="hidden sm:inline">Resume</span>
+            </motion.a>
+
+            <motion.a
+              href="/Sanjavan_Ghodasara_Resume.pdf"
+              download
+              className="p-2.5 rounded-full bg-foreground text-background hover:opacity-80 transition-opacity duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Download resume"
+            >
+              <Download className="w-4 h-4" />
+            </motion.a>
+          </div>
         </div>
       </nav>
     </motion.header>
