@@ -16,7 +16,6 @@ export const Contact = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="max-w-4xl"
         >
           <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-6">
             Get in Touch
@@ -29,7 +28,7 @@ export const Contact = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl leading-relaxed">
-            Open to research collaborations, founding opportunities, 
+            Open to research collaborations, founding opportunities,
             and products that create real impact.
           </p>
 
@@ -51,13 +50,13 @@ export const Contact = () => {
               </motion.a>
             ))}
           </div>
-
-          <div className="pt-10 border-t border-border">
-            <p className="text-base text-muted-foreground">
-              © {new Date().getFullYear()} Sanjavan Ghodasara
-            </p>
-          </div>
         </motion.div>
+
+        <div className="pt-10 border-t border-border">
+          <p className="text-base text-muted-foreground">
+            © {new Date().getFullYear()} Sanjavan Ghodasara
+          </p>
+        </div>
       </div>
     </footer>
   );
