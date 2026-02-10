@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
@@ -37,7 +36,7 @@ const experiences = [
 export const Experience = () => {
   return (
     <section id="experience" className="section-spacing">
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-8">
+      <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -45,41 +44,42 @@ export const Experience = () => {
           transition={{ duration: 1 }}
           className="mb-12"
         >
-          <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-4">
+          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
             Experience
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
             Where I've built.
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl space-y-4">
+        <div className="max-w-5xl">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.period}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="card-tech p-6 flex flex-col md:flex-row md:items-start justify-between gap-4"
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="py-6 border-t border-border first:border-t-0"
             >
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
-                  <Briefcase className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold font-display tracking-tight mb-1">
-                    {exp.company}
-                  </h3>
-                  <p className="text-sm text-primary font-medium mb-1">{exp.role}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-2">
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
+                      {exp.company}
+                    </h3>
+                  </div>
+                  <p className="text-lg text-muted-foreground mb-2">
+                    {exp.role}
+                  </p>
+                  <p className="text-base text-muted-foreground/70 max-w-2xl leading-relaxed">
                     {exp.description}
                   </p>
                 </div>
+                <span className="text-base text-muted-foreground whitespace-nowrap">
+                  {exp.period}
+                </span>
               </div>
-              <span className="text-xs text-muted-foreground whitespace-nowrap font-medium mt-1">
-                {exp.period}
-              </span>
             </motion.div>
           ))}
         </div>

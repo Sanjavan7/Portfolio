@@ -1,74 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Beyond Binary — Dark Tech-Forward Design System */
+/* Minimal Visionary Portfolio Design System
+   Muted palette, organic shapes, generous whitespace */
 
 @layer base {
   :root {
-    /* Dark mode by default — deep blue-black with cyan accents */
-    --background: 220 25% 6%;
-    --foreground: 210 20% 95%;
+    /* Light mode - warm neutrals with soft accents */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 210 20% 95%;
+    --card: 40 15% 96%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 40 20% 98%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 25% 6%;
+    --primary: 30 15% 25%;
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 220 18% 14%;
-    --secondary-foreground: 210 20% 85%;
+    --secondary: 35 10% 92%;
+    --secondary-foreground: 30 10% 25%;
 
-    --muted: 220 15% 16%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 35 8% 90%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 260 60% 60%;
-    --accent-foreground: 210 20% 95%;
+    --accent: 25 30% 75%;
+    --accent-foreground: 30 10% 15%;
 
     --destructive: 0 60% 50%;
-    --destructive-foreground: 210 20% 95%;
+    --destructive-foreground: 40 20% 98%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 175 80% 50%;
+    --border: 35 10% 88%;
+    --input: 35 10% 88%;
+    --ring: 30 15% 35%;
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
 
     /* Custom tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%) 0%, hsl(240 20% 12%) 50%, hsl(220 25% 6%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 20% 12%) 0%, hsl(220 20% 10%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(175 80% 50%) 0%, hsl(260 60% 60%) 100%);
-    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
-    --shadow-card-hover: 0 8px 40px -8px hsl(175 80% 50% / 0.15);
-    --shadow-glow: 0 0 30px -5px hsl(175 80% 50% / 0.3);
+    --gradient-subtle: linear-gradient(135deg, hsl(35 15% 94%) 0%, hsl(40 20% 98%) 100%);
+    --shadow-soft: 0 4px 40px -8px hsl(30 10% 15% / 0.08);
+    --shadow-hover: 0 8px 60px -12px hsl(30 10% 15% / 0.12);
   }
 
   .dark {
-    /* Same as root — site is dark-first */
-    --background: 220 25% 6%;
-    --foreground: 210 20% 95%;
-    --card: 220 20% 10%;
-    --card-foreground: 210 20% 95%;
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 20% 95%;
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 25% 6%;
-    --secondary: 220 18% 14%;
-    --secondary-foreground: 210 20% 85%;
-    --muted: 220 15% 16%;
-    --muted-foreground: 215 15% 55%;
-    --accent: 260 60% 60%;
-    --accent-foreground: 210 20% 95%;
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 210 20% 95%;
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 175 80% 50%;
+    /* Dark mode - deep warm grays with soft accents */
+    --background: 30 10% 8%;
+    --foreground: 35 15% 92%;
+
+    --card: 30 8% 12%;
+    --card-foreground: 35 15% 92%;
+
+    --popover: 30 8% 12%;
+    --popover-foreground: 35 15% 92%;
+
+    --primary: 35 15% 85%;
+    --primary-foreground: 30 10% 8%;
+
+    --secondary: 30 8% 16%;
+    --secondary-foreground: 35 15% 85%;
+
+    --muted: 30 8% 18%;
+    --muted-foreground: 35 10% 55%;
+
+    --accent: 25 20% 60%;
+    --accent-foreground: 30 10% 8%;
+
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 35 15% 92%;
+
+    --border: 30 8% 20%;
+    --input: 30 8% 20%;
+    --ring: 35 15% 75%;
+
+    /* Custom tokens - dark */
+    --gradient-subtle: linear-gradient(135deg, hsl(30 8% 10%) 0%, hsl(30 10% 8%) 100%);
+    --shadow-soft: 0 4px 40px -8px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 60px -12px hsl(0 0% 0% / 0.4);
   }
 }
 
@@ -88,99 +99,83 @@
     letter-spacing: -0.01em;
   }
 
+  /* Refined typography scale */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Epilogue', 'Inter', sans-serif;
-    @apply font-bold tracking-tight;
-    letter-spacing: -0.03em;
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
-  /* Sticky dark header */
+  /* Glass morphism - softer, more organic */
   .glass {
-    @apply bg-background/90 backdrop-blur-xl border-b border-border/50;
+    @apply bg-background/80 backdrop-blur-2xl border-b border-border/40;
   }
 
-  /* Hero gradient */
-  .gradient-hero {
-    background: var(--gradient-hero);
+  /* Subtle gradient backgrounds */
+  .gradient-subtle {
+    background: var(--gradient-subtle);
   }
 
-  /* Tech card */
-  .card-tech {
-    @apply relative rounded-xl bg-card border border-border/60;
-    box-shadow: var(--shadow-card);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Organic blob shapes */
+  .blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 
-  .card-tech:hover {
-    box-shadow: var(--shadow-card-hover);
-    border-color: hsl(var(--primary) / 0.3);
-    transform: translateY(-4px);
+  /* Premium card with soft shadow */
+  .card-visionary {
+    @apply relative rounded-3xl bg-card border border-border/50;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Accent gradient text */
-  .text-gradient-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .card-visionary:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: hsl(var(--border));
   }
 
-  /* CTA button — primary glow */
-  .btn-primary {
-    @apply relative px-8 py-4 rounded-lg font-semibold text-base;
-    @apply bg-primary text-primary-foreground;
-    @apply transition-all duration-300 ease-out;
-    box-shadow: 0 0 20px -4px hsl(var(--primary) / 0.4);
+  /* Minimal button styles */
+  .btn-minimal {
+    @apply relative px-8 py-4 rounded-full font-medium text-base;
+    @apply bg-foreground text-background;
+    @apply transition-all duration-500 ease-out;
   }
 
-  .btn-primary:hover {
-    @apply opacity-90;
-    box-shadow: 0 0 30px -4px hsl(var(--primary) / 0.6);
-    transform: translateY(-2px);
-  }
-
-  /* Outline button */
-  .btn-outline {
-    @apply relative px-8 py-4 rounded-lg font-semibold text-base;
-    @apply border border-border text-foreground;
-    @apply transition-all duration-300 ease-out;
-  }
-
-  .btn-outline:hover {
-    @apply bg-secondary border-primary/40;
+  .btn-minimal:hover {
+    @apply opacity-80;
     transform: translateY(-1px);
   }
 
-  /* Section spacing */
+  .btn-minimal-outline {
+    @apply relative px-8 py-4 rounded-full font-medium text-base;
+    @apply border border-border text-foreground;
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .btn-minimal-outline:hover {
+    @apply bg-secondary;
+  }
+
+  /* Organic divider */
+  .divider-organic {
+    @apply w-16 h-px bg-border mx-auto;
+  }
+
+  /* Section spacing - tighter */
   .section-spacing {
     @apply py-16 md:py-24 lg:py-32;
   }
 
-  /* Section divider */
-  .section-divider {
-    @apply w-full h-px bg-gradient-to-r from-transparent via-border to-transparent;
-  }
-
-  /* Glow ring for hover */
-  .glow-ring {
-    @apply ring-1 ring-primary/0 transition-all duration-300;
-  }
-  .glow-ring:hover {
-    @apply ring-primary/30;
-    box-shadow: var(--shadow-glow);
-  }
-
-  /* Tag/badge */
-  .tag {
-    @apply px-3 py-1.5 rounded-md text-sm font-medium bg-secondary border border-border text-secondary-foreground;
+  /* Text gradient - subtle and warm */
+  .text-gradient {
+    @apply bg-gradient-to-r from-foreground via-muted-foreground to-foreground bg-clip-text text-transparent;
   }
 }
 
 @layer utilities {
+  /* Custom scrollbar - minimal */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -193,5 +188,10 @@
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-muted-foreground/30;
+  }
+
+  /* Smooth image loading */
+  .img-smooth {
+    @apply transition-opacity duration-700;
   }
 }
