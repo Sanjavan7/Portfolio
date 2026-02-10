@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookOpen } from "lucide-react";
 
 export const Research = () => {
   return (
-    <section id="research" className="section-spacing bg-secondary/30">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <section id="research" className="section-spacing">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -12,101 +12,94 @@ export const Research = () => {
           transition={{ duration: 1 }}
           className="mb-12"
         >
-          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
+          <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-4">
             Research
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight">
             Advancing the field.
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl space-y-12">
-          {/* Published Paper */}
+        <div className="max-w-5xl space-y-8">
+          {/* ACM Paper */}
           <motion.article
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="card-tech p-6 md:p-8"
           >
-            <div className="flex items-start justify-between gap-8">
-              <div className="flex-1">
-                <p className="text-base text-muted-foreground mb-3">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                <BookOpen className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-2">
                   ACM Learning @ Scale 2026 · First Author
                 </p>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3">
+                <h3 className="text-xl md:text-2xl font-bold font-display tracking-tight leading-tight mb-3">
                   Can Learners Navigate Imperfect Generative Pedagogical Chatbots?
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-5">
-                  Multi-university study on student interactions with AI chatbots. Developed taxonomy 
-                  for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by 
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Multi-university study on student interactions with AI chatbots. Developed taxonomy
+                  for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by
                   Khan Academy and Duolingo.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 rounded-full text-sm bg-background border border-border"
-                    >
-                      {tag}
-                    </span>
+                    <span key={tag} className="tag text-xs">{tag}</span>
                   ))}
                 </div>
               </div>
             </div>
           </motion.article>
 
-          <div className="divider-organic" />
-
-          {/* Research Position - Stevens */}
+          {/* Stevens */}
           <motion.article
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
+            className="card-tech p-6 md:p-8"
           >
-            <div className="flex-1">
-              <p className="text-base text-muted-foreground mb-3">
-                Graduate Research Assistant · Oct 2025 – Present
-              </p>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3">
-                Stevens Institute of Technology
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Contributing to educational AI research under Prof. Tiffany Li. 
-                Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM), 
-                complete Python pipeline for probabilistic analysis.
-              </p>
-            </div>
+            <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-2">
+              Graduate Research Assistant · Oct 2025 – Present
+            </p>
+            <h3 className="text-xl md:text-2xl font-bold font-display tracking-tight leading-tight mb-3">
+              Stevens Institute of Technology
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Contributing to educational AI research under Prof. Tiffany Li.
+              Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM),
+              complete Python pipeline for probabilistic analysis.
+            </p>
           </motion.article>
 
-          <div className="divider-organic" />
-
-          {/* Research Position - SOCET */}
+          {/* SOCET */}
           <motion.article
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
+            className="card-tech p-6 md:p-8"
           >
-            <div className="flex-1">
-              <p className="text-base text-muted-foreground mb-3">
-                EEE SB (NLP Research Group Member) · December 2023
-              </p>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3">
-                SOCET
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-                Conducted research on NLP, covering text processing, linguistic fundamentals, and applications 
-                in various fields, including healthcare and finance.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Implemented ML techniques for text classification, sentiment analysis, and explored advanced 
-                models like RNNs and transformers, emphasizing ethical implications in NLP.
-              </p>
-            </div>
+            <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-2">
+              EEE SB (NLP Research Group Member) · December 2023
+            </p>
+            <h3 className="text-xl md:text-2xl font-bold font-display tracking-tight leading-tight mb-3">
+              SOCET
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+              Conducted research on NLP, covering text processing, linguistic fundamentals, and applications
+              in various fields, including healthcare and finance.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Implemented ML techniques for text classification, sentiment analysis, and explored advanced
+              models like RNNs and transformers, emphasizing ethical implications in NLP.
+            </p>
           </motion.article>
 
-          {/* Scholar Link */}
+          {/* Scholar link */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -117,7 +110,7 @@ export const Research = () => {
               href="https://scholar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-base text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors duration-300 font-medium"
             >
               Google Scholar
               <ArrowUpRight className="w-4 h-4" />
