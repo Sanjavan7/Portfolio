@@ -4,9 +4,9 @@ const stats = [
   { value: "11", label: "Products Shipped" },
   { value: "5", label: "Hackathon Wins" },
   { value: "500K+", label: "Daily Users" },
-  { value: "1", label: "Acquisition" },
+  { value: "3", label: "Acquisition" },
   { value: "ACM", label: "Published" },
-  { value: "15+", label: "Hackathons" },
+  { value: "10+", label: "Hackathons" },
 ];
 
 export const Stats = () => {

@@ -25,7 +25,6 @@ export const Story = () => {
       <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
         <motion.div
           style={{ opacity }}
-          className="max-w-4xl"
         >
           <motion.p
             initial={{ opacity: 0 }}
@@ -72,8 +71,8 @@ export const Story = () => {
               sessions now drives hackathon sprints.
             </p>
             <p>
-              Few months later: Won HackPrinceton. Deployed ML systems at Jio serving millions. 
-              Published at ACM conferences. Built brain surgery AI now piloting in hospitals.
+              Few months later: Won HackPrinceton, DevFest Columbia Universitie's largest hackathon and many more. Deployed ML systems at Jio serving millions. 
+              Published at ACM conferences. Built AI systems that are currently solving real-world problems.
             </p>
             <p className="text-foreground font-medium text-xl md:text-2xl">
               The game changed. The discipline didn't.
