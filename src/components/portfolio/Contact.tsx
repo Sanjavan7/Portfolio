@@ -6,6 +6,7 @@ const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sanjavan-ghodasara-854138235/" },
   { label: "GitHub", href: "https://github.com/Sanjavan7" },
   { label: "Devpost", href: "https://devpost.com/sanjavan7" },
+  { label: "ACM", href: "https://dl.acm.org/doi/10.1145/3698205.3729550" },
 ];
 
 export const Contact = () => {
