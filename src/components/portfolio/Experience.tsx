@@ -1,11 +1,23 @@
 import { motion } from "framer-motion";
+import { type ReactNode } from "react";
 
-const experiences = [
+const experiences: {
+  company: string;
+  role: string;
+  period: string;
+  description: ReactNode;
+}[] = [
   {
     company: "Stevens Institute of Technology",
     role: "Graduate Research Assistant",
     period: "Oct 2025 – Present",
-    description: "Contributing to educational AI research under Prof. Tiffany Li. Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM).",
+    description: (
+      <>
+        Conducting extended research on "Can Learners Navigate Imperfect Generative Pedagogical Chatbots?" under{" "}
+        <a href="https://tiffanywentingli.com/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 underline underline-offset-4 hover:text-foreground transition-colors duration-300">Prof. Tiffany Li</a>.
+        Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM).
+      </>
+    ),
   },
   {
     company: "Jio Platforms Limited",
