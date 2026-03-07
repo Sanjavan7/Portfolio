@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { value: "11", label: "Products Shipped" },
-  { value: "5", label: "Hackathon Wins" },
+  { value: "8", label: "Hackathon Wins" },
   { value: "500K+", label: "Daily Users" },
   { value: "3", label: "Acquisition" },
   { value: "ACM", label: "Published" },

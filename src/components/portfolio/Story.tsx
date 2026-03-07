@@ -71,7 +71,8 @@ export const Story = () => {
               sessions now drives hackathon sprints.
             </p>
             <p>
-              Few months later: Won HackPrinceton, DevFest Columbia Universitie's largest hackathon and many more. Deployed ML systems at Jio serving millions. 
+              Few months later: 8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
+              HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more. Deployed ML systems at Jio serving millions.
               Published at ACM conferences. Built AI systems that are currently solving real-world problems.
             </p>
             <p className="text-foreground font-medium text-xl md:text-2xl">
