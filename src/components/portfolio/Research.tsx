@@ -31,11 +31,19 @@ export const Research = () => {
             <div className="flex items-start justify-between gap-8">
               <div className="flex-1">
                 <p className="text-base text-muted-foreground mb-3">
-                  ACM Learning @ Scale 2026 · First Author
+                  ACM Learning @ Scale 2025
                 </p>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3">
-                  Can Learners Navigate Imperfect Generative Pedagogical Chatbots?
-                </h3>
+                <a
+                  href="https://dl.acm.org/doi/10.1145/3698205.3729550"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/link inline-block"
+                >
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3 group-hover/link:text-muted-foreground transition-colors duration-300">
+                    Can Learners Navigate Imperfect Generative Pedagogical Chatbots?
+                    <ArrowUpRight className="inline w-6 h-6 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                  </h3>
+                </a>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-5">
                   Multi-university study on student interactions with AI chatbots. Developed taxonomy 
                   for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by 

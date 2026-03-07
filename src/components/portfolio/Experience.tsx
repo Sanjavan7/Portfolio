@@ -5,7 +5,7 @@ const experiences = [
     company: "Stevens Institute of Technology",
     role: "Graduate Research Assistant",
     period: "Oct 2025 – Present",
-    description: "First-author ACM publication at L@S '25. Extended research on pedagogical chatbot error management in STEM learning.",
+    description: "Contributing to educational AI research under Prof. Tiffany Li. Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM).",
   },
   {
     company: "Jio Platforms Limited",
