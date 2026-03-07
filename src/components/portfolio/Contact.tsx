@@ -5,6 +5,7 @@ const links = [
   { label: "Email", href: "mailto:Sanjavan7@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sanjavan-ghodasara-854138235/" },
   { label: "GitHub", href: "https://github.com/Sanjavan7" },
+  { label: "Devpost", href: "https://devpost.com/sanjavan7" },
 ];
 
 export const Contact = () => {

@@ -2,15 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
-  {
-    name: "Synovia",
-    tagline: "See surgical outcomes before the first incision.",
-    description:
-      "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning delivering real-time neurological deficit predictions (motor, language, cognitive) in under 10 seconds vs 6+ hours traditional pre-operative mapping.",
-    metric: "HackPrinceton Winner (800+ participants)",
-    year: "2025",
-    link: "https://synovia.tech",
-  },
+  // 2026
   {
     name: "Synaptix",
     tagline: "Repurpose drugs. Rescue lives.",
@@ -30,15 +22,6 @@ const projects = [
     link: "https://devpost.com/software/geneai",
   },
   {
-    name: "CliniJoy AI",
-    tagline: "Healthcare scheduling, reimagined",
-    description:
-      "Intelligent optimization replacing 40+ hours of manual work with 5-minute AI scheduling.",
-    metric: "Made for Sevaro",
-    year: "2025",
-    link: "https://sevaro.com/",
-  },
-  {
     name: "ContractPilot",
     tagline: "Sign smarter. Sign safer.",
     description:
@@ -46,24 +29,6 @@ const projects = [
     metric: "Best Use of Flowglad, DevFest Columbia (600+ participants)",
     year: "2026",
     link: "https://devpost.com/software/contractpilot-1l3rnd",
-  },
-  {
-    name: "UltraBench",
-    tagline: "The standard for AI memory benchmarking",
-    description:
-      "Open-source benchmark platform that tests AI memory providers head-to-head with real data.",
-    metric: "Requested by Supermemory",
-    year: "2025",
-    link: "https://devpost.com/software/ultrabench-open-benchmark-platform-for-ai-memory-providers",
-  },
-  {
-    name: "Alama",
-    tagline: "One-touch AI companion onboarding",
-    description:
-      "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication, replacing multiple OAuth permission screens with few seconds setup flow and increasing completion rate.",
-    metric: "Requested by Omi",
-    year: "2025",
-    link: "https://www.omi.me/",
   },
   {
     name: "RentSense",
@@ -82,6 +47,43 @@ const projects = [
     metric: "2,500+ LinkedIn impressions",
     year: "2026",
     link: "https://dejavumusic.vercel.app/",
+  },
+  // 2025
+  {
+    name: "Synovia",
+    tagline: "See surgical outcomes before the first incision.",
+    description:
+      "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning delivering real-time neurological deficit predictions (motor, language, cognitive) in under 10 seconds vs 6+ hours traditional pre-operative mapping.",
+    metric: "HackPrinceton Winner (800+ participants)",
+    year: "2025",
+    link: "https://synovia.tech",
+  },
+  {
+    name: "CliniJoy AI",
+    tagline: "Healthcare scheduling, reimagined",
+    description:
+      "Intelligent optimization replacing 40+ hours of manual work with 5-minute AI scheduling.",
+    metric: "Made for Sevaro",
+    year: "2025",
+    link: "https://sevaro.com/",
+  },
+  {
+    name: "UltraBench",
+    tagline: "The standard for AI memory benchmarking",
+    description:
+      "Open-source benchmark platform that tests AI memory providers head-to-head with real data.",
+    metric: "Requested by Supermemory",
+    year: "2025",
+    link: "https://devpost.com/software/ultrabench-open-benchmark-platform-for-ai-memory-providers",
+  },
+  {
+    name: "Alama",
+    tagline: "One-touch AI companion onboarding",
+    description:
+      "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication, replacing multiple OAuth permission screens with few seconds setup flow and increasing completion rate.",
+    metric: "Requested by Omi",
+    year: "2025",
+    link: "https://www.omi.me/",
   },
 ];
 
