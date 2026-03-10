@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { type ReactNode } from "react";
-import { BotanicalCornerTopRight } from "./BotanicalSVG";
+import { BotanicalCornerTopRight, BotanicalCornerBottomLeft } from "./BotanicalSVG";
 
 const experiences: {
   company: string;
@@ -49,7 +49,8 @@ const experiences: {
 export const Experience = () => {
   return (
     <section id="experience" className="section-spacing relative overflow-hidden">
-      <BotanicalCornerTopRight className="absolute -top-8 -right-8 w-[320px] h-[320px] md:w-[450px] md:h-[450px] pointer-events-none" opacity={0.04} />
+      <BotanicalCornerTopRight className="absolute -top-8 -right-8 w-[400px] h-[400px] md:w-[550px] md:h-[550px] pointer-events-none" opacity={0.07} />
+      <BotanicalCornerBottomLeft className="absolute -bottom-12 -left-12 w-[350px] h-[350px] md:w-[500px] md:h-[500px] pointer-events-none" opacity={0.06} />
       <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
         {/* Section header */}
         <div className="section-number mb-16">

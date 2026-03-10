@@ -19,39 +19,43 @@ export const Story = () => {
           <span className="section-number-title">THE STORY</span>
         </div>
 
-        {/* Large serif statement — AceFund about section style */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.2] mb-12 max-w-5xl"
-        >
-          From the football field to the data field — captain of the National Soccer Team turned AI engineer, bringing the same discipline to hackathon sprints and research breakthroughs.
-        </motion.h2>
+        {/* Two-column layout: heading left, story right */}
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 mb-16">
+          {/* Left column - heading + tags */}
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-10"
+            >
+              From the football field
+              <br />
+              to the data field.
+            </motion.h2>
 
-        {/* Pill tags */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap gap-3 mb-16"
-        >
-          {["Machine Learning", "AI Research", "Full-Stack", "Healthcare AI", "NLP", "Computer Vision"].map((tag) => (
-            <span key={tag} className="pill-tag">{tag}</span>
-          ))}
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap gap-3"
+            >
+              {["Machine Learning", "AI Research", "Full-Stack", "Healthcare AI", "NLP", "Computer Vision"].map((tag) => (
+                <span key={tag} className="pill-tag">{tag}</span>
+              ))}
+            </motion.div>
+          </div>
 
-        {/* Story details */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="grid md:grid-cols-2 gap-12 md:gap-16 mb-16"
-        >
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-sans">
+          {/* Right column - story narrative */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="space-y-6 text-lg text-muted-foreground leading-relaxed font-sans"
+          >
             <p>
               Captain of the National Soccer Team. Six hours of daily training.
               On track for a professional career.
@@ -60,24 +64,23 @@ export const Story = () => {
               Then COVID happened. Fields closed.
               At nineteen, I waited six months for them to reopen.
             </p>
-            <p className="text-foreground text-xl md:text-2xl font-serif">
+            <p className="text-foreground text-xl md:text-2xl font-serif font-bold">
               They never did.
             </p>
-          </div>
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-sans">
             <p>
               So I taught myself to code. The same discipline that drove 5 AM training
               sessions now drives hackathon sprints.
             </p>
             <p>
               Few months later: 8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
-              HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more.
+              HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more. Deployed ML systems at Jio serving millions.
+              Published at ACM conferences.
             </p>
-            <p className="text-foreground font-medium text-xl md:text-2xl font-serif">
+            <p className="text-foreground font-medium text-xl md:text-2xl font-serif font-bold">
               The game changed. The discipline didn't.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Education */}
         <motion.div
