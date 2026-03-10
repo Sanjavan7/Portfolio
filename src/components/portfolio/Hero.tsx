@@ -12,7 +12,7 @@ export const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Indigo Arch/Dome — AceFund hero style */}
-      <div className="hero-arch relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-24 overflow-hidden" style={{ backgroundColor: 'var(--color-indigo)' }}>
+      <div className="hero-arch relative min-h-[100vh] flex flex-col items-center justify-center text-center px-6 pt-28 pb-16 overflow-hidden" style={{ backgroundColor: 'var(--color-indigo)' }}>
         {/* White botanical illustrations on the arch */}
         <BotanicalCornerTopRight className="absolute -top-8 -right-8 w-[450px] h-[450px] md:w-[650px] md:h-[650px]" opacity={0.15} color="#fff" />
         <BotanicalCornerBottomLeft className="absolute -bottom-16 -left-16 w-[400px] h-[400px] md:w-[600px] md:h-[600px]" opacity={0.12} color="#fff" />
@@ -38,9 +38,9 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-[0.9] mb-8 text-white"
           >
-            Crafting intelligent
+            Crafting intelligent systems
             <br />
-            systems that shape
+            that shape
             <br />
             <span className="text-white/40">how we live.</span>
           </motion.h1>
