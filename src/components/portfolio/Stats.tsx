@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BotanicalCornerBottomLeft } from "./BotanicalSVG";
 
 const stats = [
   { value: "11", label: "Products Shipped" },
@@ -11,8 +12,9 @@ const stats = [
 
 export const Stats = () => {
   return (
-    <section className="py-16 md:py-24">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      <BotanicalCornerBottomLeft className="absolute -bottom-10 -left-10 w-[280px] h-[280px] md:w-[400px] md:h-[400px] pointer-events-none" opacity={0.04} />
+      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
         {/* Section header — AceFund numbering */}
         <div className="section-number mb-16">
           <span className="section-number-label">(002)</span>

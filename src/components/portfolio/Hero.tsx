@@ -12,7 +12,7 @@ export const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Indigo Arch/Dome — AceFund hero style */}
-      <div className="hero-arch relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden" style={{ backgroundColor: 'var(--color-indigo)' }}>
+      <div className="hero-arch relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-24 overflow-hidden" style={{ backgroundColor: 'var(--color-indigo)' }}>
         {/* White botanical illustrations on the arch */}
         <BotanicalCornerTopRight className="absolute -top-8 -right-8 w-[450px] h-[450px] md:w-[650px] md:h-[650px]" opacity={0.15} color="#fff" />
         <BotanicalCornerBottomLeft className="absolute -bottom-16 -left-16 w-[400px] h-[400px] md:w-[600px] md:h-[600px]" opacity={0.12} color="#fff" />
