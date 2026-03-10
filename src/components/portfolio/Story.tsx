@@ -16,10 +16,22 @@ export const Story = () => {
       ref={sectionRef}
       className="section-spacing bg-secondary/30 overflow-hidden"
     >
-      {/* Organic background shapes */}
+      {/* Botanical background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-muted/30 blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] blob bg-muted/20 blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full blur-3xl" style={{ backgroundColor: 'var(--color-indigo-faint)', opacity: 0.5 }} />
+        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] blob blur-3xl" style={{ backgroundColor: 'var(--color-indigo-faint)', opacity: 0.3 }} />
+        <svg
+          className="absolute top-12 right-8 w-[200px] h-[200px]"
+          viewBox="0 0 150 150"
+          fill="none"
+          style={{ opacity: 0.05 }}
+        >
+          <path d="M75 140 Q78 110 75 80 Q72 50 78 20" stroke="var(--color-indigo)" strokeWidth="1.2" fill="none" />
+          <ellipse cx="55" cy="50" rx="20" ry="8" transform="rotate(-35 55 50)" fill="var(--color-indigo)" opacity="0.4" />
+          <ellipse cx="95" cy="40" rx="20" ry="8" transform="rotate(35 95 40)" fill="var(--color-indigo)" opacity="0.35" />
+          <ellipse cx="58" cy="80" rx="18" ry="7" transform="rotate(-30 58 80)" fill="var(--color-indigo)" opacity="0.3" />
+          <ellipse cx="92" cy="70" rx="18" ry="7" transform="rotate(30 92 70)" fill="var(--color-indigo)" opacity="0.35" />
+        </svg>
       </div>
 
       <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">

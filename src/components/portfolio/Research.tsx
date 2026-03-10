@@ -53,7 +53,8 @@ export const Research = () => {
                   {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 rounded-full text-sm bg-background border border-border"
+                      className="px-4 py-2 rounded-full text-sm border border-border"
+                      style={{ backgroundColor: 'var(--color-indigo-faint)' }}
                     >
                       {tag}
                     </span>

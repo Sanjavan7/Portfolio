@@ -10,10 +10,11 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      {/* Organic background shapes */}
+      {/* Botanical background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 -right-32 w-[600px] h-[600px] rounded-full bg-secondary/50 blur-3xl"
+          className="absolute top-1/4 -right-32 w-[600px] h-[600px] rounded-full blur-3xl"
+          style={{ backgroundColor: 'var(--color-indigo-faint)', opacity: 0.6 }}
           animate={{
             scale: [1, 1.05, 1],
             rotate: [0, 5, 0],
@@ -25,7 +26,8 @@ export const Hero = () => {
           }}
         />
         <motion.div
-          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] blob bg-muted/50 blur-3xl"
+          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] blob blur-3xl"
+          style={{ backgroundColor: 'var(--color-indigo-faint)', opacity: 0.4 }}
           animate={{
             scale: [1, 1.08, 1],
             rotate: [0, -5, 0],
@@ -36,6 +38,37 @@ export const Hero = () => {
             ease: "easeInOut",
           }}
         />
+
+        {/* Botanical SVG - top right */}
+        <svg
+          className="absolute top-20 right-12 w-[300px] h-[300px] md:w-[450px] md:h-[450px]"
+          viewBox="0 0 200 200"
+          fill="none"
+          style={{ opacity: 0.06 }}
+        >
+          <path d="M100 180 Q95 140 100 100 Q105 60 95 20" stroke="var(--color-indigo)" strokeWidth="1.5" fill="none" />
+          <ellipse cx="75" cy="70" rx="25" ry="10" transform="rotate(-30 75 70)" fill="var(--color-indigo)" opacity="0.4" />
+          <ellipse cx="70" cy="100" rx="28" ry="11" transform="rotate(-40 70 100)" fill="var(--color-indigo)" opacity="0.3" />
+          <ellipse cx="72" cy="130" rx="22" ry="9" transform="rotate(-25 72 130)" fill="var(--color-indigo)" opacity="0.35" />
+          <ellipse cx="125" cy="55" rx="25" ry="10" transform="rotate(30 125 55)" fill="var(--color-indigo)" opacity="0.35" />
+          <ellipse cx="128" cy="85" rx="28" ry="11" transform="rotate(40 128 85)" fill="var(--color-indigo)" opacity="0.3" />
+          <ellipse cx="123" cy="115" rx="22" ry="9" transform="rotate(25 123 115)" fill="var(--color-indigo)" opacity="0.4" />
+          <circle cx="95" cy="18" r="4" fill="var(--color-indigo)" opacity="0.3" />
+        </svg>
+
+        {/* Botanical SVG - bottom left */}
+        <svg
+          className="absolute bottom-12 left-8 w-[180px] h-[180px] md:w-[250px] md:h-[250px]"
+          viewBox="0 0 150 150"
+          fill="none"
+          style={{ opacity: 0.04 }}
+        >
+          <path d="M75 140 Q78 110 75 80 Q72 50 78 20" stroke="var(--color-indigo)" strokeWidth="1.2" fill="none" />
+          <ellipse cx="55" cy="50" rx="20" ry="8" transform="rotate(-35 55 50)" fill="var(--color-indigo)" opacity="0.4" />
+          <ellipse cx="95" cy="40" rx="20" ry="8" transform="rotate(35 95 40)" fill="var(--color-indigo)" opacity="0.35" />
+          <ellipse cx="58" cy="80" rx="18" ry="7" transform="rotate(-30 58 80)" fill="var(--color-indigo)" opacity="0.3" />
+          <ellipse cx="92" cy="70" rx="18" ry="7" transform="rotate(30 92 70)" fill="var(--color-indigo)" opacity="0.35" />
+        </svg>
       </div>
 
       <div className="w-full px-6 md:px-16 lg:px-24 pt-28 pb-16 relative z-10">

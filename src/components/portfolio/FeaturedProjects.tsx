@@ -145,10 +145,10 @@ export const FeaturedProjects = () => {
                       {project.metric}
                     </span>
                     <motion.div
-                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-300"
+                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                     >
-                      <ArrowUpRight className="w-5 h-5 group-hover:text-background transition-colors duration-300" />
+                      <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
                     </motion.div>
                   </div>
                 </div>

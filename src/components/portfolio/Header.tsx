@@ -61,7 +61,8 @@ export const Header = () => {
             href="/Sanjavan_Ghodasara_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background text-base font-medium hover:opacity-80 transition-opacity duration-300"
+            className="flex items-center gap-2 px-6 py-3 rounded-full text-white text-base font-medium transition-all duration-300 hover:shadow-lg"
+            style={{ backgroundColor: 'var(--color-indigo)' }}
             whileHover={{ y: -1 }}
             whileTap={{ scale: 0.98 }}
           >

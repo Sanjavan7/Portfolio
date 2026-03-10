@@ -1,85 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal Visionary Portfolio Design System
-   Muted palette, organic shapes, generous whitespace */
+/* Botanical Fintech Design System
+   Indigo + Cream + Botanical Illustrations
+   Inspired by AceFund aesthetic */
 
 @layer base {
   :root {
-    /* Light mode - warm neutrals with soft accents */
-    --background: 40 20% 98%;
-    --foreground: 30 10% 15%;
+    /* Botanical Fintech - Cream & Indigo palette */
+    --background: 33 100% 98%;
+    --foreground: 240 28% 14%;
 
-    --card: 40 15% 96%;
-    --card-foreground: 30 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 28% 14%;
 
-    --popover: 40 20% 98%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 28% 14%;
 
-    --primary: 30 15% 25%;
-    --primary-foreground: 40 20% 98%;
+    --primary: 239 68% 53%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 10% 92%;
-    --secondary-foreground: 30 10% 25%;
+    --secondary: 30 33% 94%;
+    --secondary-foreground: 240 28% 14%;
 
-    --muted: 35 8% 90%;
-    --muted-foreground: 30 8% 45%;
+    --muted: 246 46% 95%;
+    --muted-foreground: 240 18% 35%;
 
-    --accent: 25 30% 75%;
-    --accent-foreground: 30 10% 15%;
+    --accent: 239 72% 63%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 60% 50%;
-    --destructive-foreground: 40 20% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 10% 88%;
-    --input: 35 10% 88%;
-    --ring: 30 15% 35%;
+    --border: 30 17% 89%;
+    --input: 30 17% 89%;
+    --ring: 239 68% 53%;
 
-    --radius: 1.5rem;
+    --radius: 14px;
 
     /* Custom tokens */
-    --gradient-subtle: linear-gradient(135deg, hsl(35 15% 94%) 0%, hsl(40 20% 98%) 100%);
-    --shadow-soft: 0 4px 40px -8px hsl(30 10% 15% / 0.08);
-    --shadow-hover: 0 8px 60px -12px hsl(30 10% 15% / 0.12);
+    --color-indigo: #3639D8;
+    --color-indigo-mid: #5B5EE6;
+    --color-indigo-light: #AFB0F1;
+    --color-indigo-faint: #EEEDF8;
+    --gradient-subtle: linear-gradient(135deg, hsl(30 33% 94%) 0%, hsl(33 100% 98%) 100%);
+    --shadow-soft: 0 1px 3px rgba(0,0,0,0.03);
+    --shadow-hover: 0 6px 24px rgba(54,57,216,0.07);
   }
 
   .dark {
-    /* Dark mode - deep warm grays with soft accents */
-    --background: 30 10% 8%;
-    --foreground: 35 15% 92%;
+    /* Dark botanical - deep navy with indigo accents */
+    --background: 240 25% 7%;
+    --foreground: 33 50% 95%;
 
-    --card: 30 8% 12%;
-    --card-foreground: 35 15% 92%;
+    --card: 240 20% 11%;
+    --card-foreground: 33 50% 95%;
 
-    --popover: 30 8% 12%;
-    --popover-foreground: 35 15% 92%;
+    --popover: 240 20% 11%;
+    --popover-foreground: 33 50% 95%;
 
-    --primary: 35 15% 85%;
-    --primary-foreground: 30 10% 8%;
+    --primary: 239 72% 63%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 8% 16%;
-    --secondary-foreground: 35 15% 85%;
+    --secondary: 240 15% 15%;
+    --secondary-foreground: 33 50% 90%;
 
-    --muted: 30 8% 18%;
-    --muted-foreground: 35 10% 55%;
+    --muted: 240 15% 18%;
+    --muted-foreground: 240 10% 58%;
 
-    --accent: 25 20% 60%;
-    --accent-foreground: 30 10% 8%;
+    --accent: 239 68% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 50% 45%;
-    --destructive-foreground: 35 15% 92%;
+    --destructive-foreground: 33 50% 95%;
 
-    --border: 30 8% 20%;
-    --input: 30 8% 20%;
-    --ring: 35 15% 75%;
+    --border: 240 15% 18%;
+    --input: 240 15% 18%;
+    --ring: 239 72% 63%;
 
     /* Custom tokens - dark */
-    --gradient-subtle: linear-gradient(135deg, hsl(30 8% 10%) 0%, hsl(30 10% 8%) 100%);
+    --color-indigo: #5B5EE6;
+    --color-indigo-mid: #AFB0F1;
+    --color-indigo-light: #AFB0F1;
+    --color-indigo-faint: rgba(54,57,216,0.1);
+    --gradient-subtle: linear-gradient(135deg, hsl(240 15% 10%) 0%, hsl(240 25% 7%) 100%);
     --shadow-soft: 0 4px 40px -8px hsl(0 0% 0% / 0.3);
-    --shadow-hover: 0 8px 60px -12px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 8px 60px -12px rgba(54,57,216,0.15);
   }
 }
 
@@ -94,22 +101,22 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-feature-settings: 'cv11', 'ss01';
-    letter-spacing: -0.01em;
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
   }
 
-  /* Refined typography scale */
+  /* Serif headings for editorial authority */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-    letter-spacing: -0.02em;
+    font-family: Georgia, 'Times New Roman', serif;
+    @apply font-bold tracking-tight;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
-  /* Glass morphism - softer, more organic */
+  /* Glass morphism - warm botanical */
   .glass {
-    @apply bg-background/80 backdrop-blur-2xl border-b border-border/40;
+    @apply bg-background/90 backdrop-blur-2xl border-b border-border/60;
   }
 
   /* Subtle gradient backgrounds */
@@ -122,53 +129,69 @@
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 
-  /* Premium card with soft shadow */
+  /* Premium card with warm shadow */
   .card-visionary {
-    @apply relative rounded-3xl bg-card border border-border/50;
+    @apply relative bg-card border border-border;
+    border-radius: 14px;
     box-shadow: var(--shadow-soft);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
   }
 
   .card-visionary:hover {
     box-shadow: var(--shadow-hover);
-    border-color: hsl(var(--border));
+    border-color: var(--color-indigo-light);
   }
 
-  /* Minimal button styles */
+  /* Indigo CTA button */
   .btn-minimal {
-    @apply relative px-8 py-4 rounded-full font-medium text-base;
-    @apply bg-foreground text-background;
-    @apply transition-all duration-500 ease-out;
+    @apply relative px-8 py-4 rounded-full font-medium text-base text-white;
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--color-indigo);
+    @apply transition-all duration-300 ease-out;
   }
 
   .btn-minimal:hover {
-    @apply opacity-80;
+    background-color: var(--color-indigo-mid);
     transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(54,57,216,0.18);
   }
 
   .btn-minimal-outline {
     @apply relative px-8 py-4 rounded-full font-medium text-base;
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     @apply border border-border text-foreground;
-    @apply transition-all duration-500 ease-out;
+    @apply transition-all duration-300 ease-out;
   }
 
   .btn-minimal-outline:hover {
     @apply bg-secondary;
+    border-color: var(--color-indigo-light);
   }
 
-  /* Organic divider */
+  /* Organic divider with botanical feel */
   .divider-organic {
-    @apply w-16 h-px bg-border mx-auto;
+    @apply w-16 h-px mx-auto;
+    background-color: var(--color-indigo-light);
+    opacity: 0.4;
   }
 
-  /* Section spacing - tighter */
+  /* Section spacing */
   .section-spacing {
     @apply py-16 md:py-24 lg:py-32;
   }
 
-  /* Text gradient - subtle and warm */
+  /* Text gradient - indigo */
   .text-gradient {
-    @apply bg-gradient-to-r from-foreground via-muted-foreground to-foreground bg-clip-text text-transparent;
+    @apply bg-gradient-to-r bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-indigo), var(--color-indigo-mid));
+  }
+
+  /* Uppercase label style from design system */
+  .label-botanical {
+    font-family: Georgia, 'Times New Roman', serif;
+    @apply text-xs font-bold uppercase;
+    letter-spacing: 2px;
+    color: var(--color-indigo);
   }
 }
 

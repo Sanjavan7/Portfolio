@@ -38,7 +38,7 @@ export const Stats = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="text-center md:text-left"
             >
-              <div className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2" style={{ color: 'var(--color-indigo)' }}>
                 {stat.value}
               </div>
               <div className="text-base text-muted-foreground">
