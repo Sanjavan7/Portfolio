@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { BotanicalBorder } from "./BotanicalSVG";
 
 const links = [
   { label: "Email", href: "mailto:Sanjavan7@gmail.com" },
@@ -10,8 +11,10 @@ const links = [
 
 export const Contact = () => {
   return (
-    <footer className="section-spacing">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <footer className="section-spacing relative overflow-hidden">
+      {/* Botanical border decoration */}
+      <BotanicalBorder className="absolute bottom-0 left-0 w-full h-[200px]" opacity={0.06} />
+      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

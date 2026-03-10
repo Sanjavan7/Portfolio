@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { BotanicalCornerTopRight } from "./BotanicalSVG";
 
 const projects = [
   // 2026
@@ -89,8 +90,10 @@ const projects = [
 
 export const FeaturedProjects = () => {
   return (
-    <section id="projects" className="section-spacing">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <section id="projects" className="section-spacing relative overflow-hidden">
+      {/* Botanical decoration */}
+      <BotanicalCornerTopRight className="absolute -top-12 -right-12 w-[300px] h-[300px] md:w-[400px] md:h-[400px] pointer-events-none" opacity={0.05} />
+      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
