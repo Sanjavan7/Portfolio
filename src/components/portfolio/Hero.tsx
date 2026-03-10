@@ -63,7 +63,7 @@ export const Hero = () => {
           >
             <motion.button
               onClick={scrollToProjects}
-              className="px-8 py-4 rounded-full font-medium text-base font-sans transition-all duration-300 hover:shadow-lg"
+              className="px-8 py-4 rounded-full font-medium text-base border border-transparent font-sans transition-all duration-300 hover:shadow-lg"
               style={{ backgroundColor: '#fff', color: 'var(--color-indigo)' }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
