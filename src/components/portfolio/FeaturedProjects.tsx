@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { BotanicalCornerTopRight } from "./BotanicalSVG";
 
 const projects = [
   // 2026
@@ -91,27 +90,28 @@ const projects = [
 export const FeaturedProjects = () => {
   return (
     <section id="projects" className="section-spacing relative overflow-hidden">
-      {/* Botanical decoration */}
-      <BotanicalCornerTopRight className="absolute -top-12 -right-12 w-[300px] h-[300px] md:w-[400px] md:h-[400px] pointer-events-none" opacity={0.05} />
       <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
+        {/* Section header — AceFund numbering style */}
+        <div className="section-number mb-16">
+          <span className="section-number-label">(001)</span>
+          <span className="section-number-title">SELECTED WORK</span>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
-          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
         >
-          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
-            Selected Work
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
             Products that ship.
             <br />
             <span className="text-muted-foreground">Impact that scales.</span>
           </h2>
         </motion.div>
 
-        <div className="space-y-1">
+        <div className="space-y-0">
           {projects.map((project, index) => (
             <motion.a
               key={project.name}
@@ -121,38 +121,35 @@ export const FeaturedProjects = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
               className="group block"
             >
-              <div className="py-6 md:py-8 border-t border-border hover:bg-secondary/30 transition-all duration-500 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+              <div className="py-6 md:py-8 border-t border-border transition-all duration-500 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24" style={{ transition: 'background-color 0.5s' }} onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-indigo-faint)'} onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}>
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-2">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-muted-foreground transition-colors duration-300">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-300" style={{ transition: 'color 0.3s' }}>
                         {project.name}
                       </h3>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-sm text-muted-foreground font-sans">
                         {project.year}
                       </span>
                     </div>
-                    <p className="text-muted-foreground text-lg md:text-xl mb-3">
+                    <p className="text-muted-foreground text-lg md:text-xl mb-3 font-sans">
                       {project.tagline}
                     </p>
-                    <p className="text-muted-foreground/70 text-base max-w-2xl leading-relaxed hidden md:block">
+                    <p className="text-muted-foreground/60 text-base max-w-2xl leading-relaxed hidden md:block font-sans">
                       {project.description}
                     </p>
                   </div>
 
                   <div className="flex items-center gap-6">
-                    <span className="text-base text-muted-foreground">
+                    <span className="text-sm text-muted-foreground font-sans hidden lg:block max-w-[200px] text-right">
                       {project.metric}
                     </span>
-                    <motion.div
-                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                    >
+                    <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:border-transparent transition-all duration-300" style={{ transition: 'all 0.3s' }} onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'var(--color-indigo)'; e.currentTarget.style.borderColor = 'var(--color-indigo)'; }} onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = ''; }}>
                       <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>

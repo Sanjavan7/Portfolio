@@ -4,20 +4,23 @@ import { BotanicalCornerBottomLeft } from "./BotanicalSVG";
 
 export const Research = () => {
   return (
-    <section id="research" className="section-spacing bg-secondary/30 relative overflow-hidden">
-      <BotanicalCornerBottomLeft className="absolute -bottom-8 -left-8 w-[300px] h-[300px] md:w-[400px] md:h-[400px] pointer-events-none" opacity={0.05} />
+    <section id="research" className="section-spacing relative overflow-hidden" style={{ backgroundColor: 'var(--color-indigo-faint)' }}>
+      <BotanicalCornerBottomLeft className="absolute -bottom-8 -left-8 w-[350px] h-[350px] md:w-[500px] md:h-[500px] pointer-events-none" opacity={0.08} />
       <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
+        {/* Section header */}
+        <div className="section-number mb-16">
+          <span className="section-number-label">(003)</span>
+          <span className="section-number-title">RESEARCH</span>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
-            Research
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             Advancing the field.
           </h2>
         </motion.div>
@@ -32,7 +35,7 @@ export const Research = () => {
           >
             <div className="flex items-start justify-between gap-8">
               <div className="flex-1">
-                <p className="text-base text-muted-foreground mb-3">
+                <p className="text-sm text-muted-foreground mb-3 font-sans tracking-wide uppercase">
                   ACM Learning @ Scale 2025
                 </p>
                 <a
@@ -41,23 +44,19 @@ export const Research = () => {
                   rel="noopener noreferrer"
                   className="group/link inline-block"
                 >
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3 group-hover/link:text-muted-foreground transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight leading-tight mb-3 group-hover/link:text-muted-foreground transition-colors duration-300">
                     Can Learners Navigate Imperfect Generative Pedagogical Chatbots?
                     <ArrowUpRight className="inline w-6 h-6 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
                   </h3>
                 </a>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-5">
-                  Multi-university study on student interactions with AI chatbots. Developed taxonomy 
-                  for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by 
+                <p className="text-lg text-muted-foreground leading-relaxed mb-5 font-sans">
+                  Multi-university study on student interactions with AI chatbots. Developed taxonomy
+                  for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by
                   Khan Academy and Duolingo.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 rounded-full text-sm border border-border"
-                      style={{ backgroundColor: 'var(--color-indigo-faint)' }}
-                    >
+                    <span key={tag} className="pill-tag">
                       {tag}
                     </span>
                   ))}
@@ -76,18 +75,18 @@ export const Research = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
           >
             <div className="flex-1">
-              <p className="text-base text-muted-foreground mb-3">
+              <p className="text-sm text-muted-foreground mb-3 font-sans tracking-wide uppercase">
                 IEEE SB (NLP Research Group Member) · December 2023
               </p>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight leading-tight mb-3">
                 SOCET
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-                Conducted research on NLP, covering text processing, linguistic fundamentals, and applications 
+              <p className="text-lg text-muted-foreground leading-relaxed mb-3 font-sans">
+                Conducted research on NLP, covering text processing, linguistic fundamentals, and applications
                 in various fields, including healthcare and finance.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Implemented ML techniques for text classification, sentiment analysis, and explored advanced 
+              <p className="text-lg text-muted-foreground leading-relaxed font-sans">
+                Implemented ML techniques for text classification, sentiment analysis, and explored advanced
                 models like RNNs and transformers, emphasizing ethical implications in NLP.
               </p>
             </div>
@@ -104,7 +103,7 @@ export const Research = () => {
               href="https://scholar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-base text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-base text-muted-foreground hover:text-foreground transition-colors duration-300 font-sans"
             >
               Google Scholar
               <ArrowUpRight className="w-4 h-4" />

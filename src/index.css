@@ -113,7 +113,7 @@
     line-height: 1.6;
   }
 
-  /* New York serif headings — Apple system serif with Georgia fallback */
+  /* New York serif headings */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'New York', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
     @apply font-bold tracking-tight;
@@ -122,8 +122,64 @@
 }
 
 @layer components {
+  /* Glass header */
   .glass {
     @apply bg-background/90 backdrop-blur-2xl border-b border-border/60;
+  }
+
+  /* Hero arch/dome shape - key AceFund element */
+  .hero-arch {
+    border-radius: 0 0 50% 50% / 0 0 15% 15%;
+  }
+
+  @media (min-width: 768px) {
+    .hero-arch {
+      border-radius: 0 0 50% 50% / 0 0 20% 20%;
+    }
+  }
+
+  /* Indigo background */
+  .bg-indigo {
+    background-color: var(--color-indigo);
+  }
+
+  .dark .bg-indigo {
+    background-color: hsl(239 55% 25%);
+  }
+
+  /* Text colors */
+  .text-indigo-primary {
+    color: var(--color-indigo);
+  }
+
+  .bg-indigo-faint {
+    background-color: var(--color-indigo-faint);
+  }
+
+  /* Section number header - AceFund pattern: (001) left, LABEL right */
+  .section-number {
+    @apply flex items-center justify-between pb-4 border-b;
+    border-color: hsl(var(--border));
+  }
+
+  .section-number-label {
+    font-family: 'Geist', -apple-system, sans-serif;
+    @apply text-sm tracking-wide;
+    color: var(--color-indigo);
+  }
+
+  .section-number-title {
+    font-family: 'Geist', -apple-system, sans-serif;
+    @apply text-xs tracking-[0.2em] uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Pill tags */
+  .pill-tag {
+    @apply px-5 py-2 rounded-full text-sm border;
+    font-family: 'Geist', -apple-system, sans-serif;
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
   }
 
   .gradient-subtle {
@@ -192,6 +248,17 @@
     @apply text-xs font-bold uppercase;
     letter-spacing: 2px;
     color: var(--color-indigo);
+  }
+
+  /* CTA arch - inverted for contact section */
+  .cta-arch {
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  }
+
+  @media (min-width: 768px) {
+    .cta-arch {
+      border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+    }
   }
 }
 

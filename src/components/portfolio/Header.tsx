@@ -22,7 +22,7 @@ export const Header = () => {
       <nav className="w-full px-6 md:px-16 lg:px-24 py-4 flex items-center justify-between">
         <motion.a
           href="#"
-          className="text-xl font-medium tracking-tight"
+          className="text-xl font-bold tracking-tight"
           whileHover={{ opacity: 0.7 }}
           transition={{ duration: 0.3 }}
         >
@@ -34,7 +34,7 @@ export const Header = () => {
             <motion.button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase() === "work" ? "projects" : item.toLowerCase())}
-              className="text-base text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 font-sans tracking-wide uppercase"
               whileHover={{ y: -1 }}
             >
               {item}
@@ -61,12 +61,12 @@ export const Header = () => {
             href="/Sanjavan_Ghodasara_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full text-white text-base font-medium transition-all duration-300 hover:shadow-lg"
+            className="flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-medium font-sans transition-all duration-300 hover:shadow-lg tracking-wide"
             style={{ backgroundColor: 'var(--color-indigo)' }}
             whileHover={{ y: -1 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="hidden sm:inline">Resume</span>
+            <span className="hidden sm:inline">RESUME</span>
           </motion.a>
         </div>
       </nav>
