@@ -10,33 +10,31 @@ const links = [
 
 export const Contact = () => {
   return (
-    <footer className="section-spacing relative overflow-hidden grid-bg">
-      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
+    <footer className="section-spacing bg-card/50">
+      <div className="w-full max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-          className="section-header-line"
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <p className="label-mono mb-4">Get in Touch</p>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
-            CONNECT
+          <p className="label-mono mb-3">
+            <span className="accent-dot mr-2" />
+            Connect
+          </p>
+          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold tracking-tight leading-tight mb-4">
+            Let's build something
+            <br />
+            <span className="text-muted-foreground">meaningful together.</span>
           </h2>
+          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed font-serif">
+            Open to research collaborations, founding opportunities,
+            and products that create real impact.
+          </p>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl leading-relaxed font-serif"
-        >
-          Open to research collaborations, founding opportunities,
-          and products that create real impact.
-        </motion.p>
-
-        <div className="flex flex-wrap gap-6 mb-20">
+        <div className="flex flex-wrap gap-4 mb-20">
           {links.map((link, index) => (
             <motion.a
               key={link.label}
@@ -46,20 +44,22 @@ export const Contact = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.33, 1, 0.68, 1] }}
-              className="btn-shadow-outline !py-3 !px-6"
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              className="btn-editorial-outline"
             >
-              <span className="flex items-center gap-2">
-                {link.label}
-                <ArrowUpRight className="w-4 h-4" />
-              </span>
+              {link.label}
+              <ArrowUpRight className="w-4 h-4" />
             </motion.a>
           ))}
         </div>
 
-        <div className="pt-10 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p className="text-2xl font-display tracking-widest">SG</p>
-          <p className="label-mono">
+        <hr className="section-divider mb-8" />
+
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p className="text-base font-display font-bold">
+            Sanjavan<span className="accent-dot ml-1" />
+          </p>
+          <p className="label-mono text-muted-foreground">
             © {new Date().getFullYear()} Sanjavan Ghodasara
           </p>
         </div>

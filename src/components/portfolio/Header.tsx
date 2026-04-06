@@ -14,59 +14,49 @@ export const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -20, opacity: 0 }}
+      initial={{ y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 glass"
+      transition={{ duration: 0.5 }}
+      className="fixed top-1 left-0 right-0 z-50 glass"
     >
-      <nav className="w-full px-6 md:px-16 lg:px-24 py-4 flex items-center justify-between">
+      <nav className="w-full max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <motion.a
           href="#"
-          className="text-2xl font-display tracking-widest"
+          className="text-lg font-display font-bold tracking-tight"
           whileHover={{ opacity: 0.7 }}
-          transition={{ duration: 0.3 }}
         >
-          SG
+          Sanjavan<span className="accent-dot ml-1" />
         </motion.a>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {["Work", "Research", "Experience", "Story"].map((item) => (
-            <motion.button
+            <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase() === "work" ? "projects" : item.toLowerCase())}
-              className="label-mono hover:text-foreground transition-colors duration-300"
-              style={{ color: 'var(--color-caramel)' }}
-              whileHover={{ y: -2 }}
+              className="text-sm font-display font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {item}
-            </motion.button>
+            </button>
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          <motion.button
+        <div className="flex items-center gap-3">
+          <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-full hover:bg-secondary transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="p-2 rounded-md hover:bg-muted transition-colors duration-200"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5" />
-            ) : (
-              <Moon className="w-5 h-5" />
-            )}
-          </motion.button>
+            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
 
-          <motion.a
+          <a
             href="/Sanjavan_Ghodasara_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-shadow !py-2.5 !px-5 !text-xs"
-            whileHover={{ y: 0 }}
+            className="btn-editorial !py-2 !px-4 !text-xs"
           >
             Resume
-          </motion.a>
+          </a>
         </div>
       </nav>
     </motion.header>

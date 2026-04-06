@@ -14,7 +14,7 @@ const experiences: {
     description: (
       <>
         Conducting extended research on "Can Learners Navigate Imperfect Generative Pedagogical Chatbots?" under{" "}
-        <a href="https://tiffanywentingli.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground transition-colors duration-300" style={{ color: 'var(--color-accent)' }}>Prof. Tiffany Li</a>.
+        <a href="https://tiffanywentingli.com/" target="_blank" rel="noopener noreferrer" className="link-underline">Prof. Tiffany Li</a>.
         Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM).
       </>
     ),
@@ -47,18 +47,21 @@ const experiences: {
 
 export const Experience = () => {
   return (
-    <section id="experience" className="section-spacing">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <section id="experience" className="section-spacing bg-card/50">
+      <div className="w-full max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-          className="section-header-line"
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <p className="label-mono mb-4">Where I've Built</p>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
-            EXPERIENCE
+          <p className="label-mono mb-3">
+            <span className="accent-dot mr-2" />
+            Career
+          </p>
+          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold tracking-tight">
+            Where I've built.
           </h2>
         </motion.div>
 
@@ -69,24 +72,24 @@ export const Experience = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.33, 1, 0.68, 1] }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
               className="group"
             >
-              <div className="py-6 md:py-8 border-t border-border project-row -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div className="py-6 md:py-7 border-t border-border hover:bg-background/60 transition-colors duration-200 -mx-6 px-6">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
                   <div className="flex-1">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider mb-2 group-hover:text-accent-orange transition-colors duration-300" style={{ color: 'var(--color-accent)' }}>
-                      {exp.company.toUpperCase()}
+                    <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight mb-1">
+                      {exp.company}
                     </h3>
-                    <p className="text-muted-foreground text-base md:text-lg mb-2 font-serif italic">
+                    <p className="text-muted-foreground text-base mb-2 font-serif italic">
                       {exp.role}
                     </p>
-                    <p className="text-muted-foreground/60 text-sm max-w-2xl leading-relaxed hidden md:block font-serif">
+                    <p className="text-muted-foreground/60 text-sm leading-relaxed hidden md:block font-serif max-w-2xl">
                       {exp.description}
                     </p>
                   </div>
-                  <div className="flex items-center">
-                    <span className="label-mono">{exp.period}</span>
+                  <div className="shrink-0">
+                    <span className="label-mono text-muted-foreground">{exp.period}</span>
                   </div>
                 </div>
               </div>

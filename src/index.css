@@ -2,83 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Espresso & Cream Design System
-   Inspired by alan-khalili.com
-   Typography: Bebas Neue (display) + Libre Baskerville (body) + JetBrains Mono (labels) */
+/* Editorial Design System — inspired by Piccalilli
+   Clean, generous whitespace, typography-driven, restrained color
+   Fonts: Plus Jakarta Sans (display) + Literata (body) + JetBrains Mono (code) */
 
 @layer base {
   :root {
-    --background: 36 33% 95%;
-    --foreground: 25 25% 10%;
+    --background: 0 0% 99%;
+    --foreground: 220 20% 12%;
 
-    --card: 36 28% 92%;
-    --card-foreground: 25 25% 10%;
+    --card: 45 20% 96%;
+    --card-foreground: 220 20% 12%;
 
-    --popover: 36 33% 95%;
-    --popover-foreground: 25 25% 10%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 25 25% 10%;
-    --primary-foreground: 36 33% 95%;
+    --primary: 45 95% 55%;
+    --primary-foreground: 220 20% 12%;
 
-    --secondary: 34 20% 89%;
-    --secondary-foreground: 25 20% 18%;
+    --secondary: 180 45% 40%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 34 15% 87%;
-    --muted-foreground: 25 12% 40%;
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 18 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 95% 55%;
+    --accent-foreground: 220 20% 12%;
 
     --destructive: 0 60% 50%;
-    --destructive-foreground: 36 33% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 34 15% 85%;
-    --input: 34 15% 85%;
-    --ring: 18 100% 60%;
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 45 95% 55%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    --color-accent: #ff6b35;
-    --color-accent-hover: #ff8c5a;
-    --color-caramel: #c4956a;
-    --shadow-soft: 0 4px 30px -8px hsl(25 25% 10% / 0.06);
-    --shadow-hover: 8px 8px 0 hsl(25 25% 10%);
+    --color-primary: #E8B931;
+    --color-secondary: #2A8C82;
+    --color-dark: #1a1e26;
+    --color-light: #fcfcfc;
   }
 
   .dark {
-    --background: 25 18% 4%;
-    --foreground: 36 33% 95%;
+    --background: 220 18% 10%;
+    --foreground: 40 15% 92%;
 
-    --card: 25 14% 8%;
-    --card-foreground: 36 33% 95%;
+    --card: 220 15% 14%;
+    --card-foreground: 40 15% 92%;
 
-    --popover: 25 14% 8%;
-    --popover-foreground: 36 33% 95%;
+    --popover: 220 15% 14%;
+    --popover-foreground: 40 15% 92%;
 
-    --primary: 36 33% 95%;
-    --primary-foreground: 25 18% 4%;
+    --primary: 45 90% 58%;
+    --primary-foreground: 220 20% 10%;
 
-    --secondary: 25 12% 12%;
-    --secondary-foreground: 36 25% 85%;
+    --secondary: 180 50% 50%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 25 10% 15%;
-    --muted-foreground: 34 12% 55%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 8% 55%;
 
-    --accent: 18 100% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 90% 58%;
+    --accent-foreground: 220 20% 10%;
 
     --destructive: 0 50% 45%;
-    --destructive-foreground: 36 33% 95%;
+    --destructive-foreground: 40 15% 92%;
 
-    --border: 25 10% 16%;
-    --input: 25 10% 16%;
-    --ring: 18 100% 65%;
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 45 90% 58%;
 
-    --color-accent: #ff8c5a;
-    --color-accent-hover: #ffa87a;
-    --color-caramel: #d4a574;
-    --shadow-soft: 0 4px 30px -8px hsl(0 0% 0% / 0.3);
-    --shadow-hover: 8px 8px 0 hsl(36 33% 95%);
+    --color-primary: #F0C540;
+    --color-secondary: #3DB8AC;
+    --color-dark: #f0ebe4;
+    --color-light: #161a22;
   }
 }
 
@@ -93,179 +91,150 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    font-family: 'Literata', Georgia, 'Times New Roman', serif;
     line-height: 1.7;
+    font-size: 1.05rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', 'Impact', sans-serif;
-    @apply font-normal tracking-wide;
-    letter-spacing: 0.04em;
-    line-height: 0.95;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    @apply font-bold;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-wrap: balance;
   }
 }
 
 @layer components {
-  /* Glass header */
+  /* Glass header — very subtle */
   .glass {
-    @apply bg-background/85 backdrop-blur-2xl border-b border-border/50;
+    @apply bg-background/90 backdrop-blur-xl border-b border-border/50;
   }
 
-  /* Grid background pattern */
-  .grid-bg {
-    background-image:
-      linear-gradient(hsl(var(--foreground) / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  /* Grain texture overlay */
-  .grain::after {
-    content: '';
+  /* Top ribbon accent */
+  .ribbon-top {
     position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-primary);
+    z-index: 100;
   }
 
-  .dark .grain::after {
-    opacity: 0.04;
-  }
-
-  /* Accent color utilities */
-  .text-accent-orange {
-    color: var(--color-accent);
-  }
-
-  .bg-accent-orange {
-    background-color: var(--color-accent);
-  }
-
-  /* Mono label style */
+  /* Mono label — like Piccalilli badges */
   .label-mono {
     font-family: 'JetBrains Mono', monospace;
-    @apply text-xs tracking-wider uppercase;
-    color: var(--color-caramel);
+    @apply text-xs tracking-wider uppercase font-medium;
+    color: var(--color-secondary);
   }
 
-  /* Section header with accent line */
-  .section-header-line {
-    @apply relative pb-4 mb-12;
-  }
-
-  .section-header-line::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--color-accent);
-  }
-
-  /* Button with shadow offset hover */
-  .btn-shadow {
-    @apply relative px-8 py-4 font-medium text-base transition-all duration-300;
+  /* Badge/tag component */
+  .badge {
     font-family: 'JetBrains Mono', monospace;
-    @apply text-sm tracking-wider uppercase;
-    @apply bg-foreground text-background;
-    border: 2px solid hsl(var(--foreground));
+    @apply inline-block px-3 py-1 text-xs tracking-wider uppercase font-medium;
+    border: 1.5px solid hsl(var(--border));
+    color: hsl(var(--muted-foreground));
+    transition: all 0.2s ease;
   }
 
-  .btn-shadow:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translate(-4px, -4px);
+  .badge:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+    border-color: hsl(var(--foreground));
   }
 
-  .btn-shadow-outline {
-    @apply relative px-8 py-4 font-medium text-base transition-all duration-300;
-    font-family: 'JetBrains Mono', monospace;
-    @apply text-sm tracking-wider uppercase;
-    @apply text-foreground;
-    border: 2px solid hsl(var(--border));
-    background: transparent;
+  /* Section divider — editorial hr */
+  .section-divider {
+    @apply border-0 h-px w-full;
+    background: hsl(var(--border));
   }
 
-  .btn-shadow-outline:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    box-shadow: 8px 8px 0 var(--color-accent);
-    transform: translate(-4px, -4px);
-  }
-
-  /* Section spacing */
+  /* Section spacing — generous */
   .section-spacing {
     @apply py-20 md:py-28 lg:py-36;
   }
 
-  /* Divider */
+  /* Flow space for vertical rhythm */
+  .flow > * + * {
+    margin-top: var(--flow-space, 1.5em);
+  }
+
+  /* Button — clean, editorial */
+  .btn-editorial {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200;
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .btn-editorial:hover {
+    background: var(--color-primary);
+    color: hsl(var(--foreground));
+  }
+
+  .btn-editorial-outline {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200;
+    border: 1.5px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  .btn-editorial-outline:hover {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+  }
+
+  /* Card — clean with subtle bg */
+  .card-editorial {
+    @apply p-6 md:p-8;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .card-editorial:hover {
+    border-color: var(--color-primary);
+  }
+
+  /* Link underline — secondary color */
+  .link-underline {
+    @apply underline decoration-1 underline-offset-4 transition-colors duration-200;
+    text-decoration-color: var(--color-secondary);
+  }
+
+  .link-underline:hover {
+    color: var(--color-secondary);
+  }
+
+  /* Divider organic */
   .divider-organic {
-    @apply w-16 h-px mx-auto;
-    background-color: var(--color-caramel);
-    opacity: 0.4;
+    @apply w-full h-px;
+    background: hsl(var(--border));
   }
 
-  /* Floating animation */
-  @keyframes float-shape {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-  }
-
-  .animate-float-shape {
-    animation: float-shape 8s ease-in-out infinite;
-  }
-
-  /* Glitch hover effect */
-  @keyframes glitch {
-    0%, 100% { text-shadow: none; }
-    25% { text-shadow: 3px 0 var(--color-accent), -3px 0 hsl(var(--muted-foreground)); }
-    50% { text-shadow: -3px 0 var(--color-accent), 3px 0 hsl(var(--muted-foreground)); }
-    75% { text-shadow: 3px 0 hsl(var(--muted-foreground)), -3px 0 var(--color-accent); }
-  }
-
-  .hover-glitch:hover {
-    animation: glitch 0.3s ease-in-out;
-  }
-
-  /* Project card hover */
-  .project-row {
-    @apply transition-all duration-300;
-  }
-
-  .project-row:hover {
-    @apply bg-secondary/50;
-  }
-
-  /* Text stroke for outline text */
-  .text-stroke {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px hsl(var(--foreground));
-  }
-
-  @media (min-width: 768px) {
-    .text-stroke {
-      -webkit-text-stroke: 3px hsl(var(--foreground));
-    }
+  /* Accent dot */
+  .accent-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+    background: var(--color-primary);
   }
 }
 
 @layer utilities {
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+    @apply bg-transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-caramel);
-    border-radius: 4px;
+    @apply rounded-full;
+    background: hsl(var(--border));
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
+    background: var(--color-secondary);
   }
 }

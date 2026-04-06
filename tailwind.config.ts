@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Bebas Neue', 'Impact', 'sans-serif'],
-        serif: ['Libre Baskerville', 'Georgia', 'Times New Roman', 'serif'],
+        display: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+        serif: ['Literata', 'Georgia', 'Times New Roman', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
@@ -60,7 +60,7 @@ export default {
       },
       keyframes: {
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
@@ -69,8 +69,8 @@ export default {
         },
       },
       animation: {
-        "fade-up": "fade-up 0.8s ease-out forwards",
-        "fade-in": "fade-in 0.6s ease-out forwards",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
   },
