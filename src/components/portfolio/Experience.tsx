@@ -14,7 +14,7 @@ const experiences: {
     description: (
       <>
         Conducting extended research on "Can Learners Navigate Imperfect Generative Pedagogical Chatbots?" under{" "}
-        <a href="https://tiffanywentingli.com/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 underline underline-offset-4 hover:text-foreground transition-colors duration-300">Prof. Tiffany Li</a>.
+        <a href="https://tiffanywentingli.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground transition-colors duration-300" style={{ color: 'var(--color-accent)' }}>Prof. Tiffany Li</a>.
         Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM).
       </>
     ),
@@ -50,49 +50,43 @@ export const Experience = () => {
     <section id="experience" className="section-spacing">
       <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
-          className="mb-12"
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          className="section-header-line"
         >
-          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
-            Experience
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
-            Where I've built.
+          <p className="label-mono mb-4">Where I've Built</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
+            EXPERIENCE
           </h2>
         </motion.div>
 
-        <div className="space-y-1">
+        <div className="space-y-0">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.period}`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.33, 1, 0.68, 1] }}
               className="group"
             >
-              <div className="py-6 md:py-8 border-t border-border hover:bg-secondary/30 transition-all duration-500 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+              <div className="py-6 md:py-8 border-t border-border project-row -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-2">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-muted-foreground transition-colors duration-300">
-                        {exp.company}
-                      </h3>
-                    </div>
-                    <p className="text-muted-foreground text-lg md:text-xl mb-3">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider mb-2 group-hover:text-accent-orange transition-colors duration-300" style={{ color: 'var(--color-accent)' }}>
+                      {exp.company.toUpperCase()}
+                    </h3>
+                    <p className="text-muted-foreground text-base md:text-lg mb-2 font-serif italic">
                       {exp.role}
                     </p>
-                    <p className="text-muted-foreground/70 text-base max-w-2xl leading-relaxed hidden md:block">
+                    <p className="text-muted-foreground/60 text-sm max-w-2xl leading-relaxed hidden md:block font-serif">
                       {exp.description}
                     </p>
                   </div>
-                  <div className="flex items-center gap-6">
-                    <span className="text-base text-muted-foreground">
-                      {exp.period}
-                    </span>
+                  <div className="flex items-center">
+                    <span className="label-mono">{exp.period}</span>
                   </div>
                 </div>
               </div>

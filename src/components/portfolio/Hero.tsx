@@ -1,118 +1,123 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const Hero = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   const scrollToProjects = () => {
-    const element = document.getElementById("projects");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      {/* Organic background shapes */}
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden grid-bg">
+      {/* Floating decorative shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 -right-32 w-[600px] h-[600px] rounded-full bg-secondary/50 blur-3xl"
-          animate={{
-            scale: [1, 1.05, 1],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          className="absolute top-[15%] right-[10%] w-16 h-16 border-2 border-foreground/10"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] blob bg-muted/50 blur-3xl"
-          animate={{
-            scale: [1, 1.08, 1],
-            rotate: [0, -5, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          className="absolute bottom-[20%] left-[8%] w-12 h-12 rounded-full border-2 border-foreground/8"
+          animate={{ scale: [1, 1.3, 1] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-[40%] left-[15%] w-3 h-3 rounded-full"
+          style={{ backgroundColor: 'var(--color-accent)', opacity: 0.3 }}
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-[25%] right-[25%] w-2 h-2 rounded-full bg-foreground/10"
+          animate={{ y: [10, -10, 10] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
-      <div className="w-full px-6 md:px-16 lg:px-24 pt-28 pb-16 relative z-10">
-        <div className="max-w-6xl">
+      <motion.div style={{ y, opacity }} className="w-full px-6 md:px-16 lg:px-24 pt-32 pb-20 relative z-10">
+        <div className="max-w-7xl">
+          {/* Mono label */}
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-base md:text-lg text-muted-foreground tracking-wide mb-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
+            className="label-mono mb-8"
           >
-            Founder • Machine Learning Engineer • AI Researcher
+            Founder / ML Engineer / AI Researcher
           </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight leading-[1] mb-6"
-          >
-            Crafting intelligent
-            <br />
-            systems that shape
-            <br />
-            <span className="text-muted-foreground">how we live.</span>
-          </motion.h1>
+          {/* Giant split name — filled + outline */}
+          <div className="mb-8">
+            <motion.h1
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
+              className="text-[clamp(3.5rem,12vw,11rem)] font-display leading-[0.9] tracking-wider hover-glitch"
+            >
+              SANJAVAN
+            </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.45, ease: [0.33, 1, 0.68, 1] }}
+              className="text-[clamp(3.5rem,12vw,11rem)] font-display leading-[0.9] tracking-wider text-stroke hover-glitch"
+            >
+              GHODASARA
+            </motion.h1>
+          </div>
 
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-10"
+            transition={{ duration: 1, delay: 0.7 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10 font-serif"
           >
-            I build AI systems that solve real-world problems at scale — 
+            I build AI systems that solve real-world problems at scale —
             from neuroscience to network technology.
           </motion.p>
 
+          {/* CTA buttons with shadow offset */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 1, delay: 0.9 }}
             className="flex flex-wrap items-center gap-4"
           >
-            <motion.button
-              onClick={scrollToProjects}
-              className="btn-minimal"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <button onClick={scrollToProjects} className="btn-shadow">
               View Selected Work
-            </motion.button>
-
-            <motion.button
+            </button>
+            <button
               onClick={() => document.getElementById("research")?.scrollIntoView({ behavior: "smooth" })}
-              className="btn-minimal-outline"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="btn-shadow-outline"
             >
               Read Research
-            </motion.button>
+            </button>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-12 left-8 md:left-12"
+        className="absolute bottom-10 left-8 md:left-16"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-3 text-muted-foreground cursor-pointer"
+          className="flex flex-col items-center gap-3 cursor-pointer"
           onClick={scrollToProjects}
         >
-          <span className="text-xs tracking-widest rotate-90 origin-center">scroll</span>
+          <span className="label-mono rotate-90 origin-center">scroll</span>
         </motion.div>
       </motion.div>
     </section>

@@ -10,51 +10,56 @@ const links = [
 
 export const Contact = () => {
   return (
-    <footer className="section-spacing">
-      <div className="w-full px-6 md:px-16 lg:px-24">
+    <footer className="section-spacing relative overflow-hidden grid-bg">
+      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
         <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          className="section-header-line"
+        >
+          <p className="label-mono mb-4">Get in Touch</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
+            CONNECT
+          </h2>
+        </motion.div>
+
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl leading-relaxed font-serif"
         >
-          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-6">
-            Get in Touch
-          </p>
+          Open to research collaborations, founding opportunities,
+          and products that create real impact.
+        </motion.p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
-            Let's build something
-            <br />
-            <span className="text-muted-foreground">meaningful together.</span>
-          </h2>
+        <div className="flex flex-wrap gap-6 mb-20">
+          {links.map((link, index) => (
+            <motion.a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.33, 1, 0.68, 1] }}
+              className="btn-shadow-outline !py-3 !px-6"
+            >
+              <span className="flex items-center gap-2">
+                {link.label}
+                <ArrowUpRight className="w-4 h-4" />
+              </span>
+            </motion.a>
+          ))}
+        </div>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl leading-relaxed">
-            Open to research collaborations, founding opportunities,
-            and products that create real impact.
-          </p>
-
-          <div className="flex flex-wrap gap-8 mb-16">
-            {links.map((link, index) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group flex items-center gap-2 text-lg text-foreground hover:text-muted-foreground transition-colors duration-300"
-              >
-                <span>{link.label}</span>
-                <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
-
-        <div className="pt-10 border-t border-border">
-          <p className="text-base text-muted-foreground">
+        <div className="pt-10 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p className="text-2xl font-display tracking-widest">SG</p>
+          <p className="label-mono">
             © {new Date().getFullYear()} Sanjavan Ghodasara
           </p>
         </div>

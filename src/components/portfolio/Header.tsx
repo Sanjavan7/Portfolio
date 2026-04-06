@@ -16,17 +16,17 @@ export const Header = () => {
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
       className="fixed top-0 left-0 right-0 z-50 glass"
     >
       <nav className="w-full px-6 md:px-16 lg:px-24 py-4 flex items-center justify-between">
         <motion.a
           href="#"
-          className="text-xl font-medium tracking-tight"
+          className="text-2xl font-display tracking-widest"
           whileHover={{ opacity: 0.7 }}
           transition={{ duration: 0.3 }}
         >
-          Sanjavan
+          SG
         </motion.a>
 
         <div className="hidden md:flex items-center gap-10">
@@ -34,8 +34,9 @@ export const Header = () => {
             <motion.button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase() === "work" ? "projects" : item.toLowerCase())}
-              className="text-base text-muted-foreground hover:text-foreground transition-colors duration-300"
-              whileHover={{ y: -1 }}
+              className="label-mono hover:text-foreground transition-colors duration-300"
+              style={{ color: 'var(--color-caramel)' }}
+              whileHover={{ y: -2 }}
             >
               {item}
             </motion.button>
@@ -61,11 +62,10 @@ export const Header = () => {
             href="/Sanjavan_Ghodasara_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background text-base font-medium hover:opacity-80 transition-opacity duration-300"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
+            className="btn-shadow !py-2.5 !px-5 !text-xs"
+            whileHover={{ y: 0 }}
           >
-            <span className="hidden sm:inline">Resume</span>
+            Resume
           </motion.a>
         </div>
       </nav>

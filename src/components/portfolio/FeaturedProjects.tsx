@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
-  // 2026
   {
     name: "Synaptix",
     tagline: "Repurpose drugs. Rescue lives.",
@@ -48,12 +47,11 @@ const projects = [
     year: "2026",
     link: "https://dejavumusic.vercel.app/",
   },
-  // 2025
   {
     name: "Synovia",
     tagline: "See surgical outcomes before the first incision.",
     description:
-      "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning delivering real-time neurological deficit predictions (motor, language, cognitive) in under 10 seconds vs 6+ hours traditional pre-operative mapping.",
+      "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning delivering real-time neurological deficit predictions in under 10 seconds vs 6+ hours traditional pre-operative mapping.",
     metric: "HackPrinceton Winner (800+ participants)",
     year: "2025",
     link: "https://synovia.tech",
@@ -80,7 +78,7 @@ const projects = [
     name: "Alama",
     tagline: "One-touch AI companion onboarding",
     description:
-      "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication, replacing multiple OAuth permission screens with few seconds setup flow and increasing completion rate.",
+      "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication.",
     metric: "Requested by Omi",
     year: "2025",
     link: "https://www.omi.me/",
@@ -92,23 +90,19 @@ export const FeaturedProjects = () => {
     <section id="projects" className="section-spacing">
       <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
-          className="mb-12"
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          className="section-header-line"
         >
-          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
-            Selected Work
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
-            Products that ship.
-            <br />
-            <span className="text-muted-foreground">Impact that scales.</span>
+          <p className="label-mono mb-4">Selected Work</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
+            PROJECTS
           </h2>
         </motion.div>
 
-        <div className="space-y-1">
+        <div className="space-y-0">
           {projects.map((project, index) => (
             <motion.a
               key={project.name}
@@ -118,38 +112,33 @@ export const FeaturedProjects = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.05, ease: [0.33, 1, 0.68, 1] }}
               className="group block"
             >
-              <div className="py-6 md:py-8 border-t border-border hover:bg-secondary/30 transition-all duration-500 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+              <div className="py-6 md:py-8 border-t border-border project-row -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-2">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-muted-foreground transition-colors duration-300">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider group-hover:text-accent-orange transition-colors duration-300" style={{ color: 'var(--color-accent)', WebkitTextFillColor: 'initial' }}>
                         {project.name}
                       </h3>
-                      <span className="text-sm text-muted-foreground">
-                        {project.year}
-                      </span>
+                      <span className="label-mono">{project.year}</span>
                     </div>
-                    <p className="text-muted-foreground text-lg md:text-xl mb-3">
+                    <p className="text-muted-foreground text-base md:text-lg mb-2 font-serif italic">
                       {project.tagline}
                     </p>
-                    <p className="text-muted-foreground/70 text-base max-w-2xl leading-relaxed hidden md:block">
+                    <p className="text-muted-foreground/60 text-sm max-w-2xl leading-relaxed hidden md:block font-serif">
                       {project.description}
                     </p>
                   </div>
 
                   <div className="flex items-center gap-6">
-                    <span className="text-base text-muted-foreground">
+                    <span className="label-mono hidden lg:block max-w-[200px] text-right">
                       {project.metric}
                     </span>
-                    <motion.div
-                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                    >
+                    <div className="w-12 h-12 border-2 border-border flex items-center justify-center group-hover:border-foreground group-hover:bg-foreground transition-all duration-300">
                       <ArrowUpRight className="w-5 h-5 group-hover:text-background transition-colors duration-300" />
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>
