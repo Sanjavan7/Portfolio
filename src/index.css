@@ -1,100 +1,85 @@
-/* Geist Sans - Variable Font */
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Botanical Fintech Design System
-   Inspired by AceFund · New York + Geist · Indigo + Cream
-   Typography: New York (headings) + Geist (body) */
+/* Minimal Visionary Portfolio Design System
+   Muted palette, organic shapes, generous whitespace */
 
 @layer base {
   :root {
-    /* AceFund Palette */
-    --background: 33 100% 98%;
-    --foreground: 240 28% 14%;
+    /* Light mode - warm neutrals with soft accents */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 28% 14%;
+    --card: 40 15% 96%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 28% 14%;
+    --popover: 40 20% 98%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 239 68% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 30 15% 25%;
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 30 33% 94%;
-    --secondary-foreground: 240 28% 14%;
+    --secondary: 35 10% 92%;
+    --secondary-foreground: 30 10% 25%;
 
-    --muted: 246 46% 95%;
-    --muted-foreground: 240 18% 35%;
+    --muted: 35 8% 90%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 239 72% 63%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 25 30% 75%;
+    --accent-foreground: 30 10% 15%;
 
     --destructive: 0 60% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 40 20% 98%;
 
-    --border: 30 17% 89%;
-    --input: 30 17% 89%;
-    --ring: 239 68% 53%;
+    --border: 35 10% 88%;
+    --input: 35 10% 88%;
+    --ring: 30 15% 35%;
 
-    --radius: 14px;
+    --radius: 1.5rem;
 
     /* Custom tokens */
-    --color-indigo: #3639DB;
-    --color-indigo-mid: #6E61E2;
-    --color-indigo-light: #AFB0F1;
-    --color-indigo-faint: #E7E4F3;
-    --color-cream: #FFFBF6;
-    --gradient-subtle: linear-gradient(135deg, hsl(30 33% 94%) 0%, hsl(33 100% 98%) 100%);
-    --shadow-soft: 0 1px 3px rgba(0,0,0,0.03);
-    --shadow-hover: 0 6px 24px rgba(54,57,219,0.07);
+    --gradient-subtle: linear-gradient(135deg, hsl(35 15% 94%) 0%, hsl(40 20% 98%) 100%);
+    --shadow-soft: 0 4px 40px -8px hsl(30 10% 15% / 0.08);
+    --shadow-hover: 0 8px 60px -12px hsl(30 10% 15% / 0.12);
   }
 
   .dark {
-    --background: 240 25% 7%;
-    --foreground: 33 50% 95%;
+    /* Dark mode - deep warm grays with soft accents */
+    --background: 30 10% 8%;
+    --foreground: 35 15% 92%;
 
-    --card: 240 20% 11%;
-    --card-foreground: 33 50% 95%;
+    --card: 30 8% 12%;
+    --card-foreground: 35 15% 92%;
 
-    --popover: 240 20% 11%;
-    --popover-foreground: 33 50% 95%;
+    --popover: 30 8% 12%;
+    --popover-foreground: 35 15% 92%;
 
-    --primary: 239 72% 63%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 35 15% 85%;
+    --primary-foreground: 30 10% 8%;
 
-    --secondary: 240 15% 15%;
-    --secondary-foreground: 33 50% 90%;
+    --secondary: 30 8% 16%;
+    --secondary-foreground: 35 15% 85%;
 
-    --muted: 240 15% 18%;
-    --muted-foreground: 240 10% 58%;
+    --muted: 30 8% 18%;
+    --muted-foreground: 35 10% 55%;
 
-    --accent: 239 68% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 25 20% 60%;
+    --accent-foreground: 30 10% 8%;
 
     --destructive: 0 50% 45%;
-    --destructive-foreground: 33 50% 95%;
+    --destructive-foreground: 35 15% 92%;
 
-    --border: 240 15% 18%;
-    --input: 240 15% 18%;
-    --ring: 239 72% 63%;
+    --border: 30 8% 20%;
+    --input: 30 8% 20%;
+    --ring: 35 15% 75%;
 
-    --color-indigo: #6E61E2;
-    --color-indigo-mid: #AFB0F1;
-    --color-indigo-light: #AFB0F1;
-    --color-indigo-faint: rgba(54,57,219,0.1);
-    --gradient-subtle: linear-gradient(135deg, hsl(240 15% 10%) 0%, hsl(240 25% 7%) 100%);
+    /* Custom tokens - dark */
+    --gradient-subtle: linear-gradient(135deg, hsl(30 8% 10%) 0%, hsl(30 10% 8%) 100%);
     --shadow-soft: 0 4px 40px -8px hsl(0 0% 0% / 0.3);
-    --shadow-hover: 0 8px 60px -12px rgba(54,57,219,0.15);
+    --shadow-hover: 0 8px 60px -12px hsl(0 0% 0% / 0.4);
   }
 }
 
@@ -109,160 +94,86 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    letter-spacing: -0.01em;
   }
 
-  /* New York serif headings */
+  /* Refined typography scale */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'New York', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
-    @apply font-bold tracking-tight;
+    @apply font-semibold tracking-tight;
     letter-spacing: -0.02em;
   }
 }
 
 @layer components {
-  /* Glass header */
+  /* Glass morphism - softer, more organic */
   .glass {
-    @apply bg-background/90 backdrop-blur-2xl border-b border-border/60;
+    @apply bg-background/80 backdrop-blur-2xl border-b border-border/40;
   }
 
-  /* Hero arch/dome shape - key AceFund element */
-  .hero-arch {
-    border-radius: 0 0 50% 50% / 0 0 15% 15%;
-  }
-
-  @media (min-width: 768px) {
-    .hero-arch {
-      border-radius: 0 0 50% 50% / 0 0 20% 20%;
-    }
-  }
-
-  /* Indigo background */
-  .bg-indigo {
-    background-color: var(--color-indigo);
-  }
-
-  .dark .bg-indigo {
-    background-color: hsl(239 55% 25%);
-  }
-
-  /* Text colors */
-  .text-indigo-primary {
-    color: var(--color-indigo);
-  }
-
-  .bg-indigo-faint {
-    background-color: var(--color-indigo-faint);
-  }
-
-  /* Section number header - AceFund pattern: (001) left, LABEL right */
-  .section-number {
-    @apply flex items-center justify-between pb-4 border-b;
-    border-color: hsl(var(--border));
-  }
-
-  .section-number-label {
-    font-family: 'Geist', -apple-system, sans-serif;
-    @apply text-sm tracking-wide;
-    color: var(--color-indigo);
-  }
-
-  .section-number-title {
-    font-family: 'Geist', -apple-system, sans-serif;
-    @apply text-xs tracking-[0.2em] uppercase;
-    color: hsl(var(--muted-foreground));
-  }
-
-  /* Pill tags */
-  .pill-tag {
-    @apply px-5 py-2 rounded-full text-sm border;
-    font-family: 'Geist', -apple-system, sans-serif;
-    border-color: hsl(var(--border));
-    color: hsl(var(--foreground));
-  }
-
+  /* Subtle gradient backgrounds */
   .gradient-subtle {
     background: var(--gradient-subtle);
   }
 
+  /* Organic blob shapes */
   .blob {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 
+  /* Premium card with soft shadow */
   .card-visionary {
-    @apply relative bg-card border border-border;
-    border-radius: 14px;
+    @apply relative rounded-3xl bg-card border border-border/50;
     box-shadow: var(--shadow-soft);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-visionary:hover {
     box-shadow: var(--shadow-hover);
-    border-color: var(--color-indigo-light);
+    border-color: hsl(var(--border));
   }
 
-  /* Indigo CTA button */
+  /* Minimal button styles */
   .btn-minimal {
-    @apply relative px-8 py-4 rounded-full font-medium text-base text-white;
-    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: var(--color-indigo);
-    @apply transition-all duration-300 ease-out;
+    @apply relative px-8 py-4 rounded-full font-medium text-base;
+    @apply bg-foreground text-background;
+    @apply transition-all duration-500 ease-out;
   }
 
   .btn-minimal:hover {
-    background-color: var(--color-indigo-mid);
+    @apply opacity-80;
     transform: translateY(-1px);
-    box-shadow: 0 6px 24px rgba(54,57,219,0.18);
   }
 
   .btn-minimal-outline {
     @apply relative px-8 py-4 rounded-full font-medium text-base;
-    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     @apply border border-border text-foreground;
-    @apply transition-all duration-300 ease-out;
+    @apply transition-all duration-500 ease-out;
   }
 
   .btn-minimal-outline:hover {
     @apply bg-secondary;
-    border-color: var(--color-indigo-light);
   }
 
+  /* Organic divider */
   .divider-organic {
-    @apply w-16 h-px mx-auto;
-    background-color: var(--color-indigo-light);
-    opacity: 0.4;
+    @apply w-16 h-px bg-border mx-auto;
   }
 
+  /* Section spacing - tighter */
   .section-spacing {
     @apply py-16 md:py-24 lg:py-32;
   }
 
+  /* Text gradient - subtle and warm */
   .text-gradient {
-    @apply bg-gradient-to-r bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, var(--color-indigo), var(--color-indigo-mid));
-  }
-
-  .label-botanical {
-    font-family: 'New York', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
-    @apply text-xs font-bold uppercase;
-    letter-spacing: 2px;
-    color: var(--color-indigo);
-  }
-
-  /* CTA arch - inverted for contact section */
-  .cta-arch {
-    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-  }
-
-  @media (min-width: 768px) {
-    .cta-arch {
-      border-radius: 50% 50% 0 0 / 40% 40% 0 0;
-    }
+    @apply bg-gradient-to-r from-foreground via-muted-foreground to-foreground bg-clip-text text-transparent;
   }
 }
 
 @layer utilities {
+  /* Custom scrollbar - minimal */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -279,6 +190,7 @@
     @apply bg-muted-foreground/30;
   }
 
+  /* Smooth image loading */
   .img-smooth {
     @apply transition-opacity duration-700;
   }

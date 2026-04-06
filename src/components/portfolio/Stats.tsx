@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { BotanicalCornerBottomLeft } from "./BotanicalSVG";
 
 const stats = [
   { value: "11", label: "Products Shipped" },
@@ -12,39 +11,37 @@ const stats = [
 
 export const Stats = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
-      <BotanicalCornerBottomLeft className="absolute -bottom-10 -left-10 w-[280px] h-[280px] md:w-[400px] md:h-[400px] pointer-events-none" opacity={0.04} />
-      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
-        {/* Section header — AceFund numbering */}
-        <div className="section-number mb-16">
-          <span className="section-number-label">(002)</span>
-          <span className="section-number-title">BY THE NUMBERS</span>
-        </div>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-16"
+    <section className="py-12 md:py-16">
+      <div className="w-full px-6 md:px-16 lg:px-24">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
+          className="mb-10"
         >
-          Impact you can measure.
-        </motion.h2>
+          <p className="text-base md:text-lg text-muted-foreground tracking-wide mb-3">
+            By the Numbers
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-muted-foreground">
+            Impact you can measure.
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.08 }}
-              className="relative"
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="text-center md:text-left"
             >
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-2" style={{ color: 'var(--color-indigo)' }}>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm md:text-base text-muted-foreground font-sans tracking-wide">
+              <div className="text-base text-muted-foreground">
                 {stat.label}
               </div>
             </motion.div>
