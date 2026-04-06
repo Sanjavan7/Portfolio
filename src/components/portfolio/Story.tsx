@@ -1,87 +1,101 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const Story = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3]);
+
   return (
-    <section id="story" className="section-spacing">
-      <div className="w-full max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <p className="label-mono mb-3">
-            <span className="accent-dot mr-2" />
-            Origin
-          </p>
-          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold tracking-tight">
-            From the football field
-            <br />
-            <span className="text-muted-foreground">to the data field.</span>
-          </h2>
-        </motion.div>
+    <section
+      id="story"
+      ref={sectionRef}
+      className="section-spacing bg-secondary/40 overflow-hidden relative"
+    >
+      {/* Grid background */}
+      <div className="absolute inset-0 grid-bg pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-16">
+      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
+        <motion.div style={{ opacity }}>
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flow font-serif text-muted-foreground text-base leading-relaxed"
-            style={{ '--flow-space': '1.25em' } as React.CSSProperties}
+            transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+            className="section-header-line"
           >
-            <p>
-              Captain of the National Soccer Team. Six hours of daily training.
-              On track for a professional career.
-            </p>
-            <p>
-              Then COVID happened. Fields closed.
-              At nineteen, I waited six months for them to reopen.
-            </p>
-            <p className="text-foreground text-xl font-display font-bold" style={{ lineHeight: 1.2 }}>
-              They never did.
-            </p>
+            <p className="label-mono mb-4">The Story</p>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
+              ORIGIN
+            </h2>
           </motion.div>
 
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 mb-16">
+            {/* Left column */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
+              className="space-y-6 text-lg text-muted-foreground leading-relaxed font-serif"
+            >
+              <p>
+                Captain of the National Soccer Team. Six hours of daily training.
+                On track for a professional career.
+              </p>
+              <p>
+                Then COVID happened. Fields closed.
+                At nineteen, I waited six months for them to reopen.
+              </p>
+              <p className="text-foreground text-2xl md:text-3xl font-display tracking-wider" style={{ lineHeight: 1.1 }}>
+                THEY NEVER DID.
+              </p>
+            </motion.div>
+
+            {/* Right column */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
+              className="space-y-6 text-lg text-muted-foreground leading-relaxed font-serif"
+            >
+              <p>
+                So I taught myself to code. The same discipline that drove 5 AM training
+                sessions now drives hackathon sprints.
+              </p>
+              <p>
+                Few months later: 8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
+                HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more.
+              </p>
+              <p className="text-foreground text-2xl md:text-3xl font-display tracking-wider" style={{ lineHeight: 1.1 }}>
+                THE GAME CHANGED.
+                <br />
+                <span style={{ color: 'var(--color-accent)' }}>THE DISCIPLINE DIDN'T.</span>
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Education */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flow font-serif text-muted-foreground text-base leading-relaxed"
-            style={{ '--flow-space': '1.25em' } as React.CSSProperties}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="pt-10 border-t border-border"
           >
-            <p>
-              So I taught myself to code. The same discipline that drove 5 AM training
-              sessions now drives hackathon sprints.
+            <p className="label-mono mb-3">Education</p>
+            <p className="text-3xl md:text-4xl font-display tracking-wider">
+              MS IN MACHINE LEARNING
             </p>
-            <p>
-              8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
-              HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more.
-            </p>
-            <p className="text-foreground text-xl font-display font-bold" style={{ lineHeight: 1.2 }}>
-              The game changed.
-              <span style={{ color: 'var(--color-primary)' }}> The discipline didn't.</span>
+            <p className="text-lg text-muted-foreground font-serif">
+              Stevens Institute of Technology · 2025 – 2027
             </p>
           </motion.div>
-        </div>
-
-        {/* Education */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="card-editorial"
-        >
-          <p className="label-mono mb-2">Education</p>
-          <p className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-1">
-            MS in Machine Learning
-          </p>
-          <p className="text-base text-muted-foreground font-serif">
-            Stevens Institute of Technology · 2025 – 2027
-          </p>
         </motion.div>
       </div>
     </section>

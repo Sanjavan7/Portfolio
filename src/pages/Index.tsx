@@ -9,23 +9,15 @@ import { Contact } from "@/components/portfolio/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Top ribbon accent bar */}
-      <div className="ribbon-top" />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden grain">
       <Header />
       <main>
         <Hero />
-        <hr className="section-divider" />
         <FeaturedProjects />
-        <hr className="section-divider" />
         <Stats />
-        <hr className="section-divider" />
         <Research />
-        <hr className="section-divider" />
         <Experience />
-        <hr className="section-divider" />
         <Story />
-        <hr className="section-divider" />
         <Contact />
       </main>
     </div>

@@ -5,105 +5,100 @@ const projects = [
   {
     name: "Synaptix",
     tagline: "Repurpose drugs. Rescue lives.",
-    description: "Drug repurposing platform identifying new therapeutic uses for FDA-approved drugs — type a disease with no cure, receive drug candidates with biological reasoning.",
-    metric: "MLH Track Winner, Hacklytics",
+    description:
+      "Drug repurposing platform identifying new therapeutic uses for FDA-approved drugs — type a disease with no cure, receive drug candidates with biological reasoning, addressing years-long drug development timelines.",
+    metric: "MLH Track Winner, Hacklytics (Georgia Tech, 600+ participants)",
     year: "2026",
     link: "https://devpost.com/software/synaptix",
-    tags: ["Healthcare AI", "Drug Discovery"],
   },
   {
     name: "GeneAI",
     tagline: "Your genes. Your medicine.",
-    description: "Pharmacogenomics platform predicting adverse drug reactions based on patient genetic profiles, addressing 1.3M+ annual ER visits from wrong drug prescriptions.",
-    metric: "Top 7 HackIllinois Shark Tank",
+    description:
+      "Pharmacogenomics platform predicting adverse drug reactions based on patient genetic profiles, addressing 1.3M+ annual ER visits from wrong drug prescriptions.",
+    metric: "Top 7 HackIllinois Shark Tank (800+ participants)",
     year: "2026",
     link: "https://devpost.com/software/geneai",
-    tags: ["Genomics", "ML"],
   },
   {
     name: "ContractPilot",
     tagline: "Sign smarter. Sign safer.",
-    description: "Legal contract analysis system explaining every clause in plain English, delivering $2.99 consumer access vs $300/hour attorney fees.",
-    metric: "Best Use of Flowglad, DevFest Columbia",
+    description:
+      "Legal contract analysis system explaining every clause in plain English, delivering $2.99 consumer access vs $300/hour attorney fees.",
+    metric: "Best Use of Flowglad, DevFest Columbia (600+ participants)",
     year: "2026",
     link: "https://devpost.com/software/contractpilot-1l3rnd",
-    tags: ["Legal Tech", "NLP"],
   },
   {
     name: "RentSense",
     tagline: "Live where you should — not just where you can.",
-    description: "AI-powered system that helps people choose where to live by turning 'quality of life' into a personalized, data-driven decision.",
+    description:
+      "AI-powered system that helps people choose where to live by turning 'quality of life' into a personalized, data-driven decision.",
     metric: "NexHacks Selection",
     year: "2026",
     link: "https://devpost.com/software/stealth-mode-startup",
-    tags: ["Data Science", "GIS"],
   },
   {
     name: "DejaVu Music",
     tagline: "Find the song stuck in your head.",
-    description: "Music discovery platform finding songs that sound similar to your query — solving the \"I've heard this melody before\" problem.",
+    description:
+      "Music discovery platform finding songs that sound similar to your query — solving the \"I've heard this melody before\" problem.",
     metric: "2,500+ LinkedIn impressions",
     year: "2026",
     link: "https://dejavumusic.vercel.app/",
-    tags: ["Audio ML", "Search"],
   },
   {
     name: "Synovia",
     tagline: "See surgical outcomes before the first incision.",
-    description: "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning.",
-    metric: "HackPrinceton Winner",
+    description:
+      "Surgical outcome prediction system using physics-based finite element analysis and Google Gemini multimodal reasoning delivering real-time neurological deficit predictions in under 10 seconds vs 6+ hours traditional pre-operative mapping.",
+    metric: "HackPrinceton Winner (800+ participants)",
     year: "2025",
     link: "https://synovia.tech",
-    tags: ["Neuroscience", "Computer Vision"],
   },
   {
     name: "CliniJoy AI",
-    tagline: "Healthcare scheduling, reimagined.",
-    description: "Intelligent optimization replacing 40+ hours of manual work with 5-minute AI scheduling.",
+    tagline: "Healthcare scheduling, reimagined",
+    description:
+      "Intelligent optimization replacing 40+ hours of manual work with 5-minute AI scheduling.",
     metric: "Made for Sevaro",
     year: "2025",
     link: "https://sevaro.com/",
-    tags: ["Healthcare", "Optimization"],
   },
   {
     name: "UltraBench",
-    tagline: "The standard for AI memory benchmarking.",
-    description: "Open-source benchmark platform that tests AI memory providers head-to-head with real data.",
+    tagline: "The standard for AI memory benchmarking",
+    description:
+      "Open-source benchmark platform that tests AI memory providers head-to-head with real data.",
     metric: "Requested by Supermemory",
     year: "2025",
     link: "https://devpost.com/software/ultrabench-open-benchmark-platform-for-ai-memory-providers",
-    tags: ["Benchmarking", "Open Source"],
   },
   {
     name: "Alama",
-    tagline: "One-touch AI companion onboarding.",
-    description: "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication.",
+    tagline: "One-touch AI companion onboarding",
+    description:
+      "Conversational onboarding platform leveraging CUA systems agents with Chrome DevTools Protocol and Touch ID biometric authentication.",
     metric: "Requested by Omi",
     year: "2025",
     link: "https://www.omi.me/",
-    tags: ["CUA", "Onboarding"],
   },
 ];
 
 export const FeaturedProjects = () => {
   return (
     <section id="projects" className="section-spacing">
-      <div className="w-full max-w-6xl mx-auto px-6">
+      <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          className="section-header-line"
         >
-          <p className="label-mono mb-3">
-            <span className="accent-dot mr-2" />
-            Selected Work
-          </p>
-          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold tracking-tight">
-            Products that ship.
-            <br />
-            <span className="text-muted-foreground">Impact that scales.</span>
+          <p className="label-mono mb-4">Selected Work</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
+            PROJECTS
           </h2>
         </motion.div>
 
@@ -117,37 +112,32 @@ export const FeaturedProjects = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.04 }}
+              transition={{ duration: 0.6, delay: index * 0.05, ease: [0.33, 1, 0.68, 1] }}
               className="group block"
             >
-              <div className="py-6 md:py-7 border-t border-border hover:bg-card/60 transition-colors duration-200 -mx-6 px-6">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+              <div className="py-6 md:py-8 border-t border-border project-row -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-1">
-                      <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight group-hover:text-secondary transition-colors duration-200" style={{ color: 'var(--color-secondary)' }}>
+                    <div className="flex items-center gap-4 mb-2">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider group-hover:text-accent-orange transition-colors duration-300" style={{ color: 'var(--color-accent)', WebkitTextFillColor: 'initial' }}>
                         {project.name}
                       </h3>
-                      <span className="label-mono text-muted-foreground">{project.year}</span>
+                      <span className="label-mono">{project.year}</span>
                     </div>
-                    <p className="text-muted-foreground text-base mb-2 font-serif italic">
+                    <p className="text-muted-foreground text-base md:text-lg mb-2 font-serif italic">
                       {project.tagline}
                     </p>
-                    <p className="text-muted-foreground/60 text-sm leading-relaxed hidden md:block font-serif max-w-2xl">
+                    <p className="text-muted-foreground/60 text-sm max-w-2xl leading-relaxed hidden md:block font-serif">
                       {project.description}
                     </p>
-                    <div className="flex gap-2 mt-3 hidden md:flex">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="badge">{tag}</span>
-                      ))}
-                    </div>
                   </div>
 
-                  <div className="flex items-center gap-4 shrink-0">
-                    <span className="label-mono hidden lg:block max-w-[180px] text-right text-muted-foreground">
+                  <div className="flex items-center gap-6">
+                    <span className="label-mono hidden lg:block max-w-[200px] text-right">
                       {project.metric}
                     </span>
-                    <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-200">
-                      <ArrowUpRight className="w-4 h-4 group-hover:text-background transition-colors duration-200" />
+                    <div className="w-12 h-12 border-2 border-border flex items-center justify-center group-hover:border-foreground group-hover:bg-foreground transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 group-hover:text-background transition-colors duration-300" />
                     </div>
                   </div>
                 </div>

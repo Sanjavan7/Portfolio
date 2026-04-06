@@ -3,92 +3,98 @@ import { ArrowUpRight } from "lucide-react";
 
 export const Research = () => {
   return (
-    <section id="research" className="section-spacing">
-      <div className="w-full max-w-6xl mx-auto px-6">
+    <section id="research" className="section-spacing bg-secondary/40">
+      <div className="w-full px-6 md:px-16 lg:px-24">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          className="section-header-line"
         >
-          <p className="label-mono mb-3">
-            <span className="accent-dot mr-2" />
-            Publications
-          </p>
-          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold tracking-tight">
-            Advancing the field.
+          <p className="label-mono mb-4">Publications</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
+            RESEARCH
           </h2>
         </motion.div>
 
-        <div className="max-w-4xl flow" style={{ '--flow-space': '2.5rem' } as React.CSSProperties}>
-          {/* ACM Paper */}
+        <div className="max-w-5xl space-y-12">
           <motion.article
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="card-editorial"
+            transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           >
-            <p className="label-mono mb-4">ACM Learning @ Scale 2025</p>
-            <a
-              href="https://dl.acm.org/doi/10.1145/3698205.3729550"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/link inline-block"
-            >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold tracking-tight leading-tight mb-4 group-hover/link:text-secondary transition-colors duration-200" style={{ color: 'var(--color-secondary)' }}>
-                Can Learners Navigate Imperfect Generative Pedagogical Chatbots?
-                <ArrowUpRight className="inline w-5 h-5 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200" />
-              </h3>
-            </a>
-            <p className="text-base text-muted-foreground leading-relaxed mb-5 font-serif">
-              Multi-university study on student interactions with AI chatbots. Developed taxonomy
-              for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by
-              Khan Academy and Duolingo.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
-                <span key={tag} className="badge">{tag}</span>
-              ))}
+            <div className="flex-1">
+              <p className="label-mono mb-4">ACM Learning @ Scale 2025</p>
+              <a
+                href="https://dl.acm.org/doi/10.1145/3698205.3729550"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link inline-block"
+              >
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider leading-tight mb-4 group-hover/link:text-accent-orange transition-colors duration-300" style={{ color: 'var(--color-accent)' }}>
+                  CAN LEARNERS NAVIGATE IMPERFECT GENERATIVE PEDAGOGICAL CHATBOTS?
+                  <ArrowUpRight className="inline w-6 h-6 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                </h3>
+              </a>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-serif">
+                Multi-university study on student interactions with AI chatbots. Developed taxonomy
+                for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by
+                Khan Academy and Duolingo.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-2 text-sm border-2 border-border font-mono tracking-wider uppercase"
+                    style={{ fontSize: '0.7rem' }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.article>
 
-          {/* SOCET */}
+          <div className="divider-organic" />
+
           <motion.article
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="card-editorial"
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.33, 1, 0.68, 1] }}
           >
-            <p className="label-mono mb-4">IEEE SB · NLP Research Group · Dec 2023</p>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold tracking-tight leading-tight mb-4">
-              SOCET
-            </h3>
-            <p className="text-base text-muted-foreground leading-relaxed mb-3 font-serif">
-              Conducted research on NLP, covering text processing, linguistic fundamentals, and applications
-              in various fields, including healthcare and finance.
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed font-serif">
-              Implemented ML techniques for text classification, sentiment analysis, and explored advanced
-              models like RNNs and transformers, emphasizing ethical implications in NLP.
-            </p>
+            <div className="flex-1">
+              <p className="label-mono mb-4">IEEE SB (NLP Research Group) · December 2023</p>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider leading-tight mb-4">
+                SOCET
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-3 font-serif">
+                Conducted research on NLP, covering text processing, linguistic fundamentals, and applications
+                in various fields, including healthcare and finance.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-serif">
+                Implemented ML techniques for text classification, sentiment analysis, and explored advanced
+                models like RNNs and transformers, emphasizing ethical implications in NLP.
+              </p>
+            </div>
           </motion.article>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <a
               href="https://scholar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="link-underline text-sm font-display font-medium inline-flex items-center gap-1"
+              className="inline-flex items-center gap-2 label-mono hover:text-foreground transition-colors duration-300"
             >
-              Google Scholar <ArrowUpRight className="w-3.5 h-3.5" />
+              Google Scholar
+              <ArrowUpRight className="w-4 h-4" />
             </a>
           </motion.div>
         </div>
