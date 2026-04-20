@@ -1,103 +1,111 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { SectionLabel, Sparkle, Star, Cloud } from "./CoinlyDecorations";
 
 export const Research = () => {
   return (
-    <section id="research" className="section-spacing bg-secondary/40">
-      <div className="w-full px-6 md:px-16 lg:px-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-          className="section-header-line"
-        >
-          <p className="label-mono mb-4">Publications</p>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
-            RESEARCH
-          </h2>
-        </motion.div>
+    <section id="research" className="section-spacing relative overflow-hidden" style={{ background: 'var(--coinly-cream)' }}>
+      <Cloud className="absolute top-[10%] right-[5%] animate-float-slow" color="var(--coinly-sky)" size={90} />
+      <Sparkle className="absolute bottom-[20%] left-[6%] animate-wobble" color="var(--coinly-green)" size={28} />
 
-        <div className="max-w-5xl space-y-12">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <SectionLabel>02 — Publications</SectionLabel>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-[clamp(2rem,5vw,4rem)] font-black tracking-tight leading-[1.1] mt-4 text-coinly-navy"
+          >
+            Advancing the <span className="highlight-green">field</span>.
+          </motion.h2>
+        </div>
+
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
+          {/* ACM Paper — Purple card */}
           <motion.article
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+            transition={{ duration: 0.5 }}
+            className="card-coinly relative overflow-hidden"
+            style={{ background: 'var(--coinly-purple)', color: '#fff' }}
           >
-            <div className="flex-1">
-              <p className="label-mono mb-4">ACM Learning @ Scale 2025</p>
-              <a
-                href="https://dl.acm.org/doi/10.1145/3698205.3729550"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/link inline-block"
-              >
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider leading-tight mb-4 group-hover/link:text-accent-orange transition-colors duration-300" style={{ color: 'var(--color-accent)' }}>
-                  CAN LEARNERS NAVIGATE IMPERFECT GENERATIVE PEDAGOGICAL CHATBOTS?
-                  <ArrowUpRight className="inline w-6 h-6 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-                </h3>
-              </a>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-serif">
-                Multi-university study on student interactions with AI chatbots. Developed taxonomy
-                for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by
-                Khan Academy and Duolingo.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-4 py-2 text-sm border-2 border-border font-mono tracking-wider uppercase"
-                    style={{ fontSize: '0.7rem' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.article>
+            <Star className="absolute top-4 right-4" color="#fff" size={28} />
+            <Sparkle className="absolute bottom-4 right-8 opacity-40" color="#fff" size={20} />
 
-          <div className="divider-organic" />
-
-          <motion.article
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.33, 1, 0.68, 1] }}
-          >
-            <div className="flex-1">
-              <p className="label-mono mb-4">IEEE SB (NLP Research Group) · December 2023</p>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-display tracking-wider leading-tight mb-4">
-                SOCET
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-3 font-serif">
-                Conducted research on NLP, covering text processing, linguistic fundamentals, and applications
-                in various fields, including healthcare and finance.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                Implemented ML techniques for text classification, sentiment analysis, and explored advanced
-                models like RNNs and transformers, emphasizing ethical implications in NLP.
-              </p>
-            </div>
-          </motion.article>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+            <p className="text-xs font-black tracking-wider uppercase opacity-90 mb-4">
+              ✦ ACM Learning @ Scale 2025
+            </p>
             <a
-              href="https://scholar.google.com"
+              href="https://dl.acm.org/doi/10.1145/3698205.3729550"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 label-mono hover:text-foreground transition-colors duration-300"
+              className="group/link inline-block"
             >
-              Google Scholar
-              <ArrowUpRight className="w-4 h-4" />
+              <h3 className="text-xl md:text-2xl font-black leading-tight mb-4">
+                Can Learners Navigate Imperfect Generative Pedagogical Chatbots?
+                <ArrowUpRight className="inline w-5 h-5 ml-2" />
+              </h3>
             </a>
-          </motion.div>
+            <p className="text-sm leading-relaxed mb-5 opacity-90 font-medium">
+              Multi-university study on student interactions with AI chatbots. Developed taxonomy
+              for 500+ inquiries, identified 5 distinct learning profiles. Framework adopted by
+              Khan Academy and Duolingo.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Educational AI", "Latent Profile Analysis", "Qualitative Research"].map((tag) => (
+                <span key={tag} className="chip">{tag}</span>
+              ))}
+            </div>
+          </motion.article>
+
+          {/* SOCET — Yellow card */}
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="card-coinly relative overflow-hidden"
+            style={{ background: 'var(--coinly-yellow)', color: 'var(--coinly-deep-blue)' }}
+          >
+            <Sparkle className="absolute top-4 right-4 animate-wobble" color="var(--coinly-deep-blue)" size={24} />
+
+            <p className="text-xs font-black tracking-wider uppercase opacity-80 mb-4">
+              ✦ IEEE SB · NLP Research · Dec 2023
+            </p>
+            <h3 className="text-xl md:text-2xl font-black leading-tight mb-4">
+              SOCET Research Group
+            </h3>
+            <p className="text-sm leading-relaxed mb-3 font-medium opacity-90">
+              Conducted research on NLP, covering text processing, linguistic fundamentals,
+              and applications in healthcare and finance.
+            </p>
+            <p className="text-sm leading-relaxed font-medium opacity-90">
+              Implemented ML techniques for text classification, sentiment analysis, and explored
+              RNNs and transformers with focus on ethical implications.
+            </p>
+          </motion.article>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center mt-12"
+        >
+          <a
+            href="https://scholar.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-coinly-outline"
+          >
+            View Google Scholar
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,125 +1,77 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { Sparkle, Cloud, Dots, Squiggle, Star, Zigzag, Leaf, Curve, SectionLabel } from "./CoinlyDecorations";
 
 export const Hero = () => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden grid-bg">
-      {/* Floating decorative shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-[15%] right-[10%] w-16 h-16 border-2 border-foreground/10"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute bottom-[20%] left-[8%] w-12 h-12 rounded-full border-2 border-foreground/8"
-          animate={{ scale: [1, 1.3, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-[40%] left-[15%] w-3 h-3 rounded-full"
-          style={{ backgroundColor: 'var(--color-accent)', opacity: 0.3 }}
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-[25%] right-[25%] w-2 h-2 rounded-full bg-foreground/10"
-          animate={{ y: [10, -10, 10] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ background: 'var(--coinly-cream)' }}>
+      {/* Decorative scatter */}
+      <Sparkle className="absolute top-[20%] left-[8%] animate-wobble" color="var(--coinly-orange)" size={40} />
+      <Sparkle className="absolute top-[32%] right-[10%] animate-wobble" color="var(--coinly-purple)" size={32} />
+      <Sparkle className="absolute bottom-[25%] left-[12%]" color="var(--coinly-yellow)" size={24} />
+      <Sparkle className="absolute bottom-[40%] right-[18%] animate-wobble" color="var(--coinly-green)" size={28} />
+      <Cloud className="absolute top-[15%] right-[30%] animate-float-slow" color="var(--coinly-sky)" size={100} />
+      <Cloud className="absolute bottom-[20%] right-[8%] animate-float-slow" color="var(--coinly-orange)" size={70} />
+      <Dots className="absolute top-[50%] left-[3%]" color="var(--coinly-purple)" size={50} />
+      <Squiggle className="absolute bottom-[35%] right-[25%]" color="var(--coinly-orange)" size={80} />
+      <Zigzag className="absolute top-[12%] left-[40%]" color="var(--coinly-green)" size={80} />
+      <Star className="absolute top-[60%] right-[5%] animate-wobble" color="var(--coinly-purple)" size={26} />
+      <Leaf className="absolute bottom-[15%] left-[28%]" color="var(--coinly-yellow)" size={32} />
+      <Curve className="absolute bottom-[10%] right-[35%]" color="var(--coinly-purple)" size={140} />
 
-      <motion.div style={{ y, opacity }} className="w-full px-6 md:px-16 lg:px-24 pt-32 pb-20 relative z-10">
-        <div className="max-w-7xl">
-          {/* Mono label */}
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
-            className="label-mono mb-8"
-          >
-            Founder / ML Engineer / AI Researcher
-          </motion.p>
-
-          {/* Giant split name — filled + outline */}
-          <div className="mb-8">
-            <motion.h1
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
-              className="text-[clamp(3.5rem,12vw,11rem)] font-display leading-[0.9] tracking-wider hover-glitch"
-            >
-              SANJAVAN
-            </motion.h1>
-            <motion.h1
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.45, ease: [0.33, 1, 0.68, 1] }}
-              className="text-[clamp(3.5rem,12vw,11rem)] font-display leading-[0.9] tracking-wider text-stroke hover-glitch"
-            >
-              GHODASARA
-            </motion.h1>
-          </div>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10 font-serif"
-          >
-            I build AI systems that solve real-world problems at scale —
-            from neuroscience to network technology.
-          </motion.p>
-
-          {/* CTA buttons with shadow offset */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="flex flex-wrap items-center gap-4"
-          >
-            <button onClick={scrollToProjects} className="btn-shadow">
-              View Selected Work
-            </button>
-            <button
-              onClick={() => document.getElementById("research")?.scrollIntoView({ behavior: "smooth" })}
-              className="btn-shadow-outline"
-            >
-              Read Research
-            </button>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-8 md:left-16"
-      >
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 pt-32 pb-20 relative z-10">
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-3 cursor-pointer"
-          onClick={scrollToProjects}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 flex justify-center"
         >
-          <span className="label-mono rotate-90 origin-center">scroll</span>
+          <SectionLabel>Founder · ML Engineer · AI Researcher</SectionLabel>
         </motion.div>
-      </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-center text-[clamp(2.25rem,7vw,5.5rem)] font-black leading-[1.05] mb-8 text-coinly-navy"
+        >
+          Building <span className="highlight-orange">intelligent</span>
+          <br />
+          systems that shape
+          <br />
+          <span className="highlight-purple highlight-right">how we live</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center text-lg md:text-xl text-coinly-navy/70 max-w-2xl mx-auto leading-relaxed mb-12 font-medium"
+        >
+          I build AI systems that solve real-world problems at scale —
+          from neuroscience to network technology.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-wrap items-center justify-center gap-4"
+        >
+          <button onClick={scrollToProjects} className="btn-coinly">
+            View Selected Work
+          </button>
+          <button
+            onClick={() => document.getElementById("research")?.scrollIntoView({ behavior: "smooth" })}
+            className="btn-coinly-outline"
+          >
+            Read Research
+          </button>
+        </motion.div>
+      </div>
     </section>
   );
 };

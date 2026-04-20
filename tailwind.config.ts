@@ -14,9 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Bebas Neue', 'Impact', 'sans-serif'],
-        serif: ['Libre Baskerville', 'Georgia', 'Times New Roman', 'serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Nunito', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Nunito', '-apple-system', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,6 +51,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        coinly: {
+          navy: "#2A3242",
+          orange: "#FF6D3B",
+          purple: "#575FCC",
+          sky: "#739EF1",
+          green: "#8FD9B5",
+          yellow: "#FABF48",
+          cream: "#FEF9F2",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -60,7 +68,7 @@ export default {
       },
       keyframes: {
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
@@ -69,8 +77,8 @@ export default {
         },
       },
       animation: {
-        "fade-up": "fade-up 0.8s ease-out forwards",
-        "fade-in": "fade-in 0.6s ease-out forwards",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
   },

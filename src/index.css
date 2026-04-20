@@ -2,83 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Espresso & Cream Design System
-   Inspired by alan-khalili.com
-   Typography: Bebas Neue (display) + Libre Baskerville (body) + JetBrains Mono (labels) */
+/* Coinly Child Bank Design System
+   Playful, colorful, rounded — inspired by the Coinly branding
+   Typography: Nunito (free Apercu alternative) */
 
 @layer base {
   :root {
-    --background: 36 33% 95%;
-    --foreground: 25 25% 10%;
+    /* Coinly exact palette */
+    --coinly-deep-blue: #2A3242;
+    --coinly-orange: #FF6D3B;
+    --coinly-purple: #575FCC;
+    --coinly-sky: #739EF1;
+    --coinly-green: #8FD9B5;
+    --coinly-yellow: #FABF48;
+    --coinly-cream: #FEF9F2;
 
-    --card: 36 28% 92%;
-    --card-foreground: 25 25% 10%;
+    /* Tailwind tokens — mapped to Coinly */
+    --background: 36 83% 97%;
+    --foreground: 222 21% 21%;
 
-    --popover: 36 33% 95%;
-    --popover-foreground: 25 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 21% 21%;
 
-    --primary: 25 25% 10%;
-    --primary-foreground: 36 33% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 21% 21%;
 
-    --secondary: 34 20% 89%;
-    --secondary-foreground: 25 20% 18%;
+    --primary: 14 100% 62%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 34 15% 87%;
-    --muted-foreground: 25 12% 40%;
+    --secondary: 236 54% 57%;
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 18 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 36 40% 92%;
+    --muted-foreground: 222 13% 40%;
+
+    --accent: 43 94% 63%;
+    --accent-foreground: 222 21% 21%;
 
     --destructive: 0 60% 50%;
-    --destructive-foreground: 36 33% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 34 15% 85%;
-    --input: 34 15% 85%;
-    --ring: 18 100% 60%;
+    --border: 222 15% 88%;
+    --input: 222 15% 88%;
+    --ring: 14 100% 62%;
 
-    --radius: 1rem;
-
-    --color-accent: #ff6b35;
-    --color-accent-hover: #ff8c5a;
-    --color-caramel: #c4956a;
-    --shadow-soft: 0 4px 30px -8px hsl(25 25% 10% / 0.06);
-    --shadow-hover: 8px 8px 0 hsl(25 25% 10%);
+    --radius: 1.5rem;
   }
 
   .dark {
-    --background: 25 18% 4%;
-    --foreground: 36 33% 95%;
+    --coinly-deep-blue: #1a1f2b;
+    --coinly-orange: #FF7D4F;
+    --coinly-purple: #6B73D6;
+    --coinly-sky: #8AAEF5;
+    --coinly-green: #A0E0BF;
+    --coinly-yellow: #FBCC6A;
+    --coinly-cream: #F5EFE4;
 
-    --card: 25 14% 8%;
-    --card-foreground: 36 33% 95%;
+    --background: 222 24% 10%;
+    --foreground: 36 55% 94%;
 
-    --popover: 25 14% 8%;
-    --popover-foreground: 36 33% 95%;
+    --card: 222 20% 15%;
+    --card-foreground: 36 55% 94%;
 
-    --primary: 36 33% 95%;
-    --primary-foreground: 25 18% 4%;
+    --popover: 222 20% 15%;
+    --popover-foreground: 36 55% 94%;
 
-    --secondary: 25 12% 12%;
-    --secondary-foreground: 36 25% 85%;
+    --primary: 14 100% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 25 10% 15%;
-    --muted-foreground: 34 12% 55%;
+    --secondary: 236 54% 63%;
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 18 100% 65%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 222 15% 20%;
+    --muted-foreground: 222 10% 65%;
 
-    --destructive: 0 50% 45%;
-    --destructive-foreground: 36 33% 95%;
+    --accent: 43 94% 67%;
+    --accent-foreground: 222 21% 15%;
 
-    --border: 25 10% 16%;
-    --input: 25 10% 16%;
-    --ring: 18 100% 65%;
-
-    --color-accent: #ff8c5a;
-    --color-accent-hover: #ffa87a;
-    --color-caramel: #d4a574;
-    --shadow-soft: 0 4px 30px -8px hsl(0 0% 0% / 0.3);
-    --shadow-hover: 8px 8px 0 hsl(36 33% 95%);
+    --border: 222 15% 22%;
+    --input: 222 15% 22%;
+    --ring: 14 100% 65%;
   }
 }
 
@@ -93,179 +96,248 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    line-height: 1.7;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', 'Impact', sans-serif;
-    @apply font-normal tracking-wide;
-    letter-spacing: 0.04em;
-    line-height: 0.95;
+    font-family: 'Nunito', -apple-system, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
   }
 }
 
 @layer components {
   /* Glass header */
   .glass {
-    @apply bg-background/85 backdrop-blur-2xl border-b border-border/50;
+    @apply bg-background/90 backdrop-blur-xl border-b-2;
+    border-color: var(--coinly-deep-blue);
   }
 
-  /* Grid background pattern */
-  .grid-bg {
-    background-image:
-      linear-gradient(hsl(var(--foreground) / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
+  .dark .glass {
+    border-color: var(--coinly-cream);
   }
 
-  /* Grain texture overlay */
-  .grain::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* Section labels — ✦ MARKER ✦ */
+  .section-label {
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--coinly-orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .dark .grain::after {
-    opacity: 0.04;
+  /* Highlighted text boxes — key Coinly move */
+  .highlight-orange,
+  .highlight-purple,
+  .highlight-green,
+  .highlight-yellow,
+  .highlight-sky {
+    display: inline-block;
+    padding: 0.05em 0.4em;
+    border-radius: 0.5rem;
+    color: #fff;
+    transform: rotate(-2deg);
+    margin: 0 0.1em;
   }
 
-  /* Accent color utilities */
-  .text-accent-orange {
-    color: var(--color-accent);
+  .highlight-orange {
+    background: var(--coinly-orange);
   }
 
-  .bg-accent-orange {
-    background-color: var(--color-accent);
+  .highlight-purple {
+    background: var(--coinly-purple);
   }
 
-  /* Mono label style */
-  .label-mono {
-    font-family: 'JetBrains Mono', monospace;
-    @apply text-xs tracking-wider uppercase;
-    color: var(--color-caramel);
+  .highlight-green {
+    background: var(--coinly-green);
+    color: var(--coinly-deep-blue);
   }
 
-  /* Section header with accent line */
-  .section-header-line {
-    @apply relative pb-4 mb-12;
+  .highlight-yellow {
+    background: var(--coinly-yellow);
+    color: var(--coinly-deep-blue);
   }
 
-  .section-header-line::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--color-accent);
+  .highlight-sky {
+    background: var(--coinly-sky);
   }
 
-  /* Button with shadow offset hover */
-  .btn-shadow {
-    @apply relative px-8 py-4 font-medium text-base transition-all duration-300;
-    font-family: 'JetBrains Mono', monospace;
-    @apply text-sm tracking-wider uppercase;
-    @apply bg-foreground text-background;
-    border: 2px solid hsl(var(--foreground));
+  /* Rotate opposite direction — for variety */
+  .highlight-right {
+    transform: rotate(2deg);
   }
 
-  .btn-shadow:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translate(-4px, -4px);
+  /* Coinly buttons — rounded pills with solid offset shadow */
+  .btn-coinly {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    background: var(--coinly-orange);
+    color: #fff;
+    border: 2.5px solid var(--coinly-deep-blue);
+    box-shadow: 4px 4px 0 var(--coinly-deep-blue);
+    transition: all 0.2s ease;
   }
 
-  .btn-shadow-outline {
-    @apply relative px-8 py-4 font-medium text-base transition-all duration-300;
-    font-family: 'JetBrains Mono', monospace;
-    @apply text-sm tracking-wider uppercase;
-    @apply text-foreground;
-    border: 2px solid hsl(var(--border));
+  .btn-coinly:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--coinly-deep-blue);
+  }
+
+  .btn-coinly:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 var(--coinly-deep-blue);
+  }
+
+  .dark .btn-coinly {
+    border-color: var(--coinly-cream);
+    box-shadow: 4px 4px 0 var(--coinly-cream);
+  }
+
+  .dark .btn-coinly:hover {
+    box-shadow: 6px 6px 0 var(--coinly-cream);
+  }
+
+  .btn-coinly-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.95rem;
     background: transparent;
+    color: var(--coinly-deep-blue);
+    border: 2.5px solid var(--coinly-deep-blue);
+    box-shadow: 4px 4px 0 var(--coinly-deep-blue);
+    transition: all 0.2s ease;
   }
 
-  .btn-shadow-outline:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    box-shadow: 8px 8px 0 var(--color-accent);
-    transform: translate(-4px, -4px);
+  .btn-coinly-outline:hover {
+    background: var(--coinly-yellow);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--coinly-deep-blue);
   }
+
+  .dark .btn-coinly-outline {
+    color: var(--coinly-cream);
+    border-color: var(--coinly-cream);
+    box-shadow: 4px 4px 0 var(--coinly-cream);
+  }
+
+  .dark .btn-coinly-outline:hover {
+    background: var(--coinly-yellow);
+    color: var(--coinly-deep-blue);
+    box-shadow: 6px 6px 0 var(--coinly-cream);
+  }
+
+  /* Coinly cards */
+  .card-coinly {
+    border-radius: 24px;
+    border: 2.5px solid var(--coinly-deep-blue);
+    box-shadow: 6px 6px 0 var(--coinly-deep-blue);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-coinly:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 var(--coinly-deep-blue);
+  }
+
+  .dark .card-coinly {
+    border-color: var(--coinly-cream);
+    box-shadow: 6px 6px 0 var(--coinly-cream);
+  }
+
+  .dark .card-coinly:hover {
+    box-shadow: 9px 9px 0 var(--coinly-cream);
+  }
+
+  /* Chips / pills */
+  .chip {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    background: var(--coinly-cream);
+    color: var(--coinly-deep-blue);
+    border: 2px solid var(--coinly-deep-blue);
+  }
+
+  .dark .chip {
+    background: var(--coinly-deep-blue);
+    color: var(--coinly-cream);
+    border-color: var(--coinly-cream);
+  }
+
+  /* Section backgrounds */
+  .bg-cream { background: var(--coinly-cream); }
+  .bg-coinly-orange { background: var(--coinly-orange); }
+  .bg-coinly-navy { background: var(--coinly-deep-blue); }
+  .bg-coinly-purple { background: var(--coinly-purple); }
+  .bg-coinly-sky { background: var(--coinly-sky); }
+  .bg-coinly-green { background: var(--coinly-green); }
+  .bg-coinly-yellow { background: var(--coinly-yellow); }
+
+  .text-coinly-orange { color: var(--coinly-orange); }
+  .text-coinly-navy { color: var(--coinly-deep-blue); }
+  .text-coinly-purple { color: var(--coinly-purple); }
+  .text-coinly-cream { color: var(--coinly-cream); }
 
   /* Section spacing */
   .section-spacing {
-    @apply py-20 md:py-28 lg:py-36;
+    @apply py-20 md:py-28 lg:py-32;
   }
 
-  /* Divider */
-  .divider-organic {
-    @apply w-16 h-px mx-auto;
-    background-color: var(--color-caramel);
-    opacity: 0.4;
+  /* Wobble animation for sparkles */
+  @keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(8deg); }
   }
 
-  /* Floating animation */
-  @keyframes float-shape {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
+  .animate-wobble {
+    animation: wobble 4s ease-in-out infinite;
   }
 
-  .animate-float-shape {
-    animation: float-shape 8s ease-in-out infinite;
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
-  /* Glitch hover effect */
-  @keyframes glitch {
-    0%, 100% { text-shadow: none; }
-    25% { text-shadow: 3px 0 var(--color-accent), -3px 0 hsl(var(--muted-foreground)); }
-    50% { text-shadow: -3px 0 var(--color-accent), 3px 0 hsl(var(--muted-foreground)); }
-    75% { text-shadow: 3px 0 hsl(var(--muted-foreground)), -3px 0 var(--color-accent); }
-  }
-
-  .hover-glitch:hover {
-    animation: glitch 0.3s ease-in-out;
-  }
-
-  /* Project card hover */
-  .project-row {
-    @apply transition-all duration-300;
-  }
-
-  .project-row:hover {
-    @apply bg-secondary/50;
-  }
-
-  /* Text stroke for outline text */
-  .text-stroke {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px hsl(var(--foreground));
-  }
-
-  @media (min-width: 768px) {
-    .text-stroke {
-      -webkit-text-stroke: 3px hsl(var(--foreground));
-    }
+  .animate-float-slow {
+    animation: float-slow 5s ease-in-out infinite;
   }
 }
 
 @layer utilities {
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+    background: var(--coinly-cream);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-caramel);
-    border-radius: 4px;
+    background: var(--coinly-orange);
+    border-radius: 999px;
+    border: 2px solid var(--coinly-cream);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
+    background: var(--coinly-deep-blue);
   }
 }

@@ -1,101 +1,98 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { SectionLabel, Sparkle, Cloud, Squiggle, Star } from "./CoinlyDecorations";
 
 export const Story = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3]);
-
   return (
-    <section
-      id="story"
-      ref={sectionRef}
-      className="section-spacing bg-secondary/40 overflow-hidden relative"
-    >
-      {/* Grid background */}
-      <div className="absolute inset-0 grid-bg pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
+    <section id="story" className="section-spacing relative overflow-hidden" style={{ background: 'var(--coinly-orange)', color: '#fff' }}>
+      <Sparkle className="absolute top-[8%] right-[8%] animate-wobble" color="#fff" size={40} />
+      <Sparkle className="absolute bottom-[12%] left-[6%] animate-wobble" color="var(--coinly-yellow)" size={36} />
+      <Sparkle className="absolute top-[30%] left-[3%]" color="var(--coinly-purple)" size={24} />
+      <Cloud className="absolute top-[15%] left-[40%] animate-float-slow" color="#fff" size={70} />
+      <Cloud className="absolute bottom-[20%] right-[3%]" color="var(--coinly-yellow)" size={80} />
+      <Squiggle className="absolute bottom-[40%] right-[12%]" color="#fff" size={100} />
+      <Star className="absolute top-[50%] right-[8%] animate-wobble" color="var(--coinly-green)" size={30} />
 
-      <div className="w-full px-6 md:px-16 lg:px-24 relative z-10">
-        <motion.div style={{ opacity }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+        <div className="text-center mb-14">
+          <SectionLabel>
+            <span style={{ color: '#fff' }}>04 — Origin</span>
+          </SectionLabel>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-            className="section-header-line"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-[clamp(2rem,5vw,4rem)] font-black tracking-tight leading-[1.1] mt-4"
           >
-            <p className="label-mono mb-4">The Story</p>
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display tracking-wider">
-              ORIGIN
-            </h2>
-          </motion.div>
+            From the football <span className="highlight-yellow">field</span>
+            <br />
+            to the data <span className="highlight-purple highlight-right">field</span>.
+          </motion.h2>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 mb-16">
-            {/* Left column */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
-              className="space-y-6 text-lg text-muted-foreground leading-relaxed font-serif"
-            >
-              <p>
-                Captain of the National Soccer Team. Six hours of daily training.
-                On track for a professional career.
-              </p>
-              <p>
-                Then COVID happened. Fields closed.
-                At nineteen, I waited six months for them to reopen.
-              </p>
-              <p className="text-foreground text-2xl md:text-3xl font-display tracking-wider" style={{ lineHeight: 1.1 }}>
-                THEY NEVER DID.
-              </p>
-            </motion.div>
-
-            {/* Right column */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
-              className="space-y-6 text-lg text-muted-foreground leading-relaxed font-serif"
-            >
-              <p>
-                So I taught myself to code. The same discipline that drove 5 AM training
-                sessions now drives hackathon sprints.
-              </p>
-              <p>
-                Few months later: 8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
-                HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more.
-              </p>
-              <p className="text-foreground text-2xl md:text-3xl font-display tracking-wider" style={{ lineHeight: 1.1 }}>
-                THE GAME CHANGED.
-                <br />
-                <span style={{ color: 'var(--color-accent)' }}>THE DISCIPLINE DIDN'T.</span>
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Education */}
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="pt-10 border-t border-border"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="space-y-4 text-base md:text-lg font-medium leading-relaxed"
           >
-            <p className="label-mono mb-3">Education</p>
-            <p className="text-3xl md:text-4xl font-display tracking-wider">
-              MS IN MACHINE LEARNING
+            <p>
+              Captain of the National Soccer Team. Six hours of daily training.
+              On track for a professional career.
             </p>
-            <p className="text-lg text-muted-foreground font-serif">
-              Stevens Institute of Technology · 2025 – 2027
+            <p>
+              Then COVID happened. Fields closed.
+              At nineteen, I waited six months for them to reopen.
+            </p>
+            <p className="text-xl md:text-2xl font-black pt-2">
+              They never did.
             </p>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4 text-base md:text-lg font-medium leading-relaxed"
+          >
+            <p>
+              So I taught myself to code. The same discipline that drove 5 AM training
+              sessions now drives hackathon sprints.
+            </p>
+            <p>
+              8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
+              HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more.
+            </p>
+            <p className="text-xl md:text-2xl font-black pt-2">
+              The game changed.{" "}
+              <span className="highlight-yellow">The discipline didn't.</span>
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Education card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="card-coinly max-w-2xl mx-auto text-center"
+          style={{ background: 'var(--coinly-cream)', color: 'var(--coinly-deep-blue)' }}
+        >
+          <p className="section-label mb-3 justify-center flex">
+            <Sparkle size={12} color="var(--coinly-orange)" />
+            Education
+            <Sparkle size={12} color="var(--coinly-orange)" />
+          </p>
+          <p className="text-2xl md:text-3xl font-black tracking-tight mb-1">
+            MS in Machine Learning
+          </p>
+          <p className="text-base font-bold opacity-75">
+            Stevens Institute of Technology · 2025 – 2027
+          </p>
         </motion.div>
       </div>
     </section>
