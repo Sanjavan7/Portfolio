@@ -29,7 +29,7 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
           className="mb-8 flex justify-center"
         >
-          <SectionLabel>Founder · ML Engineer · AI Researcher</SectionLabel>
+          <SectionLabel>Founder · ML Engineer · Builder · AI Researcher</SectionLabel>
         </motion.div>
 
         <motion.h1
