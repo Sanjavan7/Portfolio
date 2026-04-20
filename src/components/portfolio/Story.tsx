@@ -12,7 +12,7 @@ export const Story = () => {
       <Squiggle className="absolute bottom-[40%] right-[12%]" color="#fff" size={100} />
       <Star className="absolute top-[50%] right-[8%] animate-wobble" color="var(--coinly-green)" size={30} />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <div className="text-center mb-14">
           <SectionLabel>
             <span style={{ color: '#fff' }}>04 — Origin</span>
@@ -30,7 +30,7 @@ export const Story = () => {
           </motion.h2>
         </div>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}

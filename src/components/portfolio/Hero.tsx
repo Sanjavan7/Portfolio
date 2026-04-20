@@ -22,7 +22,7 @@ export const Hero = () => {
       <Leaf className="absolute bottom-[15%] left-[28%]" color="var(--coinly-yellow)" size={32} />
       <Curve className="absolute bottom-[10%] right-[35%]" color="var(--coinly-purple)" size={140} />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 pt-32 pb-20 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-32 pb-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}

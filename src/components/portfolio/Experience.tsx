@@ -74,7 +74,7 @@ export const Experience = () => {
       <Sparkle className="absolute bottom-[10%] left-[5%] animate-wobble" color="var(--coinly-yellow)" size={28} />
       <Dots className="absolute top-[30%] left-[3%]" color="#fff" size={50} />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <div className="text-center mb-16">
           <SectionLabel>
             <span style={{ color: 'var(--coinly-deep-blue)' }}>03 — Career</span>
@@ -90,7 +90,7 @@ export const Experience = () => {
           </motion.h2>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-5">
+        <div className="max-w-6xl mx-auto space-y-5">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.period}`}

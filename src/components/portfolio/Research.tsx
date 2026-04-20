@@ -8,7 +8,7 @@ export const Research = () => {
       <Cloud className="absolute top-[10%] right-[5%] animate-float-slow" color="var(--coinly-sky)" size={90} />
       <Sparkle className="absolute bottom-[20%] left-[6%] animate-wobble" color="var(--coinly-green)" size={28} />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <div className="text-center mb-16">
           <SectionLabel>02 — Publications</SectionLabel>
           <motion.h2
@@ -22,7 +22,7 @@ export const Research = () => {
           </motion.h2>
         </div>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
           {/* ACM Paper — Purple card */}
           <motion.article
             initial={{ opacity: 0, y: 20 }}

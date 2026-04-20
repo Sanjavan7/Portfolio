@@ -19,7 +19,7 @@ export const Stats = () => {
       <Sparkle className="absolute top-6 right-8 animate-wobble opacity-70" color="var(--coinly-orange)" size={24} />
       <Sparkle className="absolute bottom-6 left-8 opacity-60" color="var(--coinly-yellow)" size={20} />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

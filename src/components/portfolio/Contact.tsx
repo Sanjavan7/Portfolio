@@ -22,7 +22,7 @@ export const Contact = () => {
         <Star className="absolute top-[60%] right-[15%] animate-wobble" color="var(--coinly-green)" size={32} />
         <Squiggle className="absolute bottom-[40%] right-[30%]" color="var(--coinly-deep-blue)" size={100} />
 
-        <div className="w-full max-w-4xl mx-auto px-6 md:px-8 text-center relative z-10">
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-10 lg:px-16 text-center relative z-10">
           <SectionLabel>
             <span style={{ color: 'var(--coinly-deep-blue)' }}>05 — Connect</span>
           </SectionLabel>
@@ -75,7 +75,7 @@ export const Contact = () => {
 
       {/* Footer bottom - deep navy */}
       <div className="relative" style={{ background: 'var(--coinly-deep-blue)', color: 'var(--coinly-cream)' }}>
-        <div className="w-full max-w-6xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-1">
             <span className="text-xl font-black">Sanjavan</span>
             <span

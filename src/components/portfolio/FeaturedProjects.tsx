@@ -100,7 +100,7 @@ export const FeaturedProjects = () => {
       <Sparkle className="absolute top-[8%] right-[5%] animate-wobble" color="var(--coinly-orange)" size={32} />
       <Sparkle className="absolute bottom-[5%] left-[4%]" color="var(--coinly-purple)" size={24} />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <div className="text-center mb-16">
           <SectionLabel>01 — Selected Work</SectionLabel>
           <motion.h2
@@ -116,7 +116,7 @@ export const FeaturedProjects = () => {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {projects.map((project, index) => {
             const colors = colorMap[project.color];
             return (
@@ -134,7 +134,7 @@ export const FeaturedProjects = () => {
               >
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
-                    <h3 className="text-2xl md:text-3xl font-black tracking-tight">
+                    <h3 className="text-xl md:text-2xl lg:text-2xl font-black tracking-tight">
                       {project.name}
                     </h3>
                     <span className="chip">{project.year}</span>
@@ -151,7 +151,7 @@ export const FeaturedProjects = () => {
                   </div>
                 </div>
 
-                <p className="text-lg font-bold mb-2 opacity-95">
+                <p className="text-base md:text-lg font-bold mb-2 opacity-95">
                   {project.tagline}
                 </p>
                 <p className="text-sm leading-relaxed mb-4 opacity-80 font-medium">
