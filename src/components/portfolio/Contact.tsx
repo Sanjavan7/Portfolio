@@ -87,18 +87,6 @@ export const Contact = () => {
             />
           </a>
 
-          <div className="flex items-center gap-6 md:gap-8">
-            {["Work", "Research", "Experience", "Story"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase() === "work" ? "projects" : item.toLowerCase()}`}
-                className="text-xs font-bold uppercase tracking-wider opacity-80 hover:opacity-100 hover:text-coinly-orange transition-all"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-
           <p className="text-xs font-bold uppercase tracking-wider opacity-70">
             © {new Date().getFullYear()} Sanjavan Ghodasara
           </p>
