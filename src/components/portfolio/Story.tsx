@@ -30,55 +30,35 @@ export const Story = () => {
           </motion.h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20, rotate: -6 }}
-          whileInView={{ opacity: 1, y: 0, rotate: -4 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, type: "spring", bounce: 0.35 }}
-          className="mx-auto mb-12 w-fit p-3 bg-white"
-          style={{
-            border: '2.5px solid var(--coinly-deep-blue)',
-            boxShadow: '10px 10px 0 var(--coinly-deep-blue)',
-            borderRadius: '4px',
-          }}
-        >
-          <img
-            src="/origin-photo.png"
-            alt="Sanjavan"
-            className="block w-[240px] sm:w-[280px] md:w-[320px] h-auto object-cover"
-            style={{ borderRadius: '2px' }}
-          />
-          <p
-            className="text-center pt-3 pb-1 font-black tracking-wide"
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 mb-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20, rotate: -6 }}
+            whileInView={{ opacity: 1, x: 0, rotate: -3 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, type: "spring", bounce: 0.35 }}
+            className="mx-auto w-fit p-3 bg-white"
             style={{
-              color: 'var(--coinly-deep-blue)',
-              fontSize: '1rem',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
+              border: '2.5px solid var(--coinly-deep-blue)',
+              boxShadow: '10px 10px 0 var(--coinly-deep-blue)',
+              borderRadius: '4px',
             }}
           >
-            ✦ that's me ✦
-          </p>
-        </motion.div>
-
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 mb-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-4 text-base md:text-lg font-medium leading-relaxed"
-          >
-            <p>
-              Captain of the National Soccer Team. Six hours of daily training.
-              On track for a professional career.
-            </p>
-            <p>
-              Then COVID happened. Fields closed.
-              At nineteen, I waited six months for them to reopen.
-            </p>
-            <p className="text-xl md:text-2xl font-black pt-2">
-              They never did.
+            <img
+              src="/origin-photo.png"
+              alt="Sanjavan"
+              className="block w-[260px] sm:w-[320px] md:w-[380px] h-auto object-cover"
+              style={{ borderRadius: '2px' }}
+            />
+            <p
+              className="text-center pt-3 pb-1 font-black"
+              style={{
+                color: 'var(--coinly-deep-blue)',
+                fontSize: '0.95rem',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+              }}
+            >
+              ✦ that's me ✦
             </p>
           </motion.div>
 
@@ -90,12 +70,18 @@ export const Story = () => {
             className="space-y-4 text-base md:text-lg font-medium leading-relaxed"
           >
             <p>
-              So I taught myself to code. The same discipline that drove 5 AM training
-              sessions now drives hackathon sprints.
+              Captain of the National Soccer Team. Six hours of daily training.
+              On track for a professional career.
             </p>
             <p>
-              8 hackathon victories — HackPrinceton, Hacklytics MLH Winner at Georgia Tech,
-              HackIllinois Top 7 Shark Tank, DevFest Columbia Best Use of Flowglad, and more.
+              Then COVID happened. Fields closed.
+              At nineteen, I waited six months for them to reopen.
+              <span className="block text-xl md:text-2xl font-black pt-2">They never did.</span>
+            </p>
+            <p>
+              So I taught myself to code. The same discipline that drove 5 AM training
+              sessions now drives hackathon sprints — 8 victories including HackPrinceton,
+              Hacklytics MLH Winner at Georgia Tech, and HackIllinois Top 7 Shark Tank.
             </p>
             <p className="text-xl md:text-2xl font-black pt-2">
               The game changed.{" "}
