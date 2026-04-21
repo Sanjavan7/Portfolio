@@ -48,41 +48,6 @@
 
     --radius: 1.5rem;
   }
-
-  .dark {
-    --coinly-deep-blue: #1a1f2b;
-    --coinly-orange: #FF7D4F;
-    --coinly-purple: #6B73D6;
-    --coinly-sky: #8AAEF5;
-    --coinly-green: #A0E0BF;
-    --coinly-yellow: #FBCC6A;
-    --coinly-cream: #F5EFE4;
-
-    --background: 222 24% 10%;
-    --foreground: 36 55% 94%;
-
-    --card: 222 20% 15%;
-    --card-foreground: 36 55% 94%;
-
-    --popover: 222 20% 15%;
-    --popover-foreground: 36 55% 94%;
-
-    --primary: 14 100% 65%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 236 54% 63%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 222 15% 20%;
-    --muted-foreground: 222 10% 65%;
-
-    --accent: 43 94% 67%;
-    --accent-foreground: 222 21% 15%;
-
-    --border: 222 15% 22%;
-    --input: 222 15% 22%;
-    --ring: 14 100% 65%;
-  }
 }
 
 @layer base {
@@ -114,10 +79,6 @@
   .glass {
     @apply bg-background/90 backdrop-blur-xl border-b-2;
     border-color: var(--coinly-deep-blue);
-  }
-
-  .dark .glass {
-    border-color: var(--coinly-cream);
   }
 
   /* Section labels — ✦ MARKER ✦ */
@@ -199,15 +160,6 @@
     box-shadow: 0 0 0 var(--coinly-deep-blue);
   }
 
-  .dark .btn-coinly {
-    border-color: var(--coinly-cream);
-    box-shadow: 4px 4px 0 var(--coinly-cream);
-  }
-
-  .dark .btn-coinly:hover {
-    box-shadow: 6px 6px 0 var(--coinly-cream);
-  }
-
   .btn-coinly-outline {
     display: inline-flex;
     align-items: center;
@@ -229,18 +181,6 @@
     box-shadow: 6px 6px 0 var(--coinly-deep-blue);
   }
 
-  .dark .btn-coinly-outline {
-    color: var(--coinly-cream);
-    border-color: var(--coinly-cream);
-    box-shadow: 4px 4px 0 var(--coinly-cream);
-  }
-
-  .dark .btn-coinly-outline:hover {
-    background: var(--coinly-yellow);
-    color: var(--coinly-deep-blue);
-    box-shadow: 6px 6px 0 var(--coinly-cream);
-  }
-
   /* Coinly cards */
   .card-coinly {
     border-radius: 24px;
@@ -255,15 +195,6 @@
     box-shadow: 9px 9px 0 var(--coinly-deep-blue);
   }
 
-  .dark .card-coinly {
-    border-color: var(--coinly-cream);
-    box-shadow: 6px 6px 0 var(--coinly-cream);
-  }
-
-  .dark .card-coinly:hover {
-    box-shadow: 9px 9px 0 var(--coinly-cream);
-  }
-
   /* Chips / pills */
   .chip {
     display: inline-block;
@@ -275,12 +206,6 @@
     background: var(--coinly-cream);
     color: var(--coinly-deep-blue);
     border: 2px solid var(--coinly-deep-blue);
-  }
-
-  .dark .chip {
-    background: var(--coinly-deep-blue);
-    color: var(--coinly-cream);
-    border-color: var(--coinly-cream);
   }
 
   /* Section backgrounds */

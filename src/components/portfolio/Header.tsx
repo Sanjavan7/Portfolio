@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "@/hooks/useTheme";
 
 export const Header = () => {
-  const { theme, toggleTheme } = useTheme();
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -46,19 +42,8 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <motion.button
-            onClick={toggleTheme}
-            className="p-2.5 rounded-full border-2 border-coinly-navy hover:bg-coinly-yellow transition-colors duration-200"
-            style={{ borderColor: 'var(--coinly-deep-blue)' }}
-            whileHover={{ scale: 1.08, rotate: 12 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </motion.button>
-
           <motion.a
-            href="/Sanjavan_Ghodasara_Resume.pdf"
+            href="/SResume_Sanjavan_Updated.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-coinly !py-2 !px-4 !text-xs"

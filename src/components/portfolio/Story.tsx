@@ -30,6 +30,37 @@ export const Story = () => {
           </motion.h2>
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20, rotate: -6 }}
+          whileInView={{ opacity: 1, y: 0, rotate: -4 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, type: "spring", bounce: 0.35 }}
+          className="mx-auto mb-12 w-fit p-3 bg-white"
+          style={{
+            border: '2.5px solid var(--coinly-deep-blue)',
+            boxShadow: '10px 10px 0 var(--coinly-deep-blue)',
+            borderRadius: '4px',
+          }}
+        >
+          <img
+            src="/origin-photo.png"
+            alt="Sanjavan"
+            className="block w-[240px] sm:w-[280px] md:w-[320px] h-auto object-cover"
+            style={{ borderRadius: '2px' }}
+          />
+          <p
+            className="text-center pt-3 pb-1 font-black tracking-wide"
+            style={{
+              color: 'var(--coinly-deep-blue)',
+              fontSize: '1rem',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+            }}
+          >
+            ✦ that's me ✦
+          </p>
+        </motion.div>
+
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
