@@ -73,20 +73,36 @@ export const Contact = () => {
         </div>
       </section>
 
-      {/* Footer bottom - deep navy */}
+      {/* Footer bottom - deep navy, mirrors Header layout */}
       <div className="relative" style={{ background: 'var(--coinly-deep-blue)', color: 'var(--coinly-cream)' }}>
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-1">
-            <span className="text-xl font-black">Sanjavan</span>
+        <nav className="w-full px-6 md:px-10 lg:px-16 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <a
+            href="#"
+            className="text-xl font-black tracking-tight flex items-center gap-1"
+          >
+            <span>Sanjavan</span>
             <span
-              className="inline-block w-2.5 h-2.5 rounded-full"
+              className="inline-block w-2 h-2 rounded-full"
               style={{ background: 'var(--coinly-orange)' }}
             />
+          </a>
+
+          <div className="flex items-center gap-6 md:gap-8">
+            {["Work", "Research", "Experience", "Story"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase() === "work" ? "projects" : item.toLowerCase()}`}
+                className="text-xs font-bold uppercase tracking-wider opacity-80 hover:opacity-100 hover:text-coinly-orange transition-all"
+              >
+                {item}
+              </a>
+            ))}
           </div>
+
           <p className="text-xs font-bold uppercase tracking-wider opacity-70">
-            ✦ © {new Date().getFullYear()} Sanjavan Ghodasara ✦
+            © {new Date().getFullYear()} Sanjavan Ghodasara
           </p>
-        </div>
+        </nav>
       </div>
     </footer>
   );
