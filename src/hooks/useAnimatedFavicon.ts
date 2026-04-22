@@ -96,7 +96,7 @@ const drawFrame = (ctx: CanvasRenderingContext2D, elapsed: number) => {
     drawCoin(ctx, x, cy, r, 1, rotation, true);
   } else {
     // FLIPPING phase — rotate around vertical axis, loop forever
-    const t = (elapsed - ROLL_DURATION) / 550;
+    const t = (elapsed - ROLL_DURATION) / 380;
     const flip = Math.cos(t);
     const showFront = flip >= 0;
     drawCoin(ctx, cx, cy, r, flip, 0, showFront);
@@ -127,7 +127,7 @@ export const useAnimatedFavicon = () => {
     const start = performance.now();
 
     const tick = (now: number) => {
-      if (now - lastUpdate > 50) {
+      if (now - lastUpdate > 33) {
         drawFrame(ctx, now - start);
         link!.href = canvas.toDataURL("image/png");
         lastUpdate = now;
