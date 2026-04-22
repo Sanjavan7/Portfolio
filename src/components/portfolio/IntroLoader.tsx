@@ -72,13 +72,17 @@ export const IntroLoader = ({ onDone }: { onDone: () => void }) => {
             className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none"
             style={{ color: "var(--coinly-deep-blue)" }}
           >
-            <div className="flex items-center justify-center text-3xl md:text-4xl font-black tracking-tight drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]">
-              {/* invisible spacer balances the dot on the right so 'Sanjavan' optically centers */}
-              <span className="inline-block w-[18px]" aria-hidden="true" />
-              <span>Sanjavan</span>
+            {/* Wordmark itself is centered; orange dot floats absolutely to the right
+                so it doesn't shift the centering of "Sanjavan". */}
+            <div className="relative inline-block text-3xl md:text-4xl font-black tracking-tight drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]">
+              Sanjavan
               <span
-                className="inline-block w-3 h-3 rounded-full ml-1.5"
-                style={{ background: "var(--coinly-orange)" }}
+                className="absolute w-3 h-3 rounded-full"
+                style={{
+                  background: "var(--coinly-orange)",
+                  left: "calc(100% + 6px)",
+                  bottom: "0.35em",
+                }}
               />
             </div>
             <motion.p
