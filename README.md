@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+# Sanjavan Ghodasara — Portfolio
 
-## Project info
+Personal portfolio at **[sanjavan.com](https://sanjavan.com)**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Machine Learning Engineer · AI Researcher · Hackathon Builder. MS in Machine Learning at Stevens Institute of Technology.
 
-## How can I edit this code?
+## Highlights
 
-There are several ways of editing your application.
+- **Animated 3D intro loader** — fullscreen video reveal that plays once per session, click anywhere to enter
+- **Animated favicon** — rolling-then-flipping orange coin with "S", driven by a `<canvas>` and `requestAnimationFrame`
+- **Section-driven SPA** — Hero, Featured Projects, Stats, Research, Experience, Story, Contact
+- **Coinly-inspired UI** — playful palette, rounded chips, hand-drawn SVG decorations (sparkles, clouds, squiggles)
+- **Custom OG card** for clean previews on LinkedIn / Twitter / Slack / iMessage
 
-**Use Lovable**
+## Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+| Layer | Tools |
+|------|-------|
+| Build | Vite, TypeScript, SWC |
+| UI | React 18, Tailwind CSS, shadcn-ui, framer-motion |
+| Routing | React Router |
+| State | TanStack Query |
+| Hosting | GitHub Pages (custom domain via CNAME) |
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Local development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev      # http://localhost:8080
+npm run build    # production build to dist/
+npm run lint     # eslint
+npm run test     # vitest
 ```
 
-**Edit a file directly in GitHub**
+Requires Node 18+.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project layout
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/
+│   ├── portfolio/        # page sections (Hero, FeaturedProjects, …, IntroLoader)
+│   └── ui/               # shadcn primitives
+├── hooks/
+│   ├── useAnimatedFavicon.ts
+│   ├── use-mobile.tsx
+│   └── use-toast.ts
+├── pages/
+│   ├── Index.tsx         # main portfolio page
+│   └── NotFound.tsx
+├── App.tsx
+└── main.tsx
+public/
+├── intro.mp4             # fullscreen loader video
+├── intro-poster.jpg      # first-frame poster
+├── og-image.jpg          # social share thumbnail (1200×630)
+├── SResume_Sanjavan_Updated.pdf
+├── origin-photo.png
+└── CNAME                 # sanjavan.com
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+Pushes to `main` are deployed to GitHub Pages, which serves the contents of `dist/` at `sanjavan.com` via the `CNAME` file in `public/`.
 
-This project is built with:
+To force re-scrape of OG/Twitter cards after updating the social preview:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- LinkedIn: <https://www.linkedin.com/post-inspector/>
+- Twitter/X: <https://cards-dev.twitter.com/validator>
+- Facebook/iMessage/Slack: <https://developers.facebook.com/tools/debug/>
 
-## How can I deploy this project?
+## Contact
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Email: [sanjavan7@gmail.com](mailto:sanjavan7@gmail.com)
+- LinkedIn: [linkedin.com/in/sanjavan-ghodasara-854138235](https://www.linkedin.com/in/sanjavan-ghodasara-854138235/)
+- GitHub: [@Sanjavan7](https://github.com/Sanjavan7)
+- Devpost: [devpost.com/sanjavan7](https://devpost.com/sanjavan7)
