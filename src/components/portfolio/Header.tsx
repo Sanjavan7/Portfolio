@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const scrollToSection = (id: string) => {
@@ -16,17 +17,28 @@ export const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 glass"
     >
       <nav className="w-full px-6 md:px-10 lg:px-16 py-4 flex items-center justify-between">
-        <motion.a
-          href="#"
-          className="text-2xl font-black tracking-tight flex items-center gap-1"
-          whileHover={{ scale: 1.03 }}
-        >
-          <span className="text-coinly-navy">Sanjavan</span>
-          <span
-            className="inline-block w-2.5 h-2.5 rounded-full"
-            style={{ background: 'var(--coinly-orange)' }}
-          />
-        </motion.a>
+        <div className="text-2xl font-black tracking-tight flex items-center gap-1">
+          <motion.a
+            href="#"
+            className="text-coinly-navy"
+            whileHover={{ scale: 1.03 }}
+          >
+            Sanjavan
+          </motion.a>
+          {/* Secret door — clicking the orange dot opens the private project hub. */}
+          <motion.span
+            whileHover={{ scale: 1.6 }}
+            whileTap={{ scale: 0.85 }}
+            className="inline-block"
+          >
+            <Link
+              to="/projects"
+              aria-label="Sanjavan brand mark"
+              className="inline-block w-2.5 h-2.5 rounded-full"
+              style={{ background: 'var(--coinly-orange)' }}
+            />
+          </motion.span>
+        </div>
 
         <div className="hidden md:flex items-center gap-8">
           {["Work", "Research", "Experience", "Story"].map((item) => (
