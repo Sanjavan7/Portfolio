@@ -10,7 +10,8 @@ type Project = {
   description: string;
   tech: string[];
   accent: "orange" | "purple" | "sky" | "green" | "yellow";
-  primary: { label: string; url: string };
+  live?: { label?: string; url: string };
+  primary?: { label: string; url: string };
   secondary?: { label: string; url: string };
 };
 
@@ -92,15 +93,36 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         ))}
       </div>
       <div className="flex flex-wrap gap-2">
-        <a
-          href={project.primary.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-coinly !py-2 !px-4 !text-xs"
-        >
-          {project.primary.label}
-          <ArrowUpRight className="w-3.5 h-3.5" />
-        </a>
+        {project.live && (
+          <a
+            href={project.live.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-coinly !py-2 !px-4 !text-xs"
+            style={{
+              background: "var(--coinly-green)",
+              color: "var(--coinly-deep-blue)",
+            }}
+          >
+            <span className="relative flex items-center justify-center w-2 h-2 mr-0.5">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+              <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-600" />
+            </span>
+            {project.live.label || "Live"}
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        )}
+        {project.primary && (
+          <a
+            href={project.primary.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-coinly !py-2 !px-4 !text-xs"
+          >
+            {project.primary.label}
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        )}
         {project.secondary && (
           <a
             href={project.secondary.url}
