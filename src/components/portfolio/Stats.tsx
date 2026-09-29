@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Sparkle } from "./CoinlyDecorations";
 
 const stats = [
-  { value: "3", label: "Hackathon Prizes", accent: "var(--coinly-orange)" },
+  { value: "8+", label: "Hackathon Wins", accent: "var(--coinly-orange)" },
   { value: "18+", label: "Hackathons & Events", accent: "var(--coinly-yellow)" },
-  { value: "93%", label: "Satellite Classification Accuracy", accent: "var(--coinly-green)" },
-  { value: "50K", label: "Tiles Processed in 22 Hrs", accent: "var(--coinly-sky)" },
-  { value: "919", label: "Chatbot Messages Coded", accent: "var(--coinly-purple)" },
-  { value: "Judge", label: "HackHarvard 2026", accent: "var(--coinly-orange)" },
+  { value: "NYC", label: "Night Owl: submitting to Mayor's Office & DOHMH", accent: "var(--coinly-green)" },
+  { value: "CHI", label: "2027 poster + L@S 2027 paper in prep", accent: "var(--coinly-sky)" },
+  { value: "Judge", label: "HackHarvard 2026", accent: "var(--coinly-purple)" },
+  { value: "SF", label: "Invite-only DevHouse residency", accent: "var(--coinly-orange)" },
 ];
 
 export const Stats = () => {

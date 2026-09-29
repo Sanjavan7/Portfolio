@@ -32,21 +32,21 @@ const experiences: {
   },
   {
     company: "Reliance Jio",
-    role: "AI/ML Intern · Network Automation",
+    role: "AI/ML Engg. · Network Automation",
     period: "Jan – May 2025",
     color: "purple",
     description: "Satellite land classification for 5G/6G site planning: fine-tuned VGG19 to 93% accuracy across 10 cities and deployed batch inference on GCP (50K tiles in 22 hours).",
   },
   {
     company: "IBM India Software Lab (WatsonX)",
-    role: "AI/ML Team Lead Intern",
+    role: "AI/ML Team Lead",
     period: "May – Sep 2024",
     color: "green",
     description: "Led a 6-person student team building a BERT/GPT healthcare chatbot on IBM Watson.",
   },
   {
     company: "IBM India",
-    role: "Data Analyst Intern · Government Infrastructure Analytics",
+    role: "Data Analyst · Government Infrastructure Analytics",
     period: "Jul – Sep 2024",
     color: "sky",
     description: "Road-safety analytics dashboards for India's National Highways Authority (Python, SQL, Tableau).",
@@ -67,7 +67,7 @@ const experiences: {
   },
   {
     company: "LTIMindtree",
-    role: "Junior Software Developer Intern",
+    role: "Junior Software Developer",
     period: "Aug 2022 – Feb 2023",
     color: "purple",
     description: "FastAPI microservices and cross-platform Flutter apps.",
