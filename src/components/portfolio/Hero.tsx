@@ -29,7 +29,7 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
           className="mb-8 flex justify-center"
         >
-          <SectionLabel>Founder · ML Engineer · Builder · AI Researcher</SectionLabel>
+          <SectionLabel>ML Engineer · AI Researcher · Builder</SectionLabel>
         </motion.div>
 
         <motion.h1
@@ -51,8 +51,8 @@ export const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center text-lg md:text-xl text-coinly-navy/70 max-w-2xl mx-auto leading-relaxed mb-12 font-medium"
         >
-          I build AI systems that solve real-world problems at scale —
-          from neuroscience to network technology.
+          I build AI for problems that matter: predicting brain-surgery outcomes,
+          reading satellite imagery, and understanding how students learn with AI.
         </motion.p>
 
         <motion.div

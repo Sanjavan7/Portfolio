@@ -70,7 +70,7 @@ export const Story = () => {
             className="space-y-4 text-base md:text-lg font-medium leading-relaxed"
           >
             <p>
-              Captain of the National Soccer Team. Six hours of daily training.
+              Captain of the Gujarat State football team. Six hours of daily training.
               On track for a professional career.
             </p>
             <p>
@@ -80,8 +80,8 @@ export const Story = () => {
             </p>
             <p>
               So I taught myself to code. The same discipline that drove 5 AM training
-              sessions now drives hackathon sprints — 8 victories including HackPrinceton,
-              Hacklytics MLH Winner at Georgia Tech, and HackIllinois Top 7 Shark Tank.
+              sessions now drives hackathon sprints: 18+ hackathons and events, prizes at
+              HackPrinceton, Hacklytics and Columbia DevFest, and a Top 7 pitch at HackIllinois.
             </p>
             <p className="text-xl md:text-2xl font-black pt-2">
               The game changed.{" "}
@@ -109,6 +109,9 @@ export const Story = () => {
           </p>
           <p className="text-base font-bold opacity-75">
             Stevens Institute of Technology · 2025 – 2027
+          </p>
+          <p className="text-sm font-bold opacity-60 mt-2">
+            B.Tech in Information Technology · Silver Oak University · 2025
           </p>
         </motion.div>
       </div>

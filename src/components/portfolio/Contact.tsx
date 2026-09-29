@@ -46,8 +46,8 @@ export const Contact = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl font-bold max-w-2xl mx-auto mb-10 opacity-85"
           >
-            Open to research collaborations, founding opportunities,
-            and products that create real impact.
+            Open to ML engineering and applied-research roles, research
+            collaborations, and hackathon teams.
           </motion.p>
 
           <motion.div

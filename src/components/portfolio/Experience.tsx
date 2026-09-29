@@ -16,7 +16,7 @@ const experiences: {
     color: "orange",
     description: (
       <>
-        Conducting extended research on "Can Learners Navigate Imperfect Generative Pedagogical Chatbots?" under{" "}
+        Research with{" "}
         <a
           href="https://tiffanywentingli.com/"
           target="_blank"
@@ -24,38 +24,60 @@ const experiences: {
           className="font-black underline decoration-2 underline-offset-2"
         >
           Prof. Tiffany Li
-        </a>
-        . Qualitative coding of 500+ interactions, statistical clustering (K-Means, LPA/GMM).
+        </a>{" "}
+        on how students learn with an AI chatbot, reading and web search. 919 coded messages,
+        344 sessions, models written from scratch. CHI 2027 poster and L@S 2027 paper in preparation.
       </>
     ),
   },
   {
-    company: "Jio Platforms Limited",
-    role: "Data Scientist · AI/ML",
+    company: "Reliance Jio",
+    role: "AI/ML Intern · Network Automation",
     period: "Jan – May 2025",
     color: "purple",
-    description: "Geospatial ML processing 500K+ satellite tiles daily. 93% accuracy nationwide.",
+    description: "Satellite land classification for 5G/6G site planning: fine-tuned VGG19 to 93% accuracy across 10 cities and deployed batch inference on GCP (50K tiles in 22 hours).",
   },
   {
-    company: "IBM WatsonX",
-    role: "AI/ML Team Lead",
+    company: "IBM India Software Lab (WatsonX)",
+    role: "AI/ML Team Lead Intern",
     period: "May – Sep 2024",
     color: "green",
-    description: "Led 6-person team. Healthcare chatbot serving 50K+ daily queries. $2M+ ARR.",
+    description: "Led a 6-person student team building a BERT/GPT healthcare chatbot on IBM Watson.",
   },
   {
-    company: "IBM",
-    role: "Data Analyst",
+    company: "IBM India",
+    role: "Data Analyst Intern · Government Infrastructure Analytics",
     period: "Jul – Sep 2024",
     color: "sky",
-    description: "Road safety analytics for National Highways. 100K+ incidents analyzed.",
+    description: "Road-safety analytics dashboards for India's National Highways Authority (Python, SQL, Tableau).",
   },
   {
-    company: "LTI Mindtree",
-    role: "Junior Software Developer",
-    period: "Aug 2022 – Feb 2023",
+    company: "IEEE Student Branch, Silver Oak",
+    role: "Technical Team Member · NLP Research Committee",
+    period: "Jan 2023 – Jan 2024",
     color: "yellow",
-    description: "Microservices supporting 10K+ daily requests. Flutter apps with 50K+ downloads.",
+    description: "Built web content for the branch's website and worked on the NLP research committee (Python, Java, C#).",
+  },
+  {
+    company: "PLUSINFOSYS",
+    role: "Python (Web) Developer",
+    period: "May – Jul 2023",
+    color: "orange",
+    description: "Built and optimized responsive web interfaces with React, Node.js and Python.",
+  },
+  {
+    company: "LTIMindtree",
+    role: "Junior Software Developer Intern",
+    period: "Aug 2022 – Feb 2023",
+    color: "purple",
+    description: "FastAPI microservices and cross-platform Flutter apps.",
+  },
+  {
+    company: "TEDx Silver Oak University",
+    role: "Team Leader · earlier Web Developer & Junior Graphic Designer",
+    period: "Dec 2021 – May 2022",
+    color: "green",
+    description: "Led the designers and developers for the TEDx event, managed sponsors and logistics, built the event website and made the promo graphics.",
   },
 ];
 
