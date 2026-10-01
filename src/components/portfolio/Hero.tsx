@@ -6,13 +6,13 @@ import { CHAPTERS, scrollToChapter } from "@/components/island/chapters";
 // a table of contents (Shopify Editions style).
 export const Hero = () => {
   return (
-    <section data-chapter="hero" data-backdrop className="relative min-h-[100svh] flex items-end md:items-center">
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-[44svh] md:pt-28 pb-10 md:pb-16 relative z-10">
+    <section data-chapter="hero" data-backdrop className="relative min-h-[100svh] flex items-end md:landscape:items-center">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-[44svh] md:landscape:pt-28 pb-10 md:pb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative max-w-xl rounded-[28px] p-6 md:p-8"
+          className="relative max-w-xl [@media(max-height:500px)]:max-w-sm rounded-[28px] p-6 md:p-8"
           style={{
             background: "var(--coinly-cream)",
             border: "2.5px solid var(--coinly-deep-blue)",

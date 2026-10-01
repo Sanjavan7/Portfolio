@@ -1,6 +1,6 @@
-import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
-import { SoftShadows } from "@react-three/drei";
+import { PerformanceMonitor, SoftShadows } from "@react-three/drei";
 import { EffectComposer, HueSaturation, N8AO, SMAA, TiltShift2, ToneMapping } from "@react-three/postprocessing";
 import { ToneMappingMode } from "postprocessing";
 import * as THREE from "three";
@@ -34,10 +34,10 @@ type Props = { chapter: SpyId; running: boolean; reducedMotion: boolean };
 
 MODEL_URLS.forEach((url) => useLoader.preload(GLTFLoader, url));
 
-const hasWebGL = () => {
+// three.js r163+ only renders with WebGL2; anything older gets the still image.
+const hasWebGL2 = () => {
   try {
-    const c = document.createElement("canvas");
-    return !!(c.getContext("webgl2") || c.getContext("webgl"));
+    return !!document.createElement("canvas").getContext("webgl2");
   } catch {
     return false;
   }
@@ -461,7 +461,9 @@ const CameraRig = ({ chapter, reducedMotion }: { chapter: SpyId; reducedMotion: 
     const k = reducedMotion ? 1 : 1 - Math.exp(-1.6 * Math.min(dt, 0.1));
     pos.current.lerp(desired, k);
     target.current.lerp(desiredTarget, k);
-    shift.current.x += ((wide ? shot.shiftWide : 0) - shift.current.x) * k;
+    // short landscape phones: nudge the hero island further right, clear of the box
+    const shiftX = wide ? shot.shiftWide * (chapter === "hero" && size.height < 500 ? 1.25 : 1) : 0;
+    shift.current.x += (shiftX - shift.current.x) * k;
     shift.current.y += ((wide ? 0 : shot.shiftTall) - shift.current.y) * k;
 
     const cam = camera as THREE.PerspectiveCamera;
@@ -480,23 +482,26 @@ const FrameloopControl = ({ running }: { running: boolean }) => {
 };
 
 // Ambient occlusion for the soft "clay diorama" contact shading, a light
-// tilt-shift for the miniature feel, then filmic tone mapping.
-const Effects = () => {
+// tilt-shift for the miniature feel, then filmic tone mapping. `lite` drops the
+// two expensive passes when a device can't keep up.
+const Effects = ({ lite }: { lite: boolean }) => {
   const size = useThree((s) => s.size);
   const mobile = size.width < 768;
   const wide = !mobile && size.width > size.height;
   const band = wide ? 0.5 : 0.63;
   return (
     <EffectComposer multisampling={0} enableNormalPass={false}>
-      <N8AO
-        aoRadius={1.2}
-        distanceFalloff={0.6}
-        intensity={mobile ? 2.4 : 3.2}
-        quality={mobile ? "performance" : "medium"}
-        halfRes={mobile}
-        color="#253224"
-      />
-      <TiltShift2 blur={mobile ? 0.08 : 0.12} taper={0.45} start={[0, band]} end={[1, band]} samples={mobile ? 8 : 14} />
+      {!lite && (
+        <N8AO
+          aoRadius={1.2}
+          distanceFalloff={0.6}
+          intensity={mobile ? 2.4 : 3.2}
+          quality={mobile ? "performance" : "medium"}
+          halfRes={mobile}
+          color="#253224"
+        />
+      )}
+      {!lite && <TiltShift2 blur={mobile ? 0.08 : 0.12} taper={0.45} start={[0, band]} end={[1, band]} samples={mobile ? 8 : 14} />}
       <ToneMapping mode={ToneMappingMode.NEUTRAL} />
       <HueSaturation saturation={-0.12} />
       <SMAA />
@@ -523,20 +528,26 @@ const Island = ({ reducedMotion }: { reducedMotion: boolean }) => {
 };
 
 const IslandBackdrop = ({ chapter, running, reducedMotion }: Props) => {
-  const supported = useMemo(hasWebGL, []);
+  const supported = useMemo(hasWebGL2, []);
+  const [lite, setLite] = useState(false);
   // soft-shadow quality is baked into the shaders at start-up, so pick it once
   const shadowSamples = useMemo(() => (window.innerWidth < 768 ? 6 : 12), []);
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none" style={{ background: PALETTE.sky }} aria-hidden="true">
+    // 100lvh keeps the canvas the same size while mobile browser toolbars slide in
+    // and out, so scrolling never triggers a WebGL resize.
+    <div className="fixed top-0 left-0 w-full h-[100lvh] z-0 pointer-events-none" style={{ background: PALETTE.sky }} aria-hidden="true">
       {supported ? (
         <Canvas
           shadows
           flat
-          dpr={[1, 1.5]}
+          dpr={lite ? 1 : [1, 1.5]}
+          resize={{ scroll: false, debounce: { scroll: 0, resize: 150 } }}
           camera={{ fov: 24, near: 1, far: 200 }}
           gl={{ antialias: false, powerPreference: "high-performance" }}
         >
           <SoftShadows size={22} samples={shadowSamples} focus={0.6} />
+          {/* if the frame rate stays low, switch to the lighter look for good */}
+          <PerformanceMonitor onDecline={() => setLite(true)} />
           <color attach="background" args={[PALETTE.sky]} />
           <fog attach="fog" args={[PALETTE.sky, 52, 120]} />
           <StudioEnvironment />
@@ -563,10 +574,10 @@ const IslandBackdrop = ({ chapter, running, reducedMotion }: Props) => {
             <Islets animate={!reducedMotion} />
           </Suspense>
           <Clouds animate={!reducedMotion} />
-          <Effects />
+          <Effects lite={lite} />
         </Canvas>
       ) : (
-        <img src="/intro-poster.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="/og-image.jpg" alt="" className="w-full h-full object-cover" />
       )}
     </div>
   );
