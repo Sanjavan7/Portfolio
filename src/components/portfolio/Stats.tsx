@@ -6,7 +6,18 @@ const stats = [
   { value: "18+", label: "Hackathons & Events", accent: "var(--coinly-yellow)" },
   { value: "NYC", label: "Night Owl: submitting to Mayor's Office & DOHMH", accent: "var(--coinly-green)" },
   { value: "CHI", label: "2027 poster + L@S 2027 paper in prep", accent: "var(--coinly-sky)" },
-  { value: "Judge", label: "HackHarvard 2026", accent: "var(--coinly-purple)" },
+  {
+    value: "Judge",
+    label: (
+      <>
+        HackHarvard 2026 ·{" "}
+        <a href="https://www.hackprinceton.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+          HackPrinceton Fall 2026
+        </a>
+      </>
+    ),
+    accent: "var(--coinly-purple)",
+  },
   { value: "SF", label: "Invite-only DevHouse residency", accent: "var(--coinly-orange)" },
 ];
 
@@ -33,7 +44,7 @@ export const Stats = () => {
         <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4">
           {stats.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={stat.value}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
