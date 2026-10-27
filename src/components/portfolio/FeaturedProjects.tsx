@@ -142,6 +142,13 @@ const moreProjects: {
     link: "https://devpost.com/software/stealth-mode-startup",
     color: "orange",
   },
+  {
+    name: "ASI:One Challenge",
+    description: "A solo win at Fetch.ai's ASI:One personalization challenge.",
+    metric: "Fetch.ai · Cal Hacks 13.0",
+    year: "2026",
+    color: "purple",
+  },
 ];
 
 const colorMap: Record<string, { bg: string; text: string }> = {
