@@ -7,7 +7,7 @@ const projects = [
     name: "PreVent",
     tagline: "Autonomous security for the medical devices hospitals can't patch.",
     description: "PreVent hacks a medical device to find the flaw, patches the code with a human in the loop, then re-runs the exact same attack to prove it's closed — red team and blue team in one loop, on real hardware with a 3D hospital ward in sync. I owned the real-time layer: one shared database row keeping the dashboard, the 3D ward and the physical device in lockstep.",
-    metric: "1st Best Security Hack & 2nd Best Use of Bitdeer AI · Cal Hacks 13.0",
+    metric: "Winner Best Security Hack & Winner of Best Use of Bitdeer AI",
     year: "2026",
     link: "https://devpost.com/software/prevent-5ymas0",
     color: "orange",
