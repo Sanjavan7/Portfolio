@@ -4,6 +4,15 @@ import { SectionLabel, Sparkle } from "./CoinlyDecorations";
 
 const projects = [
   {
+    name: "PreVent",
+    tagline: "Autonomous security for the medical devices hospitals can't patch.",
+    description: "PreVent hacks a medical device to find the flaw, patches the code with a human in the loop, then re-runs the exact same attack to prove it's closed — red team and blue team in one loop, on real hardware with a 3D hospital ward in sync. I owned the real-time layer: one shared database row keeping the dashboard, the 3D ward and the physical device in lockstep.",
+    metric: "1st Best Security Hack & 2nd Best Use of Bitdeer AI · Cal Hacks 13.0",
+    year: "2026",
+    link: "https://devpost.com/software/prevent-5ymas0",
+    color: "orange",
+  },
+  {
     name: "Synovia",
     tagline: "See surgical outcomes before the first incision.",
     description: "Predicts neurological deficits before brain surgery by combining finite-element simulation with Gemini multimodal reasoning. I led the ML side and built the simulation API.",
@@ -47,15 +56,6 @@ const projects = [
     year: "2026",
     link: "https://devpost.com/software/contractpilot-1l3rnd",
     color: "green",
-  },
-  {
-    name: "RentSense",
-    tagline: "Live where you should, not just where you can.",
-    description: "Turns 'quality of life' into a personalized, data-driven decision about where to live. I built the frontend and connected it to the model API.",
-    metric: "NexHacks 2026",
-    year: "2026",
-    link: "https://devpost.com/software/stealth-mode-startup",
-    color: "orange",
   },
 ];
 
@@ -133,6 +133,14 @@ const moreProjects: {
     year: "2025",
     link: "https://github.com/Sanjavan7/luna-backend",
     color: "green",
+  },
+  {
+    name: "RentSense",
+    description: "Turns 'quality of life' into a personalized, data-driven decision about where to live. I built the frontend and connected it to the model API.",
+    metric: "NexHacks 2026",
+    year: "2026",
+    link: "https://devpost.com/software/stealth-mode-startup",
+    color: "orange",
   },
 ];
 

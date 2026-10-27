@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Sparkle } from "./CoinlyDecorations";
 
 const stats = [
-  { value: "8+", label: "Hackathon Wins", accent: "var(--coinly-orange)" },
+  { value: "10+", label: "Hackathon Wins", accent: "var(--coinly-orange)" },
   { value: "18+", label: "Hackathons & Events", accent: "var(--coinly-yellow)" },
   { value: "NYC", label: "Night Owl: submitting to Mayor's Office & DOHMH", accent: "var(--coinly-green)" },
   { value: "CHI", label: "2027 poster + L@S 2027 paper in prep", accent: "var(--coinly-sky)" },

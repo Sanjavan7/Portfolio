@@ -80,7 +80,7 @@ export const Story = () => {
             </p>
             <p>
               So I taught myself to code. The same discipline that drove 5 AM training
-              sessions now drives hackathon sprints: 8+ wins across 18+ hackathons and events,
+              sessions now drives hackathon sprints: 10+ wins across 18+ hackathons and events,
               including prizes at HackPrinceton, Hacklytics and Columbia DevFest, an invite-only
               DevHouse SF residency, a Top 7 pitch at HackIllinois (UIUC), and more.
             </p>
