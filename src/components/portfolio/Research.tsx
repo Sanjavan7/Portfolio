@@ -35,7 +35,7 @@ export const Research = () => {
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-10">
               <div>
-                <span className="chip mb-4">Full paper in preparation · EDM 2027</span>
+                <span className="chip mb-4">CHI 2027 poster · EDM 2027 full paper · in preparation</span>
                 <h3 className="text-xl md:text-3xl font-black leading-tight mt-3 mb-3">
                   How students learn with an AI chatbot
                 </h3>
@@ -51,22 +51,11 @@ export const Research = () => {
                   </a>{" "}
                   · Oct 2025 – present
                 </p>
-                <p className="text-sm md:text-base leading-relaxed font-medium opacity-95 mb-5">
+                <p className="text-sm md:text-base leading-relaxed font-medium opacity-95">
                   I study how 179 learners used an AI chatbot, reading materials and web search while
                   studying, and which behaviors predicted how well they did. I own the analysis
                   pipeline, Methods and Results.
                 </p>
-                <div
-                  className="rounded-2xl p-4"
-                  style={{ background: 'var(--coinly-yellow)', color: 'var(--coinly-deep-blue)', border: '2.5px solid var(--coinly-deep-blue)' }}
-                >
-                  <p className="text-xs font-black uppercase tracking-wider mb-1">✦ The bug I'm proudest of catching</p>
-                  <p className="text-sm font-medium leading-relaxed">
-                    An Excel export had rounded participant IDs, so 179 people quietly became 168. Nothing
-                    errored; every count was just wrong. Now every number is rebuilt from source and
-                    checked on each run.
-                  </p>
-                </div>
               </div>
 
               <div>
