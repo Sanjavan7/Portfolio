@@ -28,37 +28,69 @@ export const Research = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="card-coinly relative overflow-hidden"
+            className="card-coinly relative overflow-hidden md:col-span-2"
             style={{ background: 'var(--coinly-purple)', color: '#fff' }}
           >
             <Star className="absolute top-4 right-4" color="#fff" size={28} />
-            <Sparkle className="absolute bottom-4 right-8 opacity-40" color="#fff" size={20} />
 
-            <p className="text-xs font-black tracking-wider uppercase opacity-90 mb-4">
-              ✦ In preparation · CHI 2027 poster & L@S 2027 paper
-            </p>
-            <h3 className="text-xl md:text-2xl font-black leading-tight mb-4">
-              How students learn with AI chatbots, reading and web search
-            </h3>
-            <p className="text-sm leading-relaxed mb-5 opacity-90 font-medium">
-              Research assistant with{" "}
-              <a
-                href="https://tiffanywentingli.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-black underline decoration-2 underline-offset-2"
-              >
-                Prof. Tiffany Wenting Li
-              </a>{" "}
-              at Stevens, extending her work on imperfect pedagogical chatbots. 919 coded chatbot
-              messages across 344 learning sessions. I wrote the statistical models from scratch:
-              a multivariate Poisson mixture, Jensen–Shannon k-medoids clustering and a custom
-              FISTA elastic-net solver.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["Educational AI", "Mixture Models", "Learning Analytics"].map((tag) => (
-                <span key={tag} className="chip">{tag}</span>
-              ))}
+            <div className="grid md:grid-cols-2 gap-6 md:gap-10">
+              <div>
+                <span className="chip mb-4">Full paper in preparation · EDM 2027</span>
+                <h3 className="text-xl md:text-3xl font-black leading-tight mt-3 mb-3">
+                  How students learn with an AI chatbot
+                </h3>
+                <p className="text-xs font-bold uppercase tracking-wider opacity-85 mb-4">
+                  Graduate Research Assistant, Stevens Institute of Technology · Advisor:{" "}
+                  <a
+                    href="https://tiffanywentingli.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-2 underline-offset-2"
+                  >
+                    Prof. Tiffany Wenting Li
+                  </a>{" "}
+                  · Oct 2025 – present
+                </p>
+                <p className="text-sm md:text-base leading-relaxed font-medium opacity-95 mb-5">
+                  I study how 179 learners used an AI chatbot, reading materials and web search while
+                  studying, and which behaviors predicted how well they did. I own the analysis
+                  pipeline, Methods and Results.
+                </p>
+                <div
+                  className="rounded-2xl p-4"
+                  style={{ background: 'var(--coinly-yellow)', color: 'var(--coinly-deep-blue)', border: '2.5px solid var(--coinly-deep-blue)' }}
+                >
+                  <p className="text-xs font-black uppercase tracking-wider mb-1">✦ The bug I'm proudest of catching</p>
+                  <p className="text-sm font-medium leading-relaxed">
+                    An Excel export had rounded participant IDs, so 179 people quietly became 168. Nothing
+                    errored; every count was just wrong. Now every number is rebuilt from source and
+                    checked on each run.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs font-black uppercase tracking-wider opacity-90 mb-3">✦ What I built</p>
+                <ul className="space-y-2.5 text-sm leading-relaxed font-medium opacity-95 mb-5">
+                  {[
+                    "A multivariate Poisson mixture model, written from scratch, to segment sparse, zero-heavy behavior counts",
+                    "A custom proximal-gradient (FISTA) solver for elastic-net logistic and ordinal regression, validated against scikit-learn and SciPy",
+                    "Leakage-controlled evaluation on 300 session-grouped train/test splits, plus stability selection",
+                    "Permutation tests (a million shuffles) with Holm multiple-testing correction",
+                    "A reproducibility pipeline that regenerates and diffs ~900 reported numbers on every run",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span aria-hidden="true">→</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {["Python", "NumPy", "SciPy", "scikit-learn", "statistics", "learning analytics"].map((tag) => (
+                    <span key={tag} className="chip">{tag}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.article>
 
