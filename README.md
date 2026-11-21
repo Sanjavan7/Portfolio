@@ -55,7 +55,7 @@ public/
 ├── intro-poster.jpg      # first-frame poster
 ├── og-image.jpg          # social share thumbnail (1200×630)
 ├── SResume_Sanjavan_Updated.pdf
-├── origin-photo.png
+├── origin-photo.jpg
 └── CNAME                 # sanjavan.com
 ```
 

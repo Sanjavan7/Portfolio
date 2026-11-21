@@ -44,7 +44,7 @@ export const Story = () => {
             }}
           >
             <img
-              src="/origin-photo.png"
+              src="/origin-photo.jpg"
               alt="Sanjavan"
               className="block w-[260px] sm:w-[320px] md:w-[380px] h-auto object-cover"
               style={{ borderRadius: '2px' }}
